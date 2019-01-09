@@ -1,0 +1,18 @@
+1 ICON "../melee-dat-editor/resources/icon-256.ico"
+
+1 VERSIONINFO
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "FileDescription",  "Melee DAT Editor"
+            VALUE "LegalCopyright", "GPLv3"
+        END
+    END
+    
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END

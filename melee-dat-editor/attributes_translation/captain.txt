@@ -1,0 +1,18 @@
+Start   38f8
+Length  8c
+
+Neutral B
+3904 	1.95 	Momentum forward
+3908 	0.92 	Momentum holding up 
+
+Side B
+3930 	20.0 	Landlag
+3934 	40.0 	Landlag on hit 
+
+Up B
+3944 	30.0 	Landing lag 
+
+Down B
+3974 	1.0 	Ground-lag multiplier (higher = less lag)
+3978 	1.0 	Aerial landing lag multiplier (higher = less lag)
+397C 	1.6 	 ??? 

@@ -1,0 +1,55 @@
+Start   37c8
+Length  A0
+
+Neutral B
+37CC 	40
+37D0 	0.7
+37D4 	0.7
+37D8 	360.0 	Refueling/Spacing in gfx?
+37DC 	40.0 	Spacing in fire gfx?
+37E0 	380.0 	GFX scaling? (smaller = larger)?
+37E4 	60.0 	Minimum distance?
+37E8 	30
+37EC 	0 	X offset of Fire
+37F0 	0 	Y offset of Fire
+37F4 	3
+40F8 	28.0 	Frame count for something?
+40FC 	20.0 	Frame count for something?
+4100 	1.9 	Flame speed?
+4104 	2.2 	Horizontal momentum of flames?
+4108 	2.18166160 	(125 degrees)
+410C 	2.53072738 	(145 degrees) 
+
+Side B
+37F8 	0.25 	Something to do with throwing after grabbing with side B.
+37FC 	0.1
+3800 	0.5
+3804 	2.0
+3808 	10.0
+380C 	12.0
+3810 	1.0 	Side B grab break out (higher number breaks out faster)
+3814 	250.0
+3818 	0 
+
+Up B
+381C 	1.78 	Vertical momentum in air
+3820 	0.05 	Gravity
+3824 	1.0
+3828 	1.5 	Grounded moving speed
+382C 	1.6 	Momentum preservation on turning?
+3830 	0.15 	Grounded turning speed
+3834 	0.02 	Aerial mobility
+3838 	15.0 	How many frames after falling to landing to automatically do a grounded fortress again?
+383C 	50.0 	Something dealing with 3838 but affects how long you stay in shell?
+3840 	10.0 	Something dealing with 3838 but making it really high delays the animation somehow?
+3844 	50.0 	Landing lag? 
+
+Down B
+3848 	1.1 	Vertical aerial momentum preservation on startup?
+384C 	0.5 	Initial aerial vertical momentum
+3850 	0.015
+3854 	0.03
+3858 	0.4 	Gravity
+385C 	-7.5 	Descent speed
+3860 	8.0
+3864 	1.0 

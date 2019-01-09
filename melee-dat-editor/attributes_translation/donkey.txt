@@ -1,0 +1,28 @@
+Start   3b34
+Length  74
+
+Neutral B
+3B60 	10 	How many arm swings to fully charge
+3B64 	2 	Damage per arm swing (first arm swing has no effect)
+3B68 	0.12 	Grounded charged punch horizontal velocity
+3B6C 	20.0 	Landing lag
+3B70 	1.5 	 ???
+3B74 	.0199 	 ??? 
+
+Side B
+3B78 	.5 	Aerial side B gravity
+3B7C 	0 	 ??? 
+
+Up B
+3B80 	.065 	Aerial Up B vertical velocity
+3B84 	.07 	Aerial Up B gravity
+3B88 	.85 	Grounded up B horizontal velocity
+3B8C 	1.399 	Aerial Up B horizontal velocity
+3B90 	.025 	Grounded Up B mobility
+3B94 	.05 	Aerial Up B mobility
+3B94 	40 	Up B landing lag 
+
+Down B
+3B9C 	12 	X offset of hitbox 1
+3BA0 	6.199 	X offset of hitbox 2
+3BA4 	10 	 ??? 

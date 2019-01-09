@@ -1,0 +1,4 @@
+*.dat
+*.dol
+*.iso
+__pycache__/

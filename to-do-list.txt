@@ -1,0 +1,20 @@
+To-do tier list
+
+ASAP:
+- Add buttons to add and delete events (easy, backend is all there)
+- Add button / context menu item to change an event to another type
+- Add buttons to move selected events up and down, in addition to the +/- keybinds
+
+Soon:
+- Add character unique attributes definitions (right now only Ganondorf has them, for testing)
+- Add drop down menus and human readable names for the various constants in hitbox events / other events
+- Fix subaction/goto follow so that it finds locations even if they are not at the start of a script, and also selects the event
+- Document the UI, etc
+
+Later:
+- Implement swapping animations between subactions
+- Option to open and save from an iso directly?
+- Un-hardcode gui dimensions and clean things up
+
+Eventually:
+- Move logic tables and FSMs are in the dol so they are a future project

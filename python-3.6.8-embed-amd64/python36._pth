@@ -1,0 +1,9 @@
+python36.zip
+PyQt5
+win32
+yaml
+../melee-dat-editor
+.
+
+# Uncomment to run site.main() automatically
+#import site
