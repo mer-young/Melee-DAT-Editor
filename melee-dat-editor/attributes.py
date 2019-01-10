@@ -1,166 +1,55 @@
 # -*- coding: utf-8 -*-
-'''
-Created on Sat Dec  8 21:40:14 2018
-
-Might redo this in yaml
+"""
+Created on Wed Jan  9 20:41:47 2019
 
 @author: rmn
-'''
+"""
+
+import os
+import yaml
 
 
-def unpack(attributes_list):
-    fmt = '>'
+common_folder = os.path.join('data', 'attributes', 'common')
+unique_folder = os.path.join('data', 'attributes', 'unique')
+
+
+def common_table(dat_type):
+    try:
+        fname = os.path.join(common_folder, dat_type + '.yml')
+        return get_table(fname)
+    except FileNotFoundError:
+        fname = os.path.join(common_folder, '_default.yml')
+        return get_table(fname)
+
+
+def unique_table(character_short_name):
+    try:
+        fname = os.path.join(unique_folder, character_short_name + '.yml')
+        return get_table(fname)
+    except FileNotFoundError:
+        fname = os.path.join(unique_folder, '_default.yml')
+        return get_table(fname)
+
+
+def get_table(fname):
+    data = yaml.safe_load(open(fname, 'r'))
+    try:
+        length = data.pop('length')
+    except KeyError:
+        # no length specified, assume the table ends with the last listed
+        print(data.keys())
+        length = max(data.keys()) + 4
+
     names = []
-    for name, fmt_char in attributes_list:
-        fmt += fmt_char
-        names.append(name)
+    fmt = '>'
+    for offset in range(0, length, 4):
+        entry = data.get(offset, _default_attribute)
+        names.append(entry['name'])
+        fmt += entry['type']
     return names, fmt
 
 
-common_attributes = {
-        'normal': [
-                ('Walk Initial Velocity', 'f'),
-                ('Walk Acceleration?', 'f'),
-                ('Walk Maximum Velocity', 'f'),
-                ('Slow Walk Max?', 'f'),
-                ('Mid Walk Point?', 'f'),
-                ('Fast Walk Min?', 'f'),
-                ('Friction / Stop Deceleration', 'f'),
-                ('Dash Initial Velocity', 'f'),
-                ('Dash & Run Acceleration A', 'f'),
-                ('Dash & Run Acceleration B', 'f'),
-                ('Dash & Run Terminal Velocity', 'f'),
-                ('Run Animation Scaling', 'f'),
-                ('Run Acceleration', 'f'),
-                ('Grounded Max Horizontal Velocity', 'f'),
-                ('Kneebend Frames', 'f'),
-                ('Jump H Initial Velocity', 'f'),
-                ('Jump V Initial Velocity', 'f'),
-                ('Ground-To-Air Jump Momentum Multiplier', 'f'),
-                ('Jump H Maximum Velocity', 'f'),
-                ('Short Hop V Initial Velocity', 'f'),
-                ('Midair Jump Multiplier', 'f'),
-                ('Double Jump Momentum', 'f'),
-                ('Number of Jumps', 'I'),
-                ('Gravity', 'f'),
-                ('Terminal Velocity', 'f'),
-                ('Air Mobility A', 'f'),
-                ('Air Mobility B', 'f'),
-                ('Max Aerial H Velocity', 'f'),
-                ('Air Friction', 'f'),
-                ('Fast Fall Terminal Velocity', 'f'),
-                ('Unknown', 'f'),
-                ('Jab 2 Window?', 'f'),
-                ('Jab 3 Window?', 'f'),
-                ('Tilt Turn Frames', 'f'),
-                ('Weight', 'f'),
-                ('Model Scaling', 'f'),
-                ('Shield Size', 'f'),
-                ('Shield Break Initial Velocity', 'f'),
-                ('Rapid Jab Window', 'I'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Ledgejump H Velocity', 'f'),
-                ('Ledgejump V Velocity', 'f'),
-                ('Item Throw Velocity', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Kirby Inhale Star Damage', 'f'),
-                ('Normal Landing Lag', 'f'),
-                ('N-Air Landing Lag', 'f'),
-                ('F-Air Landing Lag', 'f'),
-                ('B-Air Landing Lag', 'f'),
-                ('U-Air Landing Lag', 'f'),
-                ('D-Air Landing Lag', 'f'),
-                ('Victory Screen Window Model Scaling', 'f'),
-                ('Unknown', 'f'),
-                ('Wall Jump H Velocity', 'f'),
-                ('Wall Jump V Velocity', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('DJC?', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('DJC?', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Bubble Ratio?', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Ice Traction?', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Camera Target Bone?', 'I'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('-1 For Special Jump Action?', 'f'),
-                ('Throw Weight Dependence Flags', 'B')
-                ],
-        }
-
-unique_attributes = {
-        '_default': [
-                ('(Atttibutes Undefined)', 'f'),
-                ],
-
-        # account for everything, explicitly put unknown for unknowns
-        # otherwise it will error
-        'Ganon': [
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Neutral B Forward Air Momentum', 'f'),
-                ('Neutral B Vertical Air Momentum', 'f'),
-                ('Unknown', 'f'),
-                ('Side B Miss Gravity', 'f'),
-                ('Side B Miss Gravity Related', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Side B Landing Lag', 'f'),
-                ('Side B Hit Landing Lag', 'f'),
-                ('Unknown', 'f'),
-                ('Up B Horizontal Momentum', 'f'),
-                ('Unknown', 'f'),
-                ('Up B Landing Lag', 'f'),
-                ('Down B Purple Aura Angle', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'I'),
-                ('Unknown', 'I'),
-                ('Unknown', 'f'),
-                ('Down B Speed Modifier on Hit', 'f'),
-                ('Unknown', 'I'),
-                ('Down B Ground-Ground Endlag Modifier', 'f'),
-                ('Down B Air-Ground Endlag Modifier', 'f'),
-                ('Unknown', 'f'),
-                ('Unknown', 'f'),
-                ],
+_default_attribute = {
+        'name': 'Unknown',
+        'type': 'f'
         }

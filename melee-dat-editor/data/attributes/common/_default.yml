@@ -1,0 +1,235 @@
+# Attributes table common to all characters
+
+length: 0x184
+
+0x0:
+    name: Walk Initial Velocity
+    type: f
+
+0x4:
+    name: Walk Acceleration?
+    type: f
+
+0x8:
+    name: Walk Maximum Velocity
+    type: f
+
+0xC:
+    name: Slow Walk Max?
+    type: f
+
+0x10:
+    name: Mid Walk Point?
+    type: f
+
+0x14:
+    name: Fast Walk Min?
+    type: f
+
+0x18:
+    name: Friction / Stop Deceleration
+    type: f
+
+0x1C:
+    name: Dash Initial Velocity
+    type: f
+
+0x20:
+    name: Dash & Run Acceleration A
+    type: f
+
+0x24:
+    name: Dash & Run Acceleration B
+    type: f
+
+0x28:
+    name: Dash & Run Terminal Velocity
+    type: f
+
+0x2C:
+    name: Run Animation Scaling
+    type: f
+
+0x30:
+    name: Run Acceleration
+    type: f
+
+0x34:
+    name: Grounded Max Horizontal Velocity
+    type: f
+
+0x38:
+    name: Kneebend Frames
+    type: f
+
+0x3C:
+    name: Jump H Initial Velocity
+    type: f
+
+0x40:
+    name: Jump V Initial Velocity
+    type: f
+
+0x44:
+    name: Ground-To-Air Jump Momentum Multiplier
+    type: f
+
+0x48:
+    name: Jump H Maximum Velocity
+    type: f
+
+0x4C:
+    name: Short Hop V Initial Velocity
+    type: f
+
+0x50:
+    name: Midair Jump Multiplier
+    type: f
+
+0x54:
+    name: Double Jump Momentum
+    type: f
+
+0x58:
+    name: Number of Jumps
+    type: I
+
+0x5C:
+    name: Gravity
+    type: f
+
+0x60:
+    name: Terminal Velocity
+    type: f
+
+0x64:
+    name: Air Mobility A
+    type: f
+
+0x68:
+    name: Air Mobility B
+    type: f
+
+0x6C:
+    name: Max Aerial H Velocity
+    type: f
+
+0x70:
+    name: Air Friction
+    type: f
+
+0x74:
+    name: Fast Fall Terminal Velocity
+    type: f
+
+0x7C:
+    name: Jab 2 Window?
+    type: f
+
+0x80:
+    name: Jab 3 Window?
+    type: f
+
+0x84:
+    name: Tilt Turn Frames
+    type: f
+
+0x88:
+    name: Weight
+    type: f
+
+0x8C:
+    name: Model Scaling
+    type: f
+
+0x90:
+    name: Shield Size
+    type: f
+
+0x94:
+    name: Shield Break Initial Velocity
+    type: f
+
+0x98:
+    name: Rapid Jab Window
+    type: I
+
+0xA8:
+    name: Ledgejump H Velocity
+    type: f
+
+0xAC:
+    name: Ledgejump V Velocity
+    type: f
+
+0xB0:
+    name: Item Throw Velocity
+    type: f
+
+0xE0:
+    name: Kirby Inhale Star Damage
+    type: f
+
+0xE4:
+    name: Normal Landing Lag
+    type: f
+
+0xE8:
+    name: N-Air Landing Lag
+    type: f
+
+0xEC:
+    name: F-Air Landing Lag
+    type: f
+
+0xF0:
+    name: B-Air Landing Lag
+    type: f
+
+0xF4:
+    name: U-Air Landing Lag
+    type: f
+
+0xF8:
+    name: D-Air Landing Lag
+    type: f
+
+0xFC:
+    name: Victory Screen Window Model Scaling
+    type: f
+
+0x104:
+    name: Wall Jump H Velocity
+    type: f
+
+0x108:
+    name: Wall Jump V Velocity
+    type: f
+
+0x12C:
+    name: DJC?
+    type: f
+
+0x13C:
+    name: DJC?
+    type: f
+
+0x14C:
+    name: Bubble Ratio?
+    type: f
+
+0x160:
+    name: Ice Traction?
+    type: f
+
+0x16C:
+    name: Camera Target Bone?
+    type: I
+
+0x17C:
+    name: -1 For Special Jump Action?
+    type: f
+
+0x180:
+    name: Throw Weight Dependence Flags
+    type: B

@@ -159,7 +159,7 @@ class BaseDatFile (HasInPlaceTables):
 
 class MovesetDatFile (BaseDatFile):
 
-    dat_kind = 'normal'  # will be used to differentiate DatEx files
+    dat_kind = 'default'  # will be used to differentiate DatEx files
 
     INDEX_LENGTH = 0x18
     SUBACTION_DIVIDER = 0x155
@@ -211,21 +211,14 @@ class MovesetDatFile (BaseDatFile):
                 self.SubactionTableEntry
                 )
 
-        names, fmt = attributes.unpack(
-                attributes.common_attributes[self.dat_kind]
-                )
+        names, fmt = attributes.common_table(self.dat_kind)
         self.common_attributes_table = self.inplace_struct(
                 self.pointer(self.index[0]),
                 struct.Struct(fmt),
                 names=names
                 )
 
-        names, fmt = attributes.unpack(
-                attributes.unique_attributes.get(
-                        self.char_short_name(),
-                        attributes.unique_attributes['_default']
-                        )
-                )
+        names, fmt = attributes.unique_table(self.char_short_name())
         self.unique_attributes_table = self.inplace_struct(
                 self.pointer(self.index[1]),
                 struct.Struct(fmt),

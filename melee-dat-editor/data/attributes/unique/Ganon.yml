@@ -1,0 +1,143 @@
+# Ganondorf
+
+length: 0x8C
+
+0x0:
+  name: Unknown
+  type: f
+
+0x4:
+    name: Unknown
+    type: f
+
+0x8:
+    name: Unknown
+    type: f
+
+0xC:
+    name: Neutral B Forward Air Momentum
+    type: f
+
+0x10:
+    name: Neutral B Vertical Air Momentum
+    type: f
+
+0x14:
+    name: Unknown
+    type: f
+
+0x18:
+    name: Side B Miss Gravity
+    type: f
+
+0x1C:
+    name: Side B Miss Gravity Related
+    type: f
+
+0x20:
+    name: Unknown
+    type: f
+
+0x24:
+    name: Unknown
+    type: f
+
+0x28:
+    name: Unknown
+    type: f
+
+0x2C:
+    name: Unknown
+    type: f
+
+0x30:
+    name: Unknown
+    type: f
+
+0x34:
+    name: Unknown
+    type: f
+
+0x38:
+    name: Side B Landing Lag
+    type: f
+
+0x3C:
+    name: Side B Hit Landing Lag
+    type: f
+
+0x40:
+    name: Unknown
+    type: f
+
+0x44:
+    name: Up B Horizontal Momentum
+    type: f
+
+0x48:
+    name: Unknown
+    type: f
+
+0x4C:
+    name: Up B Landing Lag
+    type: f
+
+0x50:
+    name: Down B Purple Aura Angle
+    type: f
+
+0x54:
+    name: Unknown
+    type: f
+
+0x58:
+    name: Unknown
+    type: f
+
+0x5C:
+    name: Unknown
+    type: f
+
+0x60:
+    name: Unknown
+    type: f
+
+0x64:
+    name: Unknown
+    type: f
+
+0x68:
+    name: Unknown
+    type: I
+
+0x6C:
+    name: Unknown
+    type: I
+
+0x70:
+    name: Unknown
+    type: f
+
+0x74:
+    name: Down B Speed Modifier on Hit
+    type: f
+
+0x78:
+    name: Unknown
+    type: I
+
+0x7C:
+    name: Down B Ground-Ground Endlag Modifier
+    type: f
+
+0x80:
+    name: Down B Air-Ground Endlag Modifier
+    type: f
+
+0x84:
+    name: Unknown
+    type: f
+
+0x88:
+    name: Unknown
+    type: f

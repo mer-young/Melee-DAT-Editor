@@ -10,7 +10,7 @@ import binascii
 import yaml
 
 
-event_types_fname = 'data/event_types.yml'
+event_types_fname = 'data/event-types.yml'
 event_types = yaml.safe_load(open(event_types_fname, 'r'))
 
 keys = list(event_types.keys())
