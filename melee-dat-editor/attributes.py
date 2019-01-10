@@ -37,7 +37,6 @@ def get_table(fname):
         length = data.pop('length')
     except KeyError:
         # no length specified, assume the table ends with the last listed
-        print(data.keys())
         length = max(data.keys()) + 4
 
     names = []

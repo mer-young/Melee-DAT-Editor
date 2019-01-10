@@ -18,6 +18,14 @@ import script
 Int = struct.Struct('>I')
 
 
+def moveset_datfile(fname, mode='r+b', copy=True):
+    new = MovesetDatFile(fname, mode, copy)
+    if new.char_short_name() == 'Kirby':
+        new.close()
+        new = MovesetDatFile_Kirby(fname, mode, copy)
+    return new
+
+
 class BaseDatFile (HasInPlaceTables):
     """Parent to all HAL dat file types"""
 
@@ -186,8 +194,8 @@ class MovesetDatFile (BaseDatFile):
                                 'scale'
                                 ])
 
-    def __init__(self, *args):
-        super().__init__(*args)
+    def __init__(self, fname, mode='r+b', copy=True):
+        super().__init__(fname, mode, copy)
         self.index = self.inplace_table(
                 self.pointer(self.root_nodes[0].pointer),
                 self.INDEX_LENGTH,
@@ -352,3 +360,11 @@ class MovesetDatFile (BaseDatFile):
 
     def char_short_name(self):
         return self.title().replace('ftData', '')
+
+
+class MovesetDatFile_Kirby (MovesetDatFile):
+    SUBACTION_DIVIDER = 0x1DF
+
+
+if __name__ == '__main__':
+    x = moveset_datfile(r'D:\SSB\melee mods\dat files\1.02\1 - Moveset\Kirby\PlKb.dat')

@@ -23,7 +23,7 @@ from PyQt5.QtWidgets import (QApplication, QWidget, QMainWindow, QGridLayout,
                              QPushButton, QFormLayout, QDoubleSpinBox,
                              QVBoxLayout, QMessageBox)
 
-from datfiles import MovesetDatFile
+from datfiles import moveset_datfile
 import script
 
 
@@ -253,7 +253,7 @@ class MovesetDatEditor (QWidget):
         self.initialize()
 
     def initialize(self):
-        self.f = MovesetDatFile(self.fname)
+        self.f = moveset_datfile(self.fname)
         self.setup_stacked_frame()
 
     @property

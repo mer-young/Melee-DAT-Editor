@@ -77,60 +77,79 @@
         - name: ID
           bits: [6, 8]
           type: u
+
         - name: Unknown 1
           bits: [9, 13]
           type: u
+
         - name: Bone
           bits: [14, 20]
           type: u
+
         - name: Unknown 2
           bits: [21, 22]
           type: u
+
         - name: Damage
           bits: [23, 31]
           type: u
+
         - name: Size
           bits: [32, 47]
           type: u
+
         - name: Z-Offset
           bits: [48, 63]
           type: s
+
         - name: Y-Offset
           bits: [64, 79]
           type: s
+
         - name: X-Offset
           bits: [80, 95]
           type: s
+
         - name: Angle
           bits: [96, 104]
           type: u
+
         - name: Knockback Growth
           bits: [105, 113]
           type: u
+
         - name: Weight-Dependent Set Knockback
           bits: [114, 122]
           type: u
+
         - name: Unknown 3
           bits: [123, 125]
           type: u
+
         - name: Hitbox Interaction
           bits: [126, 127]
           type: u
+
         - name: Base Knockback
           bits: [128, 136]
           type: u
+
         - name: Element
           bits: [137, 141]
           type: u
+
         - name: Unknown 4
           bits: [142, 142]
           type: u
+
         - name: Shield Damage
           bits: [143, 149]
           type: u
+
         - name: Hit Sound Effect
           bits: [150, 157]
           type: u
+
         - name: Hurtbox Interaction
           bits: [158, 159]
           type: u
@@ -142,6 +161,7 @@
         - name: Hitbox ID
           bits: [6, 8]
           type: u
+
         - name: Damage
           bits: [9, 31]
           type: u
@@ -153,6 +173,7 @@
         - name: Hitbox ID
           bits: [6, 8]
           type: u
+
         - name: Size
           bits: [9, 31]
           type: u
@@ -164,6 +185,7 @@
         - name: Hitbox ID
           bits: [6, 29]
           type: u
+
         - name: Flags Setting
           bits: [30, 31]
           type: u
@@ -248,9 +270,11 @@
         - name: Further Events to Read
           bits: [8, 15]
           type: u
+
         - name: Keep All Old Events
           bits: [16, 16]
           type: u
+
         - name: ASID
           bits: [21, 31]
           type: h
@@ -287,6 +311,7 @@
         - name: Bone ID
           bits: [6, 13]
           type: u
+
         - name: Collision State
           bits: [14, 31]
           type: u
@@ -312,12 +337,15 @@
         - name: Action State
           bits: [16, 31]
           type: u
+
         - name: Starting Frame
           bits: [32, 63]
           type: f
+
         - name: Speed Modifier
           bits: [64, 95]
           type: f
+
         - name: Blend Level
           bits: [96, 127]
           type: f
@@ -335,6 +363,7 @@
         - name: Struct ID
           bits: [6, 11]
           type: u
+
         - name: Temp. Object ID
           bits: [24, 31]
           type: u
@@ -405,6 +434,7 @@
         - name: Post-Transform Action State
           bits: [15, 31]
           type: u
+
         - name: Post-Transform Frame
           bits: [8, 15]
           type: u
@@ -439,6 +469,7 @@
         - name: Aura ID
           bits: [6, 13]
           type: u
+
         - name: Duration
           bits: [14, 31]
           type: u
@@ -460,6 +491,7 @@
         - name: Use Beam Sword Trail?
           bits: [6, 6]
           type: u
+
         - name: Render Status
           bits: [24, 31]
           type: s
@@ -515,9 +547,11 @@
         - name: Charge Frames
           bits: [8, 15]
           type: u
+
         - name: Charge Rate
           bits: [16, 31]
           type: u
+
         - name: Visual Effect
           bits: [32, 39]
           type: u
@@ -540,15 +574,19 @@
         - name: Data Type
           bits: [16, 19]
           type: u
+
         - name: Compare Type
           bits: [20, 23]
           type: u
+
         - name: Character Data Offset
           bits: [24, 31]
           type: h
+
         - name: Compare Value
           bits: [32, 63]
           type: h
+
         - name: Length to Skip If False
           bits: [64, 95]
           type: u
@@ -560,16 +598,31 @@
         - name: Article ID
           bits: [24, 31]
           type: h
+
         - name: X-Offset
           bits: [32, 47]
           type: f-upper
+
         - name: Y-Offset
           bits: [48, 63]
           type: f-upper
-        - name: Z-Offset
+
+        - name: X-Velocity
           bits: [64, 79]
           type: f-upper
-        - name:
+
+        - name: Y-Velocity
+          bits: [80, 95]
+          type: f-upper
+
+        - name: Model Scale
+          bits: [96, 111]
+          type: f-upper
+
+        - name: Duration
+          bits: [112, 127]
+          type: f-upper
+    custom: True
 
 0xF4FF01:
     name: Spawn Held Item [Achilles]
@@ -578,7 +631,31 @@
         - name: Article ID
           bits: [24, 31]
           type: h
-        - name:
+
+        - name: X-Offset
+          bits: [32, 47]
+          type: f-upper
+
+        - name: Y-Offset
+          bits: [48, 63]
+          type: f-upper
+
+        - name: X-Velocity
+          bits: [64, 79]
+          type: f-upper
+
+        - name: Y-Velocity
+          bits: [80, 95]
+          type: f-upper
+
+        - name: Model Scale
+          bits: [96, 111]
+          type: f-upper
+
+        - name: Duration
+          bits: [112, 127]
+          type: f-upper
+    custom: True
 
 0xFF01:
     name: Create Reflect Hitbox [UnclePunch]
