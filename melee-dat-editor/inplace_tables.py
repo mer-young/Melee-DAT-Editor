@@ -196,9 +196,26 @@ class _InPlaceTable:
     # TODO: fix argument out of range error
     def __delitem__(self, key):
         """use with care: does not update pointers"""
+
+        print(hex(self.start_offset))
+        pos = self.f.tell()
+        self.f.seek(0x420c)
+        print(hex(Int.unpack(self.f.read(4))[0]))
+        self.f.seek(pos)
+
+
+        print(hex(self.start_offset))
         key = self._process_key(key)
+        print(hex(self.get_offset(key)))
         self.f.insert(self.get_offset(key), amount=-self.item_size)
         self.length -= 1
+
+
+        print(hex(self.start_offset))
+        pos = self.f.tell()
+        self.f.seek(0x420c)
+        print(hex(Int.unpack(self.f.read(4))[0]))
+        self.f.seek(pos)
 
     def __len__(self):
         return self.length

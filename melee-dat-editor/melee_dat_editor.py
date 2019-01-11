@@ -310,16 +310,7 @@ class ScriptEditor (QWidget):
         self.f = datfile
 
         self.dropdown = QComboBox(self)
-        for i, sa in self.f.iter_subactions():
-            name = hex(i) + ': ' + self.f.subaction_short_name(i)
-            self.dropdown.addItem(name,
-                                  self.f.pointer(sa.script_pointer)
-                                  )
-        for offset in self.f.find_subroutines():
-            if self.dropdown.findData(offset) == -1:
-                name = 'Script at ' + hex(offset)
-                self.dropdown.addItem(name, offset)
-
+        self.populate_dropdown()
         self.grid.addWidget(self.dropdown, 0, 0)
 
         self.location_display = QLineEdit(self)
@@ -345,6 +336,18 @@ class ScriptEditor (QWidget):
 
         self.dropdown.setCurrentIndex(1)
 
+    def populate_dropdown(self):
+        self.dropdown.clear()
+        for i, sa in self.f.iter_subactions():
+            name = hex(i) + ': ' + self.f.subaction_short_name(i)
+            self.dropdown.addItem(name,
+                                  self.f.pointer(sa.script_pointer)
+                                  )
+        for offset in self.f.find_subroutines():
+            if self.dropdown.findData(offset) == -1:
+                name = 'Script at ' + hex(offset)
+                self.dropdown.addItem(name, offset)
+
     def open_location(self, offset):
         offset = self.f.pointer(offset)
         index = self.dropdown.findData(offset)
@@ -363,12 +366,15 @@ class ScriptEditor (QWidget):
     def apply(self):
         self.f.replace_script_at(self.event_list.start_offset,
                                  self.event_list.get_script())
-        self.event_list.update_offsets()
+        pos = self.dropdown.currentIndex()
+        self.populate_dropdown()
+        self.dropdown.setCurrentIndex(pos)
 
     class EventList (QListWidget):
         follow_clicked = pyqtSignal(int)
         event_role = Qt.UserRole
         offset_role = Qt.UserRole + 1
+        NOP = script.Event.from_hex('0xCC000000')
 
         def __init__(self, parent=None):
             super().__init__(parent)
@@ -389,6 +395,49 @@ class ScriptEditor (QWidget):
             move_down.triggered.connect(lambda: self.shift(+1))
             self.addAction(move_down)
 
+            copy = QAction(self)
+            copy.setShortcut(QKeySequence.Copy)
+            copy.triggered.connect(self.copy)
+            self.addAction(copy)
+
+            paste = QAction(self)
+            paste.setShortcut(QKeySequence.Paste)
+            paste.triggered.connect(self.paste)
+            self.addAction(paste)
+
+        def copy(self):
+            s = ''
+            for item in self.selectedItems():
+                event_text = hex_display(hex(item.data(self.event_role)),
+                                   show_0x=False
+                                   )
+                if len(event_text) % 2:
+                    event_text = '0' + event_text
+                s += event_text
+            app.clipboard().setText(s)
+
+        def paste(self):
+            cb = app.clipboard()
+            formats = cb.mimeData().formats()
+            try:
+                fmt_010 = r'application/x-qt-windows-mime;value="010 Editor Binary Data"'
+                if fmt_010 in formats:
+                    data = cb.mimeData().data(fmt_010)
+                    # [:-2] because 010 appends \x00\x00
+                    scr = script.script_from_bytes(data[:-2])
+                    for ev in scr:
+                        self.insert_event(max(self.currentRow(), 0), ev)
+                # any other binary formats go here
+                elif cb.text():
+                    scr = script.script_from_hex_str(cb.text())
+                    for ev in scr:
+                        self.insert_event(max(self.currentRow(), 0), ev)
+                self.selectionModel().clearSelection()
+            except EOFError:
+                mbox = QMessageBox(self)
+                mbox.setText('Error interpreting pasted event data')
+                mbox.exec_()
+
         def contextMenuEvent(self, e):
             row = self.currentRow()
             if self.item(row):
@@ -400,6 +449,13 @@ class ScriptEditor (QWidget):
                         )
                 edit_action.triggered.connect(
                         lambda: self.popup_event_editor(row))
+                insert_action = menu.addAction(
+                        self.style().standardIcon(QStyle.SP_FileIcon),
+                        'Insert Event'
+                        )
+                insert_action.triggered.connect(
+                        lambda: self.insert_event(self.currentRow(), self.NOP.copy())
+                        )
                 if event.pointers:
                     follow_action = menu.addAction(
                             self.style().standardIcon(QStyle.SP_ArrowForward),
@@ -407,6 +463,16 @@ class ScriptEditor (QWidget):
                             )
                     follow_action.triggered.connect(lambda: self.follow(row))
                 menu.exec_(e.globalPos())
+
+        def insert_event(self, pos, event):
+            self.insertItem(
+                    pos,
+                    self.item_from_event(
+                            event,
+                            self.item(pos).data(self.offset_role)
+                            )
+                    )
+            self.update_offsets()
 
         def popup_event_editor(self, row):
             ev = self.item(row).data(self.event_role)
@@ -526,6 +592,8 @@ class EventEditor (QDialog):
         apply_button.pressed.connect(self.apply)
         buttons_hbox.addWidget(apply_button)
         vbox.addWidget(buttons_widget)
+
+    # add change event type dropdown menu
 
     def raw_changed(self):
         self.event._data = self.raw_edit.value()

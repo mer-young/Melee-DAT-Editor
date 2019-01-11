@@ -6,6 +6,7 @@ Created on Thu Dec 13 23:18:39 2018
 """
 
 import binascii
+from io import BytesIO
 
 import yaml
 
@@ -35,12 +36,15 @@ def read_script(file, include_terminator=False):
     script = []
     while True:
         ev = Event.from_stream(file)
+        if ev is None:
+            return script
 #        print(ev)
         script.append(ev)
-        if ev.code in [0x18, 0x1C]:  # 0x18 = return, 0x1C = goto
-            return script
         if not ev:
             return script if include_terminator else script[:-1]
+        if ev.code in [0x18, 0x1C]:  # 0x18 = return, 0x1C = goto
+            return script
+
 
 
 def iter_script(list_of_events, start_offset=0):
@@ -61,6 +65,19 @@ def pointer_offsets(list_of_events, start_offset):
             if p_offset is not None and p_offset not in pointer_offset_list:
                 pointer_offset_list.append(offset + p_offset)
     return pointer_offset_list
+
+
+def print_script(list_of_events):
+    [print(ev) for ev in list_of_events]
+
+
+def script_from_bytes(bytes_like, include_terminator=False):
+    io = BytesIO(bytes_like)
+    return read_script(io, include_terminator)
+
+
+def script_from_hex_str(hexstr, include_terminator=False):
+    return script_from_bytes(binascii.unhexlify(hexstr), include_terminator)
 
 
 class Event:
@@ -157,9 +174,6 @@ class Event:
             Event code, ranging from 0 to 0xFC
 
         """
-        if code > 0xFC:
-            raise ValueError("Event code must be no longer than 6 bits (no "
-                             "greater than 0xFC)")
         length = event_types[code].length
         bytestr = (bytes(chr(code), 'ascii') + b'\x00'*(length - 1))
         return cls(bytestr)
@@ -174,7 +188,11 @@ class Event:
         """
         # Inefficient, fix later
         pos = file.tell()
-        length = event_types.get(cls.find_code(file.read(lookahead_amount)),
+        lookahead = file.read(lookahead_amount)
+        if not lookahead:
+            return None
+
+        length = event_types.get(cls.find_code(lookahead),
                                  event_types['default']
                                  )['length']
         file.seek(pos)

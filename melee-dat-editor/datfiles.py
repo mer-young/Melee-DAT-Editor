@@ -102,11 +102,16 @@ class BaseDatFile (HasInPlaceTables):
         for i, p in enumerate(self.pointer_table):
             if p + self.header_size >= location:
                 self.pointer_table[i] += amount
-            self.seek(p + self.header_size)
-            val = Int.unpack(self.read(4))[0]
-            if val + self.header_size >= location:
-                self.seek(-4, SEEK_CUR)
-                self.write(Int.pack(val + amount))
+            if not self.pointer_table.start_offset < location < self.pointer_table.end_offset:
+                # this "am I in the pointer table" check is here to prevent
+                # a bug where __delitem__ on the pointer table would
+                # decrement the pointer in the data section by 4 as it was
+                # removed from the pointer list
+                self.seek(p + self.header_size)
+                val = Int.unpack(self.read(4))[0]
+                if val + self.header_size >= location:
+                    self.seek(-4, SEEK_CUR)
+                    self.write(Int.pack(val + amount))
         for table in (self.root_nodes, self.ref_nodes):
             for i, node in enumerate(table):
                 if node[0] > location:
@@ -363,6 +368,7 @@ class MovesetDatFile (BaseDatFile):
 
 
 class MovesetDatFile_Kirby (MovesetDatFile):
+    # temporary hardcoded fix
     SUBACTION_DIVIDER = 0x1DF
 
 
