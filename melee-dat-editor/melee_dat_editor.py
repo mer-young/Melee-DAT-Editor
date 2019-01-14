@@ -27,8 +27,8 @@ from datfiles import moveset_datfile
 import script
 
 
-__version__ = '0.1.0 Alpha'
-RELEASE_DATE = '8 January 2018'
+__version__ = '0.1.1 Alpha'
+RELEASE_DATE = '13 January 2018'
 
 ABOUT_TEXT = f"""
 Melee Dat Editor
