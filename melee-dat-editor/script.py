@@ -7,12 +7,18 @@ Created on Thu Dec 13 23:18:39 2018
 
 import binascii
 from io import BytesIO
+from math import ceil
+import os
 
 import yaml
 
 
-event_types_fname = 'data/event-types.yml'
+event_types_fname = os.path.join('data', 'event-types.yml')
+custom_fname = os.path.join('data', 'custom-event-types.yml')
 event_types = yaml.safe_load(open(event_types_fname, 'r'))
+custom_event_types = yaml.safe_load(open(custom_fname, 'r'))
+event_types.update(custom_event_types)
+
 
 keys = list(event_types.keys())
 keys.remove('default')
@@ -44,7 +50,6 @@ def read_script(file, include_terminator=False):
             return script if include_terminator else script[:-1]
         if ev.code in [0x18, 0x1C]:  # 0x18 = return, 0x1C = goto
             return script
-
 
 
 def iter_script(list_of_events, start_offset=0):
@@ -156,8 +161,8 @@ class Event:
     def find_code(bytestr):
         data = int.from_bytes(bytestr, byteorder='big')
         for i in range(data.bit_length() - 6):
-            try_code = (data >> i) << 2
-            if try_code in event_types.keys():
+            try_code = (data >> i)
+            if try_code in custom_event_types.keys():
                 return try_code
         return bytestr[0] & 0xFC
 
@@ -174,8 +179,9 @@ class Event:
             Event code, ranging from 0 to 0xFC
 
         """
-        length = event_types[code].length
-        bytestr = (bytes(chr(code), 'ascii') + b'\x00'*(length - 1))
+        length = event_types[code]['length']
+        bytestr = code.to_bytes(ceil(code.bit_length()/8), 'big')
+        bytestr += b'\x00' * (length - len(bytestr))
         return cls(bytestr)
 
     @classmethod

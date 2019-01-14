@@ -1,0 +1,177 @@
+0x5C000001:
+    name: Disallow Interrupt [Punkline]
+    length: 0x4
+    fields: []
+
+0x5D:
+    name: IASA Function Override [Punkline]
+    length: 0x4
+    fields:
+        - name: ASID
+          bits: [21, 31]
+          type: u
+
+0x5E:
+    name: Animation Interrupt Override [Punkline]
+    length: 0x4
+    fields:
+        - name: ASID
+          bits: [21, 31]
+          type: u
+
+0x5F:
+    name: Action State Transition [Punkline]
+    length: 0x4
+    fields:
+        - name: Further Events to Read
+          bits: [8, 15]
+          type: u
+
+        - name: Keep All Old Events
+          bits: [16, 16]
+          type: u
+
+        - name: ASID
+          bits: [21, 31]
+          type: u
+
+0x7500:
+    name: Enter Action State (Basic) [UnclePunch]
+    length: 0x4
+    fields:
+        - name: Action State
+          bits: [16, 31]
+          type: u
+
+0x7501:
+    name: Enter Action State (Detailed) [UnclePunch]
+    length: 0x10
+    fields:
+        - name: Action State
+          bits: [16, 31]
+          type: u
+
+        - name: Starting Frame
+          bits: [32, 63]
+          type: f
+
+        - name: Speed Modifier
+          bits: [64, 95]
+          type: f
+
+        - name: Blend Level
+          bits: [96, 127]
+          type: f
+
+0xA5:
+    name: Transform [UnclePunch]
+    length: 0x4
+    fields:
+        - name: Post-Transform Action State
+          bits: [15, 31]
+          type: u
+
+        - name: Post-Transform Frame
+          bits: [8, 15]
+          type: u
+
+0xCC01:
+    name: Self-Healing [Achilles]
+    length: 0x4
+    fields:
+        - name: Amount
+          bits: [16, 31]
+          type: u
+0xE9:
+    name: If [UnclePunch]
+    length: 0x10
+    fields:
+        - name: Data Type
+          bits: [16, 19]
+          type: u
+
+        - name: Compare Type
+          bits: [20, 23]
+          type: u
+
+        - name: Character Data Offset
+          bits: [24, 31]
+          type: h
+
+        - name: Compare Value
+          bits: [32, 63]
+          type: h
+
+        - name: Length to Skip If False
+          bits: [64, 95]
+          type: u
+
+0xF4FF00:
+    name: Launch Projectile [Achilles]
+    length: 0x10
+    fields:
+        - name: ID
+          bits: [24, 31]
+          type: h
+
+        - name: X-Offset
+          bits: [32, 47]
+          type: f-upper
+
+        - name: Y-Offset
+          bits: [48, 63]
+          type: f-upper
+
+        - name: X-Velocity
+          bits: [64, 79]
+          type: f-upper
+
+        - name: Y-Velocity
+          bits: [80, 95]
+          type: f-upper
+
+        - name: Scale
+          bits: [96, 111]
+          type: f-upper
+
+        - name: Duration
+          bits: [112, 127]
+          type: f-upper
+
+0xF4FF01:
+    name: Spawn Held Item [Achilles]
+    length: 0x10
+    fields:
+        - name: ID
+          bits: [24, 31]
+          type: h
+
+0xFF01:
+    name: Create Reflect Hitbox [UnclePunch]
+    length: 0xC
+    fields:
+        - name: Radius
+          bits: [16, 31]
+          type: f-upper
+
+        - name: Damage Multiplier
+          bits: [32, 47]
+          type: f-upper
+
+        - name: Speed Multiplier
+          bits: [48, 63]
+          type: f-upper
+
+        - name: X-Offset
+          bits: [64, 79]
+          type: f-upper
+
+        - name: Y-Offset
+          bits: [80, 95]
+          type: f-upper
+    custom: True
+
+0xFF000000:
+    name: Terminate Reflect Hitbox [UnclePunch]
+    length: 0x4
+    fields: []

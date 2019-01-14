@@ -12,8 +12,8 @@ import struct
 import sys
 
 from PyQt5.Qt import (Qt, QKeySequence, QStyle, QIntValidator, QAction,
-                      QDoubleValidator, QIcon, QMenu, QFont, QSize,
-                      QSizePolicy, pyqtSignal, pyqtSlot)
+                      QDoubleValidator, QIcon, QMenu, QFont, QSize, QPoint,
+                      QSizePolicy, pyqtSignal, pyqtSlot, QEventLoop)
 
 from PyQt5.QtWidgets import (QApplication, QWidget, QMainWindow, QGridLayout,
                              QLabel, QFrame, QFileDialog, QSpinBox,
@@ -21,7 +21,7 @@ from PyQt5.QtWidgets import (QApplication, QWidget, QMainWindow, QGridLayout,
                              QComboBox, QListWidgetItem, QTableWidget,
                              QTableWidgetItem, QLineEdit, QHBoxLayout,
                              QPushButton, QFormLayout, QDoubleSpinBox,
-                             QVBoxLayout, QMessageBox)
+                             QVBoxLayout, QMessageBox, QToolBar)
 
 from datfiles import moveset_datfile
 import script
@@ -321,6 +321,14 @@ class ScriptEditor (QWidget):
         self.event_list.follow_clicked.connect(self.open_location)
         self.grid.addWidget(self.event_list, 1, 0, 1, 2)
 
+        self.toolbar = QToolBar(self)
+        self.toolbar.setOrientation(Qt.Vertical)
+        self.toolbar.addAction(self.event_list.move_up)
+        self.toolbar.addAction(self.event_list.move_down)
+        self.toolbar.addAction(self.event_list.new)
+        self.toolbar.addAction(self.event_list.delete)
+        self.grid.addWidget(self.toolbar, 1, 2)
+
         self.apply_button = QPushButton('Apply', self)
         self.apply_button.pressed.connect(self.apply)
         self.grid.addWidget(self.apply_button, 2, 0, 1, 2)
@@ -385,15 +393,16 @@ class ScriptEditor (QWidget):
 
             self.setSelectionMode(self.ContiguousSelection)
 
-            move_up = QAction(self)
-            move_up.setShortcut(QKeySequence(Qt.Key_Minus))
-            move_up.triggered.connect(lambda: self.shift(-1))
-            self.addAction(move_up)
+            style = self.style()
+            self.move_up = QAction(style.standardIcon(QStyle.SP_ArrowUp), 'Move Up', self)
+            self.move_up.setShortcut(QKeySequence(Qt.Key_Minus))
+            self.move_up.triggered.connect(lambda: self.shift(-1))
+            self.addAction(self.move_up)
 
-            move_down = QAction(self)
-            move_down.setShortcut(QKeySequence(Qt.Key_Plus))
-            move_down.triggered.connect(lambda: self.shift(+1))
-            self.addAction(move_down)
+            self.move_down = QAction(style.standardIcon(QStyle.SP_ArrowDown), 'Move Down', self)
+            self.move_down.setShortcut(QKeySequence(Qt.Key_Plus))
+            self.move_down.triggered.connect(lambda: self.shift(+1))
+            self.addAction(self.move_down)
 
             copy = QAction(self)
             copy.setShortcut(QKeySequence.Copy)
@@ -404,6 +413,24 @@ class ScriptEditor (QWidget):
             paste.setShortcut(QKeySequence.Paste)
             paste.triggered.connect(self.paste)
             self.addAction(paste)
+
+            self.delete = QAction(style.standardIcon(QStyle.SP_TrashIcon), 'Delete', self)
+            self.delete.setShortcut(QKeySequence.Delete)
+            self.delete.triggered.connect(self.delete_selected)
+            self.addAction(self.delete)
+
+            self.new = QAction(style.standardIcon(QStyle.SP_FileIcon), 'Insert Event', self)
+            self.new.triggered.connect(lambda: self.insert_event(self.currentRow(), self.NOP.copy()))
+            self.addAction(self.new)
+
+        def delete_selected(self):
+            selected = sorted(self.selectedIndexes())
+            if selected:
+                self.setCurrentIndex(selected[0])
+            row = self.currentIndex().row()
+            for i in range(len(selected)):
+                ev = self.takeItem(row)
+                del ev
 
         def copy(self):
             s = ''
@@ -449,13 +476,14 @@ class ScriptEditor (QWidget):
                         )
                 edit_action.triggered.connect(
                         lambda: self.popup_event_editor(row))
-                insert_action = menu.addAction(
-                        self.style().standardIcon(QStyle.SP_FileIcon),
-                        'Insert Event'
-                        )
-                insert_action.triggered.connect(
-                        lambda: self.insert_event(self.currentRow(), self.NOP.copy())
-                        )
+                menu.addAction(self.new)
+#                insert_action = menu.addAction(
+#                        self.style().standardIcon(QStyle.SP_FileIcon),
+#                        'Insert Event'
+#                        )
+#                insert_action.triggered.connect(
+#                        lambda: self.insert_event(self.currentRow(), self.NOP.copy())
+#                        )
                 if event.pointers:
                     follow_action = menu.addAction(
                             self.style().standardIcon(QStyle.SP_ArrowForward),
@@ -557,28 +585,27 @@ class EventEditor (QDialog):
     def __init__(self, event, parent):
         super().__init__(parent)
         self.setWindowTitle('Event Editor')
-        vbox = QVBoxLayout(self)
-        vbox.addWidget(QLabel(event.name))
+        self.vbox = QVBoxLayout(self)
+#        vbox.addWidget(QLabel(event.name))
+        event_type_dropdown = QComboBox(self)
+        for code, evtype in script.event_types.items():
+            if code in ['length', 'default']:
+                continue
+            event_type_dropdown.addItem(
+                    f'{evtype["name"]} ({hex(code)})',
+                    code
+                    )
+        event_type_dropdown.setCurrentIndex(event_type_dropdown.findData(event.code))
+        event_type_dropdown.currentIndexChanged.connect(
+                lambda: self.change_type(event_type_dropdown.currentData())
+                )
+        self.vbox.addWidget(event_type_dropdown)
 
         form_widget = QWidget(self)
-        vbox.addWidget(form_widget)
+        self.vbox.addWidget(form_widget)
         self.form = QFormLayout(form_widget)
         self.event = event.copy()
-
-        self.field_entry = []
-        for i, fd in enumerate(event.fields):
-            entry = self.field_editor(fd['bits'], fd['type'])
-            entry.set_value(event[i])
-            entry.editingFinished.connect(
-                    lambda i=i, entry=entry: self.field_edited(i, entry.value())
-                    )
-            self.field_entry.append(entry)
-            self.form.addRow(fd['name'], entry)
-
-        self.raw_edit = self.field_editor([0, event.length*8 - 1], 'h')
-        self.raw_edit.set_value(int(event))
-        self.raw_edit.editingFinished.connect(self.raw_changed)
-        self.form.addRow('Raw', self.raw_edit)
+        self.populate_form()
 
         buttons_widget = QWidget(self)
         buttons_hbox = QHBoxLayout(buttons_widget)
@@ -591,9 +618,35 @@ class EventEditor (QDialog):
         apply_button = QPushButton('Apply')
         apply_button.pressed.connect(self.apply)
         buttons_hbox.addWidget(apply_button)
-        vbox.addWidget(buttons_widget)
+        self.vbox.addWidget(buttons_widget)
 
-    # add change event type dropdown menu
+    def populate_form(self):
+        self.field_entry = []
+        for i, fd in enumerate(self.event.fields):
+            print(fd['name'], fd['bits'], fd['type'])
+            entry = self.field_editor(fd['bits'], fd['type'])
+            entry.set_value(self.event[i])
+            entry.editingFinished.connect(
+                    lambda i=i, entry=entry: self.field_edited(i, entry.value())
+                    )
+            self.field_entry.append(entry)
+            self.form.addRow(fd['name'], entry)
+
+        self.raw_edit = self.field_editor([0, self.event.length*8 - 1], 'h')
+        self.raw_edit.set_value(int(self.event))
+        self.raw_edit.editingFinished.connect(self.raw_changed)
+        self.form.addRow('Raw', self.raw_edit)
+
+    def change_type(self, code):
+        self.event = script.Event.blank(code)
+        while self.form.count():
+            self.form.removeRow(0)
+        app.processEvents(QEventLoop.ExcludeUserInputEvents)
+        self.resize(self.sizeHint());
+        app.processEvents(QEventLoop.ExcludeUserInputEvents)
+        self.resize(self.sizeHint());
+        self.populate_form()
+        app.processEvents(QEventLoop.ExcludeUserInputEvents)
 
     def raw_changed(self):
         self.event._data = self.raw_edit.value()
@@ -630,12 +683,13 @@ class EventEditor (QDialog):
             return self.FloatFieldEntry(False, self)
         elif type_str == 'f-upper':
             byte_length = (bit_range[1] - bit_range[0] + 1)/8
-            if not byte_length == 4:
-                raise ValueError('Float field length is not 32 bits')
+            if not byte_length == 2:
+                raise ValueError('Upper-Half Float field length is not 16 bits')
             return self.FloatFieldEntry(True, self)
 
     class HexFieldEntry (QLineEdit):
         # Always an even number of bytes
+        # should change to using a spinbox that displays hex instead of decimal
         value_changed = pyqtSignal(int)
 
         def __init__(self, byte_length, parent=None):
@@ -648,8 +702,9 @@ class EventEditor (QDialog):
             self.setFont(font)
             self.sizeHint = lambda: QSize(
                     self.fontMetrics().width(self.text() + '   '),
-                    self.fontMetrics().height(),
+                    self.fontMetrics().height()*1.2,
                     )
+            self.minimumSizeHint = self.sizeHint
             self.sizePolicy().setVerticalPolicy(QSizePolicy.Fixed)
             self.sizePolicy().setHorizontalPolicy(QSizePolicy.Minimum)
             self.updateGeometry()
@@ -699,9 +754,14 @@ class EventEditor (QDialog):
             super().__init__(parent)
             self.setSingleStep(0.1)
             self.setDecimals(2)
-            self.shift = 16 if upper_only else 0
-            self.setMaximum(self.from_raw(0x7F7FFFFF))
-            self.setMinimum(self.from_raw(0xFF7FFFFF))
+            if upper_only:
+                self.shift = 16
+                self.setMaximum(self.from_raw(0x7F7F))
+                self.setMinimum(self.from_raw(0xFF7F))
+            else:
+                self.shift = 0
+                self.setMaximum(self.from_raw(0x7F7FFFFF))
+                self.setMinimum(self.from_raw(0xFF7FFFFF))
             self.valueChanged.connect(
                     lambda: self.raw_changed.emit(self.value())
                     )
