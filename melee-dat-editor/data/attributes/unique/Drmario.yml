@@ -1,0 +1,136 @@
+# Dr. Mario
+
+length: 0x84
+
+0x0:
+    name: "Side-B Horizontal momentum from moving left/right Smaller values means more momentum"
+    type: f
+
+0x4:
+    name: "Side-B Affects vertical momentum?"
+    type: f
+
+0x8:
+    name: "Side-B Vertical momentum"
+    type: f
+
+0xc:
+    name: "Side-B Vertical momentum from moving left/right"
+    type: f
+
+0x10:
+    name: "Side-B Unknown"
+    type: f
+
+0x14:
+    name: "Side-B Prop ID 54 = cape?"
+    type: I
+
+0x18:
+    name: "Up-B Special fall aerial mobility"
+    type: f
+
+0x1c:
+    name: "Up-B Landing lag(in frames)"
+    type: f
+
+0x20:
+    name: "Up-B Control stick threshold to reverse?"
+    type: f
+
+0x24:
+    name: "Up-B Control stick threshold to move horizontally?"
+    type: f
+
+0x28:
+    name: "Up-B Air control during Up-B"
+    type: f
+
+0x2c:
+    name: "Up-B Initial horizontal momentum from moving stick forward"
+    type: f
+
+0x30:
+    name: "Up-B Gravity during initial Up-B"
+    type: f
+
+0x34:
+    name: "Up-B Initial vertical momentum during aerial Up-B"
+    type: f
+
+0x38:
+    name: "Down-B Affects ability to rise during grounded tornado"
+    type: f
+
+0x3c:
+    name: "Down-B Horizontal momentum on ground"
+    type: f
+
+0x40:
+    name: "Down-B Horizontal momentum in the air"
+    type: f
+
+0x44:
+    name: "Down-B Unknown"
+    type: f
+
+0x48:
+    name: "Down-B Unknown"
+    type: f
+
+0x4c:
+    name: "Down-B Unknown"
+    type: f
+
+0x50:
+    name: "Down-B Unknown"
+    type: I
+
+0x54:
+    name: "Down-B Affects ability to rise from mashing B"
+    type: f
+
+0x58:
+    name: "Down-B Maximum vertical moment gained from mashing B"
+    type: f
+
+0x5c:
+    name: "Down-B Landing lag? Non-0 values toggle freefall after usage"
+    type: f
+
+0x60:
+    name: "Down-B Unknown"
+    type: I
+
+0x64:
+    name: "Side-B Max damage reflectable?"
+    type: I
+
+0x68:
+    name: "Side-B Reflection bubble X-offset"
+    type: f
+
+0x6c:
+    name: "Side-B Reflection bubble Y-offset"
+    type: f
+
+0x70:
+    name: "Side-B Reflection bubble Z-offset"
+    type: f
+
+0x74:
+    name: "Side-B Reflection bubble size"
+    type: f
+
+0x78:
+    name: "Side-B Reflection damage multiplier"
+    type: f
+
+0x7c:
+    name: "Side-B Reflection speed multiplier"
+    type: f
+
+0x80:
+    name: "Side-B Unknown"
+    type: f
+

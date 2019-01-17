@@ -1,0 +1,42 @@
+length: 0x94
+
+0x0:
+    name: "Miscellaneous Model width"
+    type: f
+
+0x18:
+    name: "Neutral-B Frame repeated hit starts from"
+    type: f
+
+0x1c:
+    name: "Neutral-B Max number of sausage per rotation"
+    type: f
+
+0x5c:
+    name: "Up B (Fire?) Maximum angle on up B? (radians)"
+    type: f
+
+0x60:
+    name: "Up B (Fire?) Up B landing lag (/5)?"
+    type: f
+
+0x80:
+    name: "Down-B Bucket absorption Y axis"
+    type: I
+
+0x84:
+    name: "Down-B Bucket absorption X axis"
+    type: f
+
+0x88:
+    name: "Down-B Bucket absorption Z axis"
+    type: f
+
+0x8c:
+    name: "Down-B  ???"
+    type: I
+
+0x90:
+    name: "Down-B Bucket absorption hitbox size"
+    type: f
+

@@ -1,0 +1,182 @@
+length: 0xd4
+
+0x0:
+    name: "Unknown Unknown"
+    type: f
+
+0x4:
+    name: "Unknown Unknown"
+    type: f
+
+0x8:
+    name: "Unknown Unknown"
+    type: f
+
+0xc:
+    name: "Unknown Unknown"
+    type: f
+
+0x10:
+    name: "Unknown Unknown"
+    type: I
+
+0x14:
+    name: "Unknown Unknown"
+    type: f
+
+0x18:
+    name: "Unknown Unknown"
+    type: I
+
+0x1c:
+    name: "Neutral B projectile Neutral-B projectile ID The integer ID for the desired projectile."
+    type: I
+
+0x20:
+    name: "Neutral B Neutral-B gun ID The integer ID for what Falco holds while using Neutral B"
+    type: I
+
+0x24:
+    name: "Unknown Unknown"
+    type: f
+
+0x28:
+    name: "Unknown Unknown"
+    type: f
+
+0x2c:
+    name: "Unknown Unknown"
+    type: f
+
+0x30:
+    name: "Unknown Unknown"
+    type: f
+
+0x34:
+    name: "Unknown Unknown"
+    type: f
+
+0x38:
+    name: "Unknown Unknown"
+    type: f
+
+0x3c:
+    name: "Unknown Unknown"
+    type: f
+
+0x40:
+    name: "Unknown Unknown"
+    type: f
+
+0x44:
+    name: "Unknown Unknown"
+    type: f
+
+0x48:
+    name: "Unknown Unknown"
+    type: f
+
+0x4c:
+    name: "Unknown Unknown"
+    type: f
+
+0x50:
+    name: "Unknown Unknown"
+    type: f
+
+0x54:
+    name: "Unknown Unknown"
+    type: f
+
+0x58:
+    name: "Up-B Unknown"
+    type: f
+
+0x5c:
+    name: "Up-B Aerial momentum preservation on startup?"
+    type: f
+
+0x60:
+    name: "Up-B Momentum on startup?"
+    type: f
+
+0x64:
+    name: "Up-B Default angle?(radians)"
+    type: f
+
+0x68:
+    name: "Up-B How many frames before you stop traveling Does not affect distance past a certain point"
+    type: f
+
+0x6c:
+    name: "Up-B Unknown"
+    type: I
+
+0x70:
+    name: "Up-B Something to do with distance?"
+    type: f
+
+0x74:
+    name: "Up-B Speed of travel/distance traveled"
+    type: f
+
+0x78:
+    name: "Up-B Max momentum to stop at"
+    type: f
+
+0x7c:
+    name: "Up-B Unknown"
+    type: f
+
+0x80:
+    name: "Up-B Something to do with angle when hitting the ground?"
+    type: f
+
+0x84:
+    name: "Up-B How far you go when hitting the ground at an angle"
+    type: f
+
+0x88:
+    name: "Up-B Unknown"
+    type: f
+
+0x8c:
+    name: "Up-B Unknown"
+    type: f
+
+0x90:
+    name: "Up-B Landing lag?"
+    type: f
+
+0x94:
+    name: "Unknown Unknown"
+    type: f
+
+0x98:
+    name: "Unknown Unknown"
+    type: f
+
+0x9c:
+    name: "Unknown Unknown"
+    type: f
+
+0xa0:
+    name: "Unknown Unknown"
+    type: f
+
+0xa4:
+    name: "Unknown Unknown"
+    type: I
+
+0xa8:
+    name: "Unknown Unknown"
+    type: f
+
+0xac:
+    name: "Unknown Unknown"
+    type: f
+
+0xb0:
+    name: "Unknown Unknown"
+    type: I
+

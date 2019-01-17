@@ -1,0 +1,30 @@
+length: 0xf8
+
+0x24:
+    name: "Side-B Charge time"
+    type: f
+
+0x28:
+    name: "Side-B Base damage"
+    type: f
+
+0x2c:
+    name: "Side-B Damage multiplier"
+    type: f
+
+0x3c:
+    name: "Side-B Base horizontal momentum"
+    type: f
+
+0x40:
+    name: "Side-B Horizontal momentum multiplier"
+    type: f
+
+0x44:
+    name: "Side-B Base vertical momentum"
+    type: f
+
+0x48:
+    name: "Side-B Vertical momentum multiplier"
+    type: f
+

@@ -1,0 +1,143 @@
+# Bowser
+
+length: 0xA0
+
+0x0:
+    name: Unknown
+    type: f
+
+0x4:
+    name: Unknown
+    type: f
+
+0x8:
+    name: Unknown
+    type: f
+
+0xC:
+    name: Unknown
+    type: f
+
+0x10:
+    name: Unknown
+    type: f
+
+0x14:
+    name: Unknown
+    type: f
+
+0x18:
+    name: Unknown
+    type: f
+
+0x1C:
+    name: Unknown
+    type: f
+
+0x20:
+    name: Unknown
+    type: f
+
+0x24:
+    name: Unknown
+    type: f
+
+0x28:
+    name: Unknown
+    type: f
+
+0x2C:
+    name: Unknown
+    type: f
+
+0x30:
+    name: Unknown
+    type: f
+
+0x34:
+    name: Unknown
+    type: f
+
+0x38:
+    name: Unknown
+    type: f
+
+0x3C:
+    name: Unknown
+    type: f
+
+0x40:
+    name: Unknown
+    type: f
+
+0x44:
+    name: Unknown
+    type: f
+
+0x48:
+    name: Unknown
+    type: f
+
+0x4C:
+    name: Unknown
+    type: f
+
+0x50:
+    name: Unknown
+    type: f
+
+0x54:
+    name: Unknown
+    type: f
+
+0x58:
+    name: Unknown
+    type: f
+
+0x5C:
+    name: Unknown
+    type: f
+
+0x60:
+    name: Unknown
+    type: f
+
+0x64:
+    name: Unknown
+    type: f
+
+0x68:
+    name: Unknown
+    type: I
+
+0x6C:
+    name: Unknown
+    type: I
+
+0x70:
+    name: Unknown
+    type: f
+
+0x74:
+    name: Unknown
+    type: f
+
+0x78:
+    name: Unknown
+    type: I
+
+0x7C:
+    name: Unknown
+    type: f
+
+0x80:
+    name: Unknown
+    type: f
+
+0x84:
+    name: Unknown
+    type: f
+
+0x88:
+    name: Unknown
+    type: f

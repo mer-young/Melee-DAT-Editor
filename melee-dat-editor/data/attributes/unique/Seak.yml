@@ -1,0 +1,52 @@
+# Sheik
+
+length: 0x74
+
+0x14:
+    name: "Side-B How long chain is out before reeling in (release B)"
+    type: f
+
+0x18:
+    name: "Side-B  ??"
+    type: f
+
+0x1c:
+    name: "Side-B frame chain comes out"
+    type: f
+
+0x20:
+    name: "Side-B frame you can move chain around"
+    type: f
+
+0x24:
+    name: "Side-B frame after releasing B chain reels in"
+    type: f
+
+0x28:
+    name: "Side-B frame chain disappears after releasing B"
+    type: f
+
+0x38:
+    name: "Up-B Travel frames"
+    type: I
+
+0x58:
+    name: "Up-B Unknown"
+    type: f
+
+0x5c:
+    name: "Up-B Landing lag."
+    type: f
+
+0x60:
+    name: "Up-B Unknown"
+    type: f
+
+0x64:
+    name: "Up-B Unknown"
+    type: f
+
+0x68:
+    name: "Down-B Gravity?"
+    type: f
+

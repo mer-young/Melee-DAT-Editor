@@ -1,12 +1,14 @@
 To-do tier list
 
 Soon:
-- Add character unique attributes definitions (right now only Ganondorf has them, for testing)
 - Add drop down menus and human readable names for the various constants in hitbox events / other events
 - Fix subaction/goto follow so that it finds locations even if they are not at the start of a script, and also selects the event
 - Document the UI, etc
 
 Later:
+- Add ability to modify projectile data
+- Clean up unique attribute names, right now they're scraped from CH
+- Expand unique attrib. config files to define an arbitrary number of tables per file, maybe projectiles too
 - Implement swapping animations between subactions
 - Option to open and save from an iso directly?
 - Un-hardcode gui dimensions and clean things up

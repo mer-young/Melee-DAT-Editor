@@ -1,0 +1,84 @@
+# Young Link
+
+length: 0xdc
+
+0x0:
+    name: "Neutral-B Frames until max arrow angle?"
+    type: f
+
+0x4:
+    name: "Neutral-B Arrow charging speed (higher = faster)"
+    type: f
+
+0x8:
+    name: "Neutral-B Anything other than 0 goes into special free fall"
+    type: f
+
+0xc:
+    name: "Neutral-B Behavior for projectile?(65 is Fire Arrow)"
+    type: I
+
+0x10:
+    name: "Neutral-B Model ID for projectile?(77 is Young Link's arrow)"
+    type: I
+
+0x14:
+    name: "Side-B Something to do with angle of boomerang, high numbers it cannot be angled"
+    type: f
+
+0x18:
+    name: "Side-B Boomerang angle (radians)"
+    type: f
+
+0x1c:
+    name: "Side-B  ???"
+    type: f
+
+0x20:
+    name: "Side-B Smash Boomerang launch speed"
+    type: f
+
+0x24:
+    name: "Side-B Regular Boomerang launch speed"
+    type: f
+
+0x28:
+    name: "Side-B Boomerang return proximity (X offset of when catchable)"
+    type: f
+
+0x2c:
+    name: "Side-B Thrown projectile ID(61 is Young Link's boomerang)"
+    type: I
+
+0x30:
+    name: "Up-B Up B landing lag"
+    type: f
+
+0x34:
+    name: "Up-B Up B initial horizontal momentum"
+    type: f
+
+0x38:
+    name: "Up-B Up B aerial mobility multiplier"
+    type: f
+
+0x3c:
+    name: "Up-B Maximum mobility"
+    type: f
+
+0x40:
+    name: "Up-B Initial vertical momentum"
+    type: f
+
+0x44:
+    name: "Up-B Up B gravity"
+    type: f
+
+0x48:
+    name: "Down-B Item ID for bomb(59 is Young Link's bomb)"
+    type: I
+
+0x4c:
+    name: "Miscellaneous Down Air 'bounce' vertical momentum"
+    type: f
+

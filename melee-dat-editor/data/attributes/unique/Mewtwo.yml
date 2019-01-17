@@ -1,0 +1,138 @@
+length: 0x88
+
+0x0:
+    name: "Neutral-B Increment frames before charging per each iteration"
+    type: f
+
+0x4:
+    name: "Neutral-B Ground horizontal momentum from releasing Shadow Ball"
+    type: f
+
+0x8:
+    name: "Neutral-B Air horizontal momentum from releasing Shadow Ball"
+    type: f
+
+0xc:
+    name: "Neutral-B Loop iterations to fully charge Shadow Ball"
+    type: I
+
+0x10:
+    name: "Neutral-B Frames before transition to Shadow Ball release animation (?)"
+    type: I
+
+0x14:
+    name: "Neutral-B Landing lag/SpecialFall toggle"
+    type: f
+
+0x18:
+    name: "Side-B Air vertical momentum boost"
+    type: f
+
+0x1c:
+    name: "Side-B Unknown"
+    type: I
+
+0x20:
+    name: "Side-B Unknown"
+    type: I
+
+0x24:
+    name: "Side-B Z-offset of reflection"
+    type: f
+
+0x28:
+    name: "Side-B Y-offset of reflection"
+    type: f
+
+0x2c:
+    name: "Side-B X-offset of reflection"
+    type: f
+
+0x30:
+    name: "Side-B Reflection size multiplier"
+    type: f
+
+0x34:
+    name: "Up-B Unknown"
+    type: f
+
+0x38:
+    name: "Up-B Unknown"
+    type: f
+
+0x3c:
+    name: "Up-B Unknown"
+    type: f
+
+0x40:
+    name: "Up-B If set to 0, moving down on Up+B crashes game"
+    type: f
+
+0x44:
+    name: "Up-B If set to 0, crashes game on Up+B"
+    type: f
+
+0x48:
+    name: "Up-B Unknown"
+    type: f
+
+0x4c:
+    name: "Up-B Unknown"
+    type: f
+
+0x50:
+    name: "Up-B Travel time (frames)"
+    type: I
+
+0x54:
+    name: "Up-B Unknown"
+    type: f
+
+0x58:
+    name: "Up-B Affects sensitivity to direction change?"
+    type: f
+
+0x5c:
+    name: "Up-B Something with initial momentum (?)"
+    type: f
+
+0x60:
+    name: "Up-B Something with initial momentum (stacks with previous)"
+    type: f
+
+0x64:
+    name: "Up-B Unknown"
+    type: f
+
+0x68:
+    name: "Up-B Unknown"
+    type: I
+
+0x6c:
+    name: "Up-B Ending momentum (?)"
+    type: f
+
+0x70:
+    name: "Up-B Unknown"
+    type: f
+
+0x74:
+    name: "Up-B Landing lag (divided by ~10)"
+    type: f
+
+0x78:
+    name: "Down-B Base falling acceleration"
+    type: f
+
+0x7c:
+    name: "Down-B Falling acceleration multiplier"
+    type: f
+
+0x80:
+    name: "Down-B X-offset of first hitbox"
+    type: f
+
+0x84:
+    name: "Down-B Y-offset of first hitbox"
+    type: f
+

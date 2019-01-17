@@ -1,0 +1,326 @@
+length: 0x424
+
+0x0:
+    name: "Jumps Time it takes to change direction in midair jump (frames)"
+    type: I
+
+0x4:
+    name: "Jumps Midair jump horizontal momentum backward"
+    type: f
+
+0x8:
+    name: "Jumps Midair jump horizontal momentum forward"
+    type: f
+
+0xc:
+    name: "Jumps Unknown"
+    type: f
+
+0x10:
+    name: "Jumps Unknown"
+    type: f
+
+0x14:
+    name: "Jumps Midair jump 1 vertical momentum"
+    type: f
+
+0x18:
+    name: "Jumps Midair jump 2 vertical momentum"
+    type: f
+
+0x1c:
+    name: "Jumps Midair jump 3 vertical momentum"
+    type: f
+
+0x20:
+    name: "Jumps Midair jump 4 vertical momentum"
+    type: f
+
+0x24:
+    name: "Jumps Midair jump 5 vertical momentum"
+    type: f
+
+0x28:
+    name: "Jumps Unknown"
+    type: I
+
+0x2c:
+    name: "Jumps Unknown"
+    type: I
+
+0x30:
+    name: "Jumps Unknown"
+    type: I
+
+0x38:
+    name: "Neutral-B Unknown"
+    type: f
+
+0x3c:
+    name: "Neutral-B Unknown"
+    type: f
+
+0x40:
+    name: "Neutral-B Unknown"
+    type: f
+
+0x44:
+    name: "Neutral-B Unknown"
+    type: f
+
+0x48:
+    name: "Neutral-B Inhale velocity of outer grab box"
+    type: f
+
+0x4c:
+    name: "Neutral-B Inhale velocity of inner grab box"
+    type: f
+
+0x50:
+    name: "Neutral-B Unknown"
+    type: f
+
+0x54:
+    name: "Neutral-B Part of breakout formula (lower values = harder to escape)"
+    type: f
+
+0x58:
+    name: "Neutral-B Unknown"
+    type: f
+
+0x5c:
+    name: "Neutral-B Part of breakout formula (higher values = harder to escape)"
+    type: f
+
+0x60:
+    name: "Neutral-B Spit out horizontal deceleration rate"
+    type: f
+
+0x64:
+    name: "Neutral-B Unknown"
+    type: f
+
+0x68:
+    name: "Neutral-B Frames foe is in spit out star"
+    type: f
+
+0x6c:
+    name: "Neutral-B Frames foe is stuck in swallow star"
+    type: f
+
+0x70:
+    name: "Neutral-B Unknown"
+    type: f
+
+0x74:
+    name: "Neutral-B Unknown"
+    type: f
+
+0x78:
+    name: "Neutral-B Unknown"
+    type: f
+
+0x7c:
+    name: "Neutral-B Inhale walk speed"
+    type: f
+
+0x80:
+    name: "Neutral-B Inhale jump height"
+    type: f
+
+0x84:
+    name: "Neutral-B Inhale stop walk momentum"
+    type: f
+
+0x88:
+    name: "Neutral-B Grounded spit out initial horizontal velocity"
+    type: f
+
+0x8c:
+    name: "Neutral-B Unknown"
+    type: f
+
+0x90:
+    name: "Neutral-B Swallow pop-out angle: 75 degrees (radians)"
+    type: f
+
+0x94:
+    name: "Neutral-B Unknown"
+    type: f
+
+0x98:
+    name: "Neutral-B Unknown"
+    type: f
+
+0x9c:
+    name: "Neutral-B Unknown"
+    type: f
+
+0xa0:
+    name: "Neutral-B Unknown"
+    type: f
+
+0xa4:
+    name: "Neutral-B Unknown"
+    type: f
+
+0xa8:
+    name: "Neutral-B Unknown"
+    type: f
+
+0xac:
+    name: "Neutral-B Unknown"
+    type: f
+
+0xb0:
+    name: "Neutral-B Odds of losing power when hit"
+    type: f
+
+0xb4:
+    name: "Neutral-B Unknown"
+    type: f
+
+0xb8:
+    name: "Side-B Unknown"
+    type: f
+
+0xbc:
+    name: "Side-B Unknown"
+    type: f
+
+0xc0:
+    name: "Side-B Unknown"
+    type: f
+
+0xc4:
+    name: "Side-B Unknown"
+    type: f
+
+0xc8:
+    name: "Side-B Unknown"
+    type: f
+
+0xcc:
+    name: "Side-B Aerial Side B vertical momentum"
+    type: f
+
+0xd0:
+    name: "Side-B Aerial Side B landing lag (frames)"
+    type: f
+
+0xd4:
+    name: "Up-B Up B vertical momentum"
+    type: f
+
+0xd8:
+    name: "Up-B Maximum horizontal velocity forward?"
+    type: f
+
+0xdc:
+    name: "Up-B X offset of final cutter projectile"
+    type: f
+
+0xe0:
+    name: "Up-B Y offset of final cutter projectile"
+    type: I
+
+0xe4:
+    name: "Up-B Up B turning threshold"
+    type: f
+
+0xec:
+    name: "Stone Maximum duration in stone mode (frames)"
+    type: I
+
+0xf0:
+    name: "Stone Minimum duration in stone mode (frames)"
+    type: I
+
+0xf4:
+    name: "Stone Unknown"
+    type: f
+
+0xf8:
+    name: "Stone Unknown"
+    type: f
+
+0xfc:
+    name: "Stone Unknown"
+    type: f
+
+0x100:
+    name: "Stone Unknown"
+    type: f
+
+0x104:
+    name: "Stone Stone Gravity"
+    type: f
+
+0x108:
+    name: "Stone Stone HP"
+    type: I
+
+0x10c:
+    name: "Stone Unknown"
+    type: I
+
+0x110:
+    name: "Stone Unknown"
+    type: I
+
+0x3ac:
+    name: "Yoshi hat Neutral-B Initial horizontal momentum"
+    type: f
+
+0x3b0:
+    name: "Yoshi hat Neutral-B Initial vertical momentum"
+    type: f
+
+0x3b4:
+    name: "Yoshi hat Neutral-B Damage multiplier when egged"
+    type: f
+
+0x3b8:
+    name: "Yoshi hat Neutral-B Unknown"
+    type: f
+
+0x3bc:
+    name: "Yoshi hat Neutral-B Egg lay growing time"
+    type: f
+
+0x3c0:
+    name: "Yoshi hat Neutral-B Part of breakout formula (lower = harder)"
+    type: f
+
+0x3c4:
+    name: "Yoshi hat Neutral-B Something with button mashing time?"
+    type: f
+
+0x3c8:
+    name: "Yoshi hat Neutral-B Something with egg wiggling?"
+    type: f
+
+0x3cc:
+    name: "Yoshi hat Neutral-B Unknown"
+    type: f
+
+0x3d0:
+    name: "Yoshi hat Neutral-B Unknown"
+    type: f
+
+0x3d4:
+    name: "Yoshi hat Neutral-B Enemies invincibility upon breaking out of egg (frames). 0 = infinite"
+    type: I
+
+0x3d8:
+    name: "Yoshi hat Neutral-B Horizontal velocity on breakout?"
+    type: f
+
+0x3dc:
+    name: "Yoshi hat Neutral-B Vertical velocity on breakout?"
+    type: f
+
+0x3e0:
+    name: "Yoshi hat Neutral-B Something to do with breakout time"
+    type: f
+

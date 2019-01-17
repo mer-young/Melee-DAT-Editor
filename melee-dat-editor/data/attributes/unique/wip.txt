@@ -1,0 +1,4468 @@
+bowser:
+    0x37CC:
+        name: Neutral-B Frame delay between cycles
+        type: I
+
+    0x37D0:
+        name: Unknown
+        type: f
+
+    0x37D4:
+        name: Unknown
+        type: f
+
+    0x37D8:
+        name: Neutral-B Refueling/spacing in gfx? 
+        type: f
+
+    0x37DC:
+        name: Neutral-B Spacing in fire gfx? 
+        type: f
+
+    0x37E0:
+        name: Neutral-B GFX scaling Smaller number makes GFX larger
+        type: f
+
+    0x37E4:
+        name: Neutral-B Minimum distance? 
+        type: f
+
+    0x37E8:
+        name: Neutral-B Unknown 
+        type: I
+
+    0x37EC:
+        name: Neutral-B X offset of Fire 
+        type: f
+
+    0x37F0:
+        name: Neutral-B Y offset of Fire 
+        type: f
+
+    0x37F4:
+        name: Neutral-B Unknown 
+        type: I
+
+    0x40F8:
+        name: Neutral-B Maximum lifespan for flames(in frames) 
+        type: f
+
+    0x40FC:
+        name: Neutral-B Minimum lifespan for flames(in frames) 
+        type: f
+
+    0x4100:
+        name: Neutral-B Flame speed? 
+        type: f
+
+    0x4104:
+        name: Neutral-B Horizontal momentum of flames? 
+        type: f
+
+    0x4108:
+        name: Neutral-B Default:(125 degrees) The minimum angle that a spawned flame can go at
+        type: f
+
+    0x410C:
+        name: Neutral-B Default:(145 degrees) The maximum angle that a spawned flame can go at
+        type: f
+
+    0x37F8:
+        name: Side-B Side B Throw? Something to do with throwing after grabbing with side B
+        type: f
+
+    0x37FC:
+        name: Side-B Unknown 
+        type: f
+
+    0x3800:
+        name: Side-B Unknown 
+        type: f
+
+    0x3804:
+        name: Side-B Unknown 
+        type: f
+
+    0x3808:
+        name: Side-B Unknown 
+        type: f
+
+    0x380C:
+        name: Side-B Unknown 
+        type: f
+
+    0x3810:
+        name: Side-B Side B grab break out Higher number breaks out faster
+        type: f
+
+    0x3814:
+        name: Side-B Unknown 
+        type: f
+
+    0x3818:
+        name: Side-B Unknown 
+        type: f
+
+    0x381C:
+        name: Up-B Vertical momentum in air 
+        type: f
+
+    0x3820:
+        name: Up-B Gravity 
+        type: f
+
+    0x3824:
+        name: Unknown
+        type: f
+
+    0x3828:
+        name: Up-B Grounded moving speed 
+        type: f
+
+    0x382C:
+        name: Up-B Momentum preservation on turning? 
+        type: f
+
+    0x3830:
+        name: Up-B Grounded turning speed 
+        type: f
+
+    0x3834:
+        name: Up-B Aerial mobility 
+        type: f
+
+    0x3838:
+        name: Up-B Frames after landing to automatically Up-B again? 
+        type: f
+
+    0x383C:
+        name: Up-B Something dealing with above Affects how long you stay in shell?
+        type: f
+
+    0x3840:
+        name: Up-B Something dealing with above High values delay the animation somehow?
+        type: f
+
+    0x3844:
+        name: Up-B Landing lag? 
+        type: f
+
+    0x3848:
+        name: Down-B Vertical aerial momentum preservation on startup? 
+        type: f
+
+    0x384C:
+        name: Down-B Initial aerial vertical momentum 
+        type: f
+
+    0x3850:
+        name: Down-B Distance to the ground before impact Do NOT set to zero. Trust me. 
+        type: f
+
+    0x3854:
+        name: Unknown
+        type: f
+
+    0x3858:
+        name: Down-B Gravity
+        type: f
+
+    0x385C:
+        name: Down-B Descent Speed
+        type: f
+
+    0x3860:
+        name: Unknown
+        type: f
+
+    0x3864:
+        name: Unknown
+        type: f
+
+
+falcon:
+    0x3904:
+        name: Neutral-B Momentum forward 
+        type: f
+
+    0x3908:
+        name: Neutral-B Momentum holding up 
+        type: f
+
+    0x3930:
+        name: Side-B Landing lag 
+        type: f
+
+    0x3934:
+        name: Side-B Landing lag(on hit) 
+        type: f
+
+    0x3838:
+        name: Side-B Miss gravity 
+        type: f
+
+    0x383C:
+        name: Side-B Miss gravity related 
+        type: f
+
+    0x3938:
+        name: Up-B Horizontal momentum 
+        type: f
+
+    0x3944:
+        name: Up-B Landing lag 
+        type: f
+
+    0x3948:
+        name: Up-B Unknown 
+        type: f
+
+    0x3950:
+        name: Up-B Joys-stick position to reverse 
+        type: f
+
+    0x3954:
+        name: Up-B Unknown 
+        type: f
+
+    0x3958:
+        name: Up-B Gravity after releasing an opponent 
+        type: f
+
+    0x3968:
+        name: Down-B Fire aura angle 
+        type: f
+
+    0x396C:
+        name: Down-B Speed modifier on hit 
+        type: f
+
+    0x3974:
+        name: Down-B Ground-lag multiplier Higher values means less lag
+        type: f
+
+    0x3978:
+        name: Down-B Aerial landing lag multiplier Higher values means less lag
+        type: f
+
+    0x397C:
+        name: Down-B Unknown 
+        type: f
+
+    0x3980:
+        name: Down-B Friction from landing from aerial Down-B 
+        type: f
+
+    0x3984:
+        name: Down-B Unknown 
+        type: f
+
+    0x3988:
+        name: Neutral-B? ???Seems to prevent grounded falcon punch from coming out if its not 544 
+        type: f
+
+
+doctorMario:
+    0x3BF4:
+        name: Pills Initial projectile speed 
+        type: f
+
+    0x3BF8:
+        name: Pills Initial projectile angle(radians) 
+        type: f
+
+    0x3BFC:
+        name: Pills Projectile duration(In frames) 
+        type: f
+
+    0x3C04:
+        name: Pills Projectile bounce height multiplier 
+        type: f
+
+    0x36C4:
+        name: Side-B Horizontal momentum from moving left/right Smaller values means more momentum
+        type: f
+
+    0x36C8:
+        name: Side-B Affects vertical momentum? 
+        type: f
+
+    0x36CC:
+        name: Side-B Vertical momentum 
+        type: f
+
+    0x36D0:
+        name: Side-B Vertical momentum from moving left/right 
+        type: f
+
+    0x36D4:
+        name: Side-B Unknown 
+        type: f
+
+    0x36D8:
+        name: Side-B Prop ID 54 = cape?
+        type: I
+
+    0x3728:
+        name: Side-B Max damage reflectable? 
+        type: I
+
+    0x372C:
+        name: Side-B Reflection bubble X-offset 
+        type: f
+
+    0x3730:
+        name: Side-B Reflection bubble Y-offset 
+        type: f
+
+    0x3734:
+        name: Side-B Reflection bubble Z-offset 
+        type: f
+
+    0x3738:
+        name: Side-B Reflection bubble size 
+        type: f
+
+    0x373C:
+        name: Side-B Reflection damage multiplier 
+        type: f
+
+    0x3740:
+        name: Side-B Reflection speed multiplier 
+        type: f
+
+    0x3744:
+        name: Side-B Unknown 
+        type: f
+
+    0x36DC:
+        name: Up-B Special fall aerial mobility 
+        type: f
+
+    0x36E0:
+        name: Up-B Landing lag(in frames) 
+        type: f
+
+    0x36E4:
+        name: Up-B Control stick threshold to reverse? 
+        type: f
+
+    0x36E8:
+        name: Up-B Control stick threshold to move horizontally? 
+        type: f
+
+    0x36EC:
+        name: Up-B Air control during Up-B 
+        type: f
+
+    0x36F0:
+        name: Up-B Initial horizontal momentum from moving stick forward 
+        type: f
+
+    0x36F4:
+        name: Up-B Gravity during initial Up-B 
+        type: f
+
+    0x36F8:
+        name: Up-B Initial vertical momentum during aerial Up-B 
+        type: f
+
+    0x36FC:
+        name: Down-B Affects ability to rise during grounded tornado 
+        type: f
+
+    0x3700:
+        name: Down-B Horizontal momentum on ground 
+        type: f
+
+    0x3704:
+        name: Down-B Horizontal momentum in the air 
+        type: f
+
+    0x3708:
+        name: Down-B Unknown 
+        type: f
+
+    0x370C:
+        name: Down-B Unknown 
+        type: f
+
+    0x3710:
+        name: Down-B Unknown 
+        type: f
+
+    0x3714:
+        name: Down-B Unknown 
+        type: I
+
+    0x3718:
+        name: Down-B Affects ability to rise from mashing B 
+        type: f
+
+    0x371C:
+        name: Down-B Maximum vertical moment gained from mashing B 
+        type: f
+
+    0x3720:
+        name: Down-B Landing lag? Non-0 values toggle freefall after usage
+        type: f
+
+    0x3724:
+        name: Down-B Unknown 
+        type: I
+
+
+dk:
+    0x3B60:
+        name: Neutral-B Max arm swings How many arm swings to fully charge
+        type: I
+
+    0x3B64:
+        name: Neutral-B Damage per arm swing First arm swing has no effect
+        type: I
+
+    0x3B68:
+        name: Neutral-B Grounded charged punch horizontal velocity 
+        type: f
+
+    0x3B6C:
+        name: Neutral-B Landing lag 
+        type: f
+
+    0x3B70:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x3B74:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x3B78:
+        name: Side-B Aerial gravity 
+        type: f
+
+    0x3B7C:
+        name: Side-B Unknown 
+        type: f
+
+    0x3B80:
+        name: Up-B Aerial vertical velocity 
+        type: f
+
+    0x3B84:
+        name: Up-B Aerial gravity 
+        type: f
+
+    0x3B88:
+        name: Up-B Grounded horizontal velocity 
+        type: f
+
+    0x3B8C:
+        name: Up-B Aerial horizontal velocity 
+        type: f
+
+    0x3B90:
+        name: Up-B Grounded mobility 
+        type: f
+
+    0x3B94:
+        name: Up-B Aerial mobility 
+        type: f
+
+    0x3B98:
+        name: Up-B Landing lag 
+        type: f
+
+    0x3B9C:
+        name: Down-B X offset of hitbox 1 
+        type: f
+
+    0x3BA0:
+        name: Down-B X offset of hitbox 2 
+        type: f
+
+    0x3BA4:
+        name: Down-B Unknown 
+        type: f
+
+
+falco:
+    0x39C0:
+        name: Up-B Unknown 
+        type: f
+
+    0x39C4:
+        name: Up-B Aerial momentum preservation on startup? 
+        type: f
+
+    0x39C8:
+        name: Up-B Momentum on startup? 
+        type: f
+
+    0x39CC:
+        name: Up-B Default angle?(radians) 
+        type: f
+
+    0x39D0:
+        name: Up-B How many frames before you stop traveling Does not affect distance past a certain point
+        type: f
+
+    0x39D4:
+        name: Up-B Unknown 
+        type: I
+
+    0x39D8:
+        name: Up-B Something to do with distance? 
+        type: f
+
+    0x39DC:
+        name: Up-B Speed of travel/distance traveled 
+        type: f
+
+    0x39E0:
+        name: Up-B Max momentum to stop at 
+        type: f
+
+    0x39E4:
+        name: Up-B Unknown 
+        type: f
+
+    0x39E8:
+        name: Up-B Something to do with angle when hitting the ground? 
+        type: f
+
+    0x39EC:
+        name: Up-B How far you go when hitting the ground at an angle 
+        type: f
+
+    0x39F0:
+        name: Up-B Unknown 
+        type: f
+
+    0x39F4:
+        name: Up-B Unknown 
+        type: f
+
+    0x39F8:
+        name: Up-B Landing lag? 
+        type: f
+
+    0x3984:
+        name: Neutral B projectile Neutral-B projectile ID The integer ID for the desired projectile.
+        type: I
+
+    0x3988:
+        name: Neutral B Neutral-B gun ID The integer ID for what Falco holds while using Neutral B
+        type: I
+
+    0x3F44:
+        name: Unknown Projectile lifetime? Blaster shot
+        type: f
+
+    0x665B:
+        name: Falco's shadow?
+        type: I
+
+    0x3968:
+        name: Unknown Unknown 
+        type: f
+
+    0x396C:
+        name: Unknown Unknown 
+        type: f
+
+    0x3970:
+        name: Unknown Unknown 
+        type: f
+
+    0x3974:
+        name: Unknown Unknown 
+        type: f
+
+    0x3978:
+        name: Unknown Unknown 
+        type: I
+
+    0x397C:
+        name: Unknown Unknown 
+        type: f
+
+    0x3980:
+        name: Unknown Unknown 
+        type: I
+
+    0x398C:
+        name: Unknown Unknown 
+        type: f
+
+    0x3990:
+        name: Unknown Unknown 
+        type: f
+
+    0x3994:
+        name: Unknown Unknown 
+        type: f
+
+    0x3998:
+        name: Unknown Unknown 
+        type: f
+
+    0x399C:
+        name: Unknown Unknown 
+        type: f
+
+    0x39A0:
+        name: Unknown Unknown 
+        type: f
+
+    0x39A4:
+        name: Unknown Unknown 
+        type: f
+
+    0x39A8:
+        name: Unknown Unknown 
+        type: f
+
+    0x39AC:
+        name: Unknown Unknown 
+        type: f
+
+    0x39B0:
+        name: Unknown Unknown 
+        type: f
+
+    0x39B4:
+        name: Unknown Unknown 
+        type: f
+
+    0x39B8:
+        name: Unknown Unknown 
+        type: f
+
+    0x39BC:
+        name: Unknown Unknown 
+        type: f
+
+    0x39FC:
+        name: Unknown Unknown 
+        type: f
+
+    0x3A00:
+        name: Unknown Unknown 
+        type: f
+
+    0x3A04:
+        name: Unknown Unknown 
+        type: f
+
+    0x3A08:
+        name: Unknown Unknown 
+        type: f
+
+    0x3A0C:
+        name: Unknown Unknown 
+        type: I
+
+    0x3A10:
+        name: Unknown Unknown 
+        type: f
+
+    0x3A14:
+        name: Unknown Unknown 
+        type: f
+
+    0x3A18:
+        name: Unknown Unknown 
+        type: I
+
+
+# /*falco:
+    # 0x396C:
+        # name:  Unknown 
+        # type: f
+
+    # 0x3970:
+        # name:  Unknown 
+        # type: f
+
+    # 0x3974:
+        # name:  Unknown 
+        # type: f
+
+    # 0x3978:
+        # name:  Unknown 
+        # type: I
+
+    # 0x397C:
+        # name:  Unknown 
+        # type: f
+
+    # 0x3980:
+        # name:  Unknown 
+        # type: I
+
+    # 0x3984:
+        # name:  Unknown 
+        # type: I
+
+    # 0x3988:
+        # name:  Unknown 
+        # type: I
+
+    # 0x398C:
+        # name:  Unknown 
+        # type: f
+
+    # 0x3990:
+        # name:  Unknown 
+        # type: f
+
+    # 0x3994:
+        # name:  Unknown 
+        # type: f
+
+    # 0x3998:
+        # name:  Unknown 
+        # type: f
+
+    # 0x399C:
+        # name:  Unknown 
+        # type: f
+
+    # 0x39A0:
+        # name:  Unknown 
+        # type: f
+
+    # 0x39A4:
+        # name:  Unknown 
+        # type: f
+
+    # 0x39A8:
+        # name:  Unknown 
+        # type: f
+
+    # 0x39AC:
+        # name:  Unknown 
+        # type: f
+
+    # 0x39B0:
+        # name:  Unknown 
+        # type: f
+
+    # 0x39B4:
+        # name:  Unknown 
+        # type: f
+
+    # 0x39B8:
+        # name:  Unknown 
+        # type: f
+
+    # 0x39BC:
+        # name:  Unknown 
+        # type: f
+
+    # 0x39C0:
+        # name: Up-B Unknown 
+        # type: f
+
+    # 0x39C4:
+        # name: Up-B Aerial momentum preservation on startup? 
+        # type: f
+
+    # 0x39C8:
+        # name: Up-B Momentum on startup? 
+        # type: f
+
+    # 0x39CC:
+        # name: Up-B Default angle? (radians) 
+        # type: f
+
+    # 0x39D0:
+        # name: Up-B How many frames before you stop traveling (does not affect distance past a certain point) 
+        # type: f
+
+    # 0x39D4:
+        # name: Up-B Unknown 
+        # type: I
+
+    # 0x39D8:
+        # name: Up-B Something with distance? 
+        # type: f
+
+    # 0x39DC:
+        # name: Up-B Speed of travel/distance traveled 
+        # type: f
+
+    # 0x39E0:
+        # name: Up-B Max momentum to stop at 
+        # type: f
+
+    # 0x39E4:
+        # name: Up-B Unknown 
+        # type: f
+
+    # 0x39E8:
+        # name: Up-B Something to do with angle when hitting the ground? 
+        # type: I
+
+    # 0x39EC:
+        # name: Up-B How far you go when hitting ground angled 
+        # type: f
+
+    # 0x39F0:
+        # name: Up-B Unknown 
+        # type: f
+
+    # 0x39F4:
+        # name: Up-B Unknown 
+        # type: f
+
+    # 0x39F8:
+        # name: Up-B Landing lag? 
+        # type: f
+
+    # 0x39FC:
+        # name: Unknown Unknown 
+        # type: f
+
+    # 0x3A00:
+        # name: Unknown Unknown 
+        # type: f
+
+    # 0x3A04:
+        # name: Unknown Unknown 
+        # type: f
+
+    # 0x3A08:
+        # name: Unknown Unknown 
+        # type: f
+
+    # 0x3A0C:
+        # name: Unknown Unknown 
+        # type: I
+
+    # 0x3A10:
+        # name: Unknown Unknown 
+        # type: f
+
+    # 0x3A14:
+        # name: Unknown Unknown 
+        # type: f
+
+    # 0x3A18:
+        # name: Unknown Unknown 
+        # type: I
+
+    # 0x3A1C:
+        # name: Down-B? Max damage reflectable 
+        # type: I
+
+    # 0x3A20:
+        # name: Down-B? Reflection bubble x-pos 
+        # type: I
+
+    # 0x3A24:
+        # name: Down-B? Reflection bubble y-pos 
+        # type: f
+
+    # 0x3A28:
+        # name: Down-B? Reflection bubble z-pos 
+        # type: I
+
+    # 0x3A2C:
+        # name: Down-B? Reflection bubble radius 
+        # type: f
+
+    # 0x3A30:
+        # name: Down-B? Reflection damage multiplier 
+        # type: f
+
+    # 0x3A34:
+        # name: Down-B? Reflection speed multiplier 
+        # type: f
+
+    # 0x3EF0:
+        # name: Down-B? Unknown 
+        # type: f
+
+    # 0x3EF4:
+        # name: Down-B? Unknown 
+        # type: f
+
+    # 0x3EF8:
+        # name: Down-B? Unknown 
+        # type: I
+
+    # 0x3EFC:
+        # name: Down-B? Unknown 
+        # type: I
+
+    # 0x3F00:
+        # name: Down-B? Unknown 
+        # type: I
+
+    # 0x3F04:
+        # name: Down-B? Unknown 
+        # type: I
+
+    # 0x3F08:
+        # name: Down-B? Unknown 
+        # type: f
+
+    # 0x3F0C:
+        # name: Down-B? Unknown 
+        # type: f
+
+    # 0x3F10:
+        # name: Down-B? Unknown 
+        # type: f
+
+    # 0x3F14:
+        # name: Down-B? Unknown 
+        # type: f
+
+    # 0x3F18:
+        # name: Down-B? Unknown 
+        # type: f
+
+    # 0x3F1C:
+        # name: Down-B? Unknown 
+        # type: I
+
+    # 0x3F20:
+        # name: Down-B? Unknown 
+        # type: I
+
+    # 0x3F24:
+        # name: Down-B? Unknown 
+        # type: I
+
+    # 0x3F28:
+        # name: Down-B? Unknown 
+        # type: I
+
+    # 0x3F2C:
+        # name: Down-B? Unknown 
+        # type: f
+
+    # 0x3F30:
+        # name: Down-B? Unknown 
+        # type: f
+
+    # 0x3F34:
+        # name: Down-B? Unknown 
+        # type: f
+
+    # 0x3F38:
+        # name: Down-B? Unknown 
+        # type: f
+
+    # 0x3F3C:
+        # name: Down-B? Unknown 
+        # type: f
+
+    # 0x3F40:
+        # name: Down-B? Unknown 
+        # type: f
+
+    # 0x3F44:
+        # name: Down-B? Unknown 
+        # type: f
+
+    # 0x3F48:
+        # name: Down-B? Unknown 
+        # type: f
+
+    # 0x3F4C:
+        # name: Down-B? Unknown 
+        # type: f
+
+    # 0x3F70:
+        # name: Down-B? Lifetime? (can only actually hit on 99 frames though) 
+        # type: f
+
+    # 0x3F74:
+        # name: Down-B? Unknown 
+        # type: f
+
+    # 0x3F94:
+        # name: Down-B? Unknown 
+        # type: f
+
+# */
+fox:
+    0x3898:
+        name: Unknown Unknown 
+        type: f
+
+    0x389C:
+        name: Unknown Unknown 
+        type: f
+
+    0x38A0:
+        name: Unknown Unknown 
+        type: f
+
+    0x38A4:
+        name: Unknown Unknown 
+        type: f
+
+    0x38A8:
+        name: Unknown Unknown 
+        type: I
+
+    0x38AC:
+        name: Unknown Unknown 
+        type: f
+
+    0x38B0:
+        name: Unknown Unknown 
+        type: I
+
+    0x38BC:
+        name: Unknown Unknown 
+        type: f
+
+    0x38C0:
+        name: Unknown Unknown 
+        type: f
+
+    0x38C4:
+        name: Unknown Unknown 
+        type: f
+
+    0x38C8:
+        name: Unknown Unknown 
+        type: f
+
+    0x38CC:
+        name: Unknown Unknown 
+        type: f
+
+    0x38D0:
+        name: Unknown Unknown 
+        type: f
+
+    0x38D4:
+        name: Unknown Unknown 
+        type: f
+
+    0x38D8:
+        name: Unknown Unknown 
+        type: f
+
+    0x38DC:
+        name: Unknown Unknown 
+        type: f
+
+    0x38E0:
+        name: Unknown Unknown 
+        type: f
+
+    0x38E4:
+        name: Unknown Unknown 
+        type: f
+
+    0x38E8:
+        name: Unknown Unknown 
+        type: f
+
+    0x38EC:
+        name: Unknown Unknown 
+        type: f
+
+    0x38F0:
+        name: Up-B Unknown 
+        type: f
+
+    0x38F4:
+        name: Up-B Aerial momentum preservation on startup? 
+        type: f
+
+    0x38F8:
+        name: Up-B Momentum on startup? 
+        type: f
+
+    0x38FC:
+        name: Up-B Default angle? (radians) 
+        type: f
+
+    0x3900:
+        name: Up-B How many frames before you stop traveling (does not affect distance past a certain point) 
+        type: f
+
+    0x3904:
+        name: Up-B Unknown 
+        type: I
+
+    0x3908:
+        name: Up-B Something with distance? Perhaps frames before slowing down? 
+        type: f
+
+    0x390C:
+        name: Up-B Speed of travel/distance traveled 
+        type: f
+
+    0x3910:
+        name: Up-B Max momentum to stop at 
+        type: f
+
+    0x3914:
+        name: Up-B Unknown 
+        type: f
+
+    0x3918:
+        name: Up-B Something to do with angle when hitting ground? 
+        type: f
+
+    0x391C:
+        name: Up-B How far you go when hitting ground angled 
+        type: f
+
+    0x3920:
+        name: Up-B Unknown 
+        type: f
+
+    0x3924:
+        name: Up-B Unknown 
+        type: f
+
+    0x3928:
+        name: Up-B Landing lag? 
+        type: f
+
+    0x392C:
+        name: Up-B Unknown 
+        type: f
+
+    0x3930:
+        name: Unknown Unknown 
+        type: f
+
+    0x3934:
+        name: Unknown Unknown 
+        type: f
+
+    0x3938:
+        name: Unknown Unknown 
+        type: f
+
+    0x393C:
+        name: Unknown Unknown 
+        type: I
+
+    0x3940:
+        name: Unknown Unknown 
+        type: f
+
+    0x3944:
+        name: Unknown Unknown 
+        type: f
+
+    0x3948:
+        name: Unknown Unknown 
+        type: I
+
+    0x394C:
+        name: Down-B? Max damage reflectable 
+        type: I
+
+    0x3950:
+        name: Down-B? Reflection bubble x-pos 
+        type: I
+
+    0x3954:
+        name: Down-B? Reflection bubble y-pos 
+        type: f
+
+    0x3958:
+        name: Down-B? Reflection bubble z-pos 
+        type: I
+
+    0x395C:
+        name: Down-B? Reflection bubble radius 
+        type: f
+
+    0x3960:
+        name: Down-B? Reflection damage multiplier 
+        type: f
+
+    0x3964:
+        name: Down-B? Reflection speed multiplier 
+        type: f
+
+    0x3E34:
+        name: Neutral-B projectiles? Unknown 
+        type: f
+
+    0x3E38:
+        name: Neutral-B projectiles? Unknown 
+        type: f
+
+    0x3E3C:
+        name: Neutral-B projectiles? Unknown 
+        type: I
+
+    0x3E40:
+        name: Neutral-B projectiles? Unknown 
+        type: I
+
+    0x3E44:
+        name: Neutral-B projectiles? Unknown 
+        type: I
+
+    0x3E48:
+        name: Neutral-B projectiles? Unknown 
+        type: I
+
+    0x3E4C:
+        name: Neutral-B projectiles? Unknown 
+        type: f
+
+    0x3E50:
+        name: Neutral-B projectiles? Unknown 
+        type: f
+
+    0x3E54:
+        name: Neutral-B projectiles? Unknown 
+        type: f
+
+    0x3E58:
+        name: Neutral-B projectiles? Unknown 
+        type: f
+
+    0x3E5C:
+        name: Neutral-B projectiles? Unknown 
+        type: f
+
+    0x3E60:
+        name: Neutral-B projectiles? Unknown 
+        type: I
+
+    0x3E64:
+        name: Neutral-B projectiles? Unknown 
+        type: I
+
+    0x3E68:
+        name: Neutral-B projectiles? Unknown 
+        type: I
+
+    0x3E6C:
+        name: Neutral-B projectiles? Unknown 
+        type: I
+
+    0x3E70:
+        name: Neutral-B projectiles? Unknown 
+        type: f
+
+    0x3E74:
+        name: Neutral-B projectiles? Unknown 
+        type: f
+
+    0x3E78:
+        name: Neutral-B projectiles? Unknown 
+        type: f
+
+    0x3E7C:
+        name: Neutral-B projectiles? Unknown 
+        type: f
+
+    0x3E80:
+        name: Neutral-B projectiles? Unknown 
+        type: f
+
+    0x3E84:
+        name: Neutral-B projectiles? Unknown 
+        type: f
+
+    0x3E88:
+        name: Neutral-B projectiles? Unknown 
+        type: f
+
+    0x3E8C:
+        name: Neutral-B projectiles? Unknown 
+        type: f
+
+    0x3E90:
+        name: Neutral-B projectiles? Unknown 
+        type: f
+
+    0x3EB4:
+        name: Neutral-B projectiles? Lifetime (can only actually hit on [this-1] frames though) 
+        type: f
+
+    0x3EB8:
+        name: Neutral-B projectiles? Unknown 
+        type: f
+
+    0x3EBC:
+        name: Neutral-B projectiles? 3EBC-3ED4 are all 0. 
+        type: I
+
+    0x3ED8:
+        name: Neutral-B projectiles? Unknown 
+        type: f
+
+    0x38B4:
+        name: Neutral-B projectiles? Projectile ID 
+        type: I
+
+    0x38B8:
+        name: Neutral-B projectiles? Blaster ID 
+        type: I
+
+ganondorf:
+    0x38AC:
+        name: Neutral-B Momentum forward in air 
+        type: f
+
+    0x38B0:
+        name: Neutral-B Momentum from holding up 
+        type: f
+
+    0x38B8:
+        name: Side-B Miss gravity 
+        type: f
+
+    0x38BC:
+        name: Side-B Miss gravity related 
+        type: f
+
+    0x38D8:
+        name: Side-B Landing lag 
+        type: f
+
+    0x38DC:
+        name: Side-B Landing lag from hit 
+        type: f
+
+    0x38E4:
+        name: Up-B Horizontal momentum 
+        type: f
+
+    0x38EC:
+        name: Up-B Landing lag 
+        type: f
+
+    0x3910:
+        name: Down-B Purple aura angle 
+        type: f
+
+    0x3914:
+        name: Down-B Speed modifier on hit 
+        type: f
+
+    0x391C:
+        name: Down-B Ground-ground ending lag modifier 
+        type: f
+
+    0x3920:
+        name: Down-B Aerial-ground landing lag modifier 
+        type: f
+
+iceclimbers:
+    None: None
+
+jigglypuff:
+    None: None
+
+kirby:
+    0x4E8C:
+        name: Jumps Time it takes to change direction in midair jump (frames) 
+        type: I
+
+    0x4E90:
+        name: Jumps Midair jump horizontal momentum backward 
+        type: f
+
+    0x4E94:
+        name: Jumps Midair jump horizontal momentum forward 
+        type: f
+
+    0x4E98:
+        name: Jumps Unknown 
+        type: f
+
+    0x4E9C:
+        name: Jumps Unknown 
+        type: f
+
+    0x4EA0:
+        name: Jumps Midair jump 1 vertical momentum 
+        type: f
+
+    0x4EA4:
+        name: Jumps Midair jump 2 vertical momentum 
+        type: f
+
+    0x4EA8:
+        name: Jumps Midair jump 3 vertical momentum 
+        type: f
+
+    0x4EAC:
+        name: Jumps Midair jump 4 vertical momentum 
+        type: f
+
+    0x4EB0:
+        name: Jumps Midair jump 5 vertical momentum 
+        type: f
+
+    0x4EB4:
+        name: Jumps Unknown 
+        type: I
+
+    0x4EB8:
+        name: Jumps Unknown 
+        type: I
+
+    0x4EBC:
+        name: Jumps Unknown 
+        type: I
+
+    0x4EC4:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4EC8:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4ECC:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4ED0:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4ED4:
+        name: Neutral-B Inhale velocity of outer grab box 
+        type: f
+
+    0x4ED8:
+        name: Neutral-B Inhale velocity of inner grab box 
+        type: f
+
+    0x4EDC:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4EE0:
+        name: Neutral-B Part of breakout formula (lower values = harder to escape) 
+        type: f
+
+    0x4EE4:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4EE8:
+        name: Neutral-B Part of breakout formula (higher values = harder to escape) 
+        type: f
+
+    0x4EEC:
+        name: Neutral-B Spit out horizontal deceleration rate 
+        type: f
+
+    0x4EF0:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4EF4:
+        name: Neutral-B Frames foe is in spit out star 
+        type: f
+
+    0x4EF8:
+        name: Neutral-B Frames foe is stuck in swallow star 
+        type: f
+
+    0x4EFC:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4F00:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4F04:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4F08:
+        name: Neutral-B Inhale walk speed 
+        type: f
+
+    0x4F0C:
+        name: Neutral-B Inhale jump height 
+        type: f
+
+    0x4F10:
+        name: Neutral-B Inhale stop walk momentum 
+        type: f
+
+    0x4F14:
+        name: Neutral-B Grounded spit out initial horizontal velocity 
+        type: f
+
+    0x4F18:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4F1C:
+        name: "Neutral-B Swallow pop-out angle: 75 degrees (radians)" 
+        type: f
+
+    0x4F20:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4F24:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4F28:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4F2C:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4F20:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4F24:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4F28:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4F2C:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4F30:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4F34:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4F38:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4F3C:
+        name: Neutral-B Odds of losing power when hit 
+        type: f
+
+    0x4F40:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x4F44:
+        name: Side-B Unknown 
+        type: f
+
+    0x4F48:
+        name: Side-B Unknown 
+        type: f
+
+    0x4F4C:
+        name: Side-B Unknown 
+        type: f
+
+    0x4F50:
+        name: Side-B Unknown 
+        type: f
+
+    0x4F54:
+        name: Side-B Unknown 
+        type: f
+
+    0x4F58:
+        name: Side-B Aerial Side B vertical momentum 
+        type: f
+
+    0x4F5C:
+        name: Side-B Aerial Side B landing lag (frames) 
+        type: f
+
+    0x7BF8:
+        name: Side-B Hammer* graphic size 
+        type: f
+
+    0x4F60:
+        name: Up-B Up B vertical momentum 
+        type: f
+
+    0x4F64:
+        name: Up-B Maximum horizontal velocity forward? 
+        type: f
+
+    0x4F68:
+        name: Up-B X offset of final cutter projectile 
+        type: f
+
+    0x4F6C:
+        name: Up-B Y offset of final cutter projectile 
+        type: I
+
+    0x4F70:
+        name: Up-B Up B turning threshold 
+        type: f
+
+    0x7B4C:
+        name: Up-B Projectile initial velocity 
+        type: f
+
+    0x7B50:
+        name: Up-B Unknown 
+        type: f
+
+    0x7B54:
+        name: Up-B Cutter Projectile duration (frames) 
+        type: f
+
+    0x7B58:
+        name: Up-B Projectile horizontal deceleration rate? 
+        type: f
+
+    0x7B5C:
+        name: Up-B Unknown 
+        type: f
+
+    0x7B60:
+        name: Up-B Unknown 
+        type: f
+
+    0x7B64:
+        name: Up-B Unknown 
+        type: f
+
+    0x7B68:
+        name: Up-B Unknown 
+        type: f
+
+    0x7B6C:
+        name: Up-B Unknown 
+        type: f
+
+    0x7B70:
+        name: Up-B Unknown 
+        type: f
+
+    0x7B74:
+        name: Up-B Unknown 
+        type: f
+
+    0x7B78:
+        name: Up-B Unknown 
+        type: f
+
+    0x4F78:
+        name: Stone Maximum duration in stone mode (frames) 
+        type: I
+
+    0x4F7C:
+        name: Stone Minimum duration in stone mode (frames) 
+        type: I
+
+    0x4F80:
+        name: Stone Unknown 
+        type: f
+
+    0x4F84:
+        name: Stone Unknown 
+        type: f
+
+    0x4F88:
+        name: Stone Unknown 
+        type: f
+
+    0x4F8C:
+        name: Stone Unknown 
+        type: f
+
+    0x4F90:
+        name: Stone Stone Gravity 
+        type: f
+
+    0x4F94:
+        name: Stone Stone HP 
+        type: I
+
+    0x4F98:
+        name: Stone Unknown 
+        type: I
+
+    0x4F9C:
+        name: Stone Unknown 
+        type: I
+
+    0x5238:
+        name: Yoshi hat Neutral-B Initial horizontal momentum 
+        type: f
+
+    0x523C:
+        name: Yoshi hat Neutral-B Initial vertical momentum 
+        type: f
+
+    0x5240:
+        name: Yoshi hat Neutral-B Damage multiplier when egged 
+        type: f
+
+    0x5244:
+        name: Yoshi hat Neutral-B Unknown 
+        type: f
+
+    0x5248:
+        name: Yoshi hat Neutral-B Egg lay growing time 
+        type: f
+
+    0x524C:
+        name: Yoshi hat Neutral-B Part of breakout formula (lower = harder) 
+        type: f
+
+    0x5250:
+        name: Yoshi hat Neutral-B Something with button mashing time? 
+        type: f
+
+    0x5254:
+        name: Yoshi hat Neutral-B Something with egg wiggling? 
+        type: f
+
+    0x5258:
+        name: Yoshi hat Neutral-B Unknown 
+        type: f
+
+    0x525C:
+        name: Yoshi hat Neutral-B Unknown 
+        type: f
+
+    0x5260:
+        name: Yoshi hat Neutral-B Enemies invincibility upon breaking out of egg (frames). 0 = infinite 
+        type: I
+
+    0x5264:
+        name: Yoshi hat Neutral-B Horizontal velocity on breakout? 
+        type: f
+
+    0x5268:
+        name: Yoshi hat Neutral-B Vertical velocity on breakout? 
+        type: f
+
+    0x526C:
+        name: Yoshi hat Neutral-B Something to do with breakout time 
+        type: f
+
+
+link:
+    0x3580:
+        name: Neutral-B Frames until max arrow angle? 
+        type: f
+
+    0x3584:
+        name: Neutral-B Arrow charging speed (higher = faster) 
+        type: f
+
+    0x3588:
+        name: Neutral-B Anything other than 0 goes into special free fall 
+        type: f
+
+    0x358C:
+        name: Neutral-B Item Loader ID? (0 = Capsule + game freeze) 
+        type: I
+
+    0x3590:
+        name: Neutral-B Item Loader ID? (0 = Capsule + normal arrow shooting) 
+        type: I
+
+    0x3F68:
+        name: Neutral-B Arrow lifetime (frames) 
+        type: f
+
+    0x3F6C:
+        name: Neutral-B Uncharged arrow velocity multiplier 
+        type: f
+
+    0x3F70:
+        name: Neutral-B Charged arrow velocity multiplier 
+        type: f
+
+    0x3F74:
+        name: Neutral-B Uncharged arrow damage 
+        type: f
+
+    0x3F78:
+        name: Neutral-B Fully charged arrow damage 
+        type: f
+
+    0x3F7C:
+        name: Neutral-B  ??? 
+        type: f
+
+    0x3F80:
+        name: Neutral-B Arrow lifetime on ground (frames) 
+        type: f
+
+    0x3F84:
+        name: Neutral-B Arrow gravity 
+        type: f
+
+    0x3F88:
+        name: Neutral-B Arrow weight 
+        type: f
+
+    0x3594:
+        name: Side-B Something to do with angle of boomerang, high numbers it cannot be angled 
+        type: f
+
+    0x3598:
+        name: Side-B Boomerang angle (radians) 
+        type: f
+
+    0x359C:
+        name: Side-B  ??? 
+        type: f
+
+    0x35A0:
+        name: Side-B Smash Boomerang launch speed 
+        type: f
+
+    0x35A4:
+        name: Side-B Regular Boomerang launch speed 
+        type: f
+
+    0x35B0:
+        name: Up-B Up B landing lag 
+        type: f
+
+    0x35B4:
+        name: Up-B Up B initial horizontal momentum 
+        type: f
+
+    0x35B8:
+        name: Up-B Up B aerial mobility 
+        type: f
+
+    0x35BC:
+        name: Up-B Up B momentum preservation? 
+        type: f
+
+    0x35C0:
+        name: Up-B Initial vertical momentum 
+        type: f
+
+    0x35C8:
+        name: Down-B ID for bomb(58 is Link's bomb) 
+        type: I
+
+    0x4224:
+        name: Down-B Bomb lifetime 
+        type: I
+
+    0x4230:
+        name: Down-B Bomb starts flashing when timer reaches this value 
+        type: I
+
+    0x4234:
+        name: Down-B Bomb HP 
+        type: I
+
+    0x35CC:
+        name: Miscellaneous Down Air 'bounce' vertical momentum 
+        type: f
+
+    0x35D0:
+        name: Miscellaneous Frames before hitbox reappears after hitting with Down Air 
+        type: f
+
+    0x3648:
+        name: Miscellaneous Shield block collision X offset 
+        type: I
+
+    0x364C:
+        name: Miscellaneous Shield block collision Y offset (positive is down, negative is up) 
+        type: I
+
+    0x3650:
+        name: Miscellaneous Shield block collision Z offset 
+        type: I
+
+    0x3654:
+        name: Miscellaneous Shield block hitbox size modifier 
+        type: f
+
+
+luigi:
+    0x3A94:
+        name: Neutral-B Initial Velocity 
+        type: f
+
+    0x3A98:
+        name: Neutral-B Projectile lifetime (frames) 
+        type: f
+
+    0x3A9C:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x3AA0:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x3524:
+        name: Side-B Unknown 
+        type: f
+
+    0x3528:
+        name: Side-B Unknown 
+        type: f
+
+    0x352C:
+        name: Side-B Unknown 
+        type: f
+
+    0x3530:
+        name: Side-B Frames to fully charge missile 
+        type: f
+
+    0x3534:
+        name: Side-B Base damage 
+        type: f
+
+    0x3538:
+        name: Side-B Damage slope (damage = base damage + frames spent charging * this) 
+        type: f
+
+    0x353C:
+        name: Side-B Unknown 
+        type: f
+
+    0x3540:
+        name: Side-B Unknown 
+        type: f
+
+    0x3544:
+        name: Side-B Unknown 
+        type: f
+
+    0x3548:
+        name: Side-B Horizontal momentum 
+        type: f
+
+    0x354C:
+        name: Side-B Horizontal momentum multiplier 
+        type: f
+
+    0x3550:
+        name: Side-B Initial Vertical momentum 
+        type: f
+
+    0x3554:
+        name: Side-B Vertical momentum multiplier (lower = higher) 
+        type: f
+
+    0x3558:
+        name: Side-B Gravity right after movement animation 
+        type: f
+
+    0x355C:
+        name: Side-B 0 = SD at end of movement animation 
+        type: f
+
+    0x3560:
+        name: Side-B Horizontal deceleration after movement animation 
+        type: f
+
+    0x3564:
+        name: Side-B Gravity multiplier at end of movement animation 
+        type: f
+
+    0x3568:
+        name: Side-B Misfire ratio (i.e. 1 out of this chance of misfiring) 
+        type: f
+
+    0x356C:
+        name: Side-B Misfire horizontal momentum 
+        type: f
+
+    0x3570:
+        name: Side-B Misfire vertical momentum 
+        type: f
+
+    0x3574:
+        name: Up-B Aerial mobility in freefall 
+        type: f
+
+    0x3578:
+        name: Up-B Landing lag 
+        type: f
+
+    0x357C:
+        name: Up-B Control stick threshold to reverse UpB? 
+        type: f
+
+    0x3580:
+        name: Up-B Control stick threshold to move horizontally? 
+        type: f
+
+    0x3584:
+        name: Up-B Air control during UpB 
+        type: f
+
+    0x3588:
+        name: Up-B Initial horizontal momentum from moving stick forward 
+        type: f
+
+    0x358C:
+        name: Up-B Gravity during initial UpB 
+        type: f
+
+    0x3590:
+        name: Up-B Initial vertical momentum during aerial UpB 
+        type: f
+
+    0x3594:
+        name: Down-B Vertical momentum from first B tap 
+        type: f
+
+    0x3598:
+        name: Down-B Grounded horizontal momentum 
+        type: f
+
+    0x359C:
+        name: Down-B Aerial horizontal momentum 
+        type: f
+
+    0x35A0:
+        name: Down-B Grounded turning momentum 
+        type: f
+
+    0x35A4:
+        name: Down-B Aerial lift multiplier from tapping B in the air? 
+        type: f
+
+    0x35A8:
+        name: Down-B Ending friction 
+        type: f
+
+    0x35AC:
+        name: Down-B Unknown 
+        type: I
+
+    0x35B0:
+        name: Down-B Maximum vertical momentum gained from tapping B in the air 
+        type: f
+
+    0x35B4:
+        name: Down-B Gravity during tapping B in the air 
+        type: f
+
+    0x35B8:
+        name: Down-B Freefall toggle 
+        type: f
+
+        
+mario:
+    0x3AB8:
+        name: Neutral-B Initial speed 
+        type: f
+
+    0x3ABC:
+        name: Neutral-B Initial angle (radians) 
+        type: f
+
+    0x3AC0:
+        name: Neutral-B Duration 
+        type: f
+
+    0x3AC8:
+        name: Neutral-B Bounce height multiplier 
+        type: f
+
+    0x345C:
+        name: Side-B Horizontal momentum from moving left/right (smaller = more) 
+        type: f
+
+    0x3460:
+        name: Side-B Affects vertical momentum? 
+        type: f
+
+    0x3464:
+        name: Side-B Vertical momentum 
+        type: f
+
+    0x3468:
+        name: Side-B Vertical momentum from moving left/right 
+        type: f
+
+    0x346C:
+        name: Side-B Unknown 
+        type: f
+
+    0x3470:
+        name: Side-B Prop ID = 53 (Cape) ? 
+        type: I
+
+    0x34C0:
+        name: Side-B Max damage reflectable? 
+        type: I
+
+    0x34C4:
+        name: Side-B Reflection bubble X-offset 
+        type: f
+
+    0x34C8:
+        name: Side-B Reflection bubble Y-offset 
+        type: f
+
+    0x34CC:
+        name: Side-B Reflection bubble Z-offset 
+        type: f
+
+    0x34D0:
+        name: Side-B Reflection bubble size 
+        type: f
+
+    0x34D4:
+        name: Side-B Reflection damage multiplier 
+        type: f
+
+    0x34D8:
+        name: Side-B Reflection speed multiplier 
+        type: f
+
+    0x34DC:
+        name: Side-B Unknown 
+        type: f
+
+    0x3474:
+        name: Up-B Special fall aerial mobility 
+        type: f
+
+    0x3478:
+        name: Up-B Landing lag 
+        type: f
+
+    0x347C:
+        name: Up-B Control stick threshold to reverse UpB? 
+        type: f
+
+    0x3480:
+        name: Up-B Control stick threshold to move horizontally? 
+        type: f
+
+    0x3484:
+        name: Up-B Air control during UpB 
+        type: f
+
+    0x3488:
+        name: Up-B Initial horizontal momentum from moving stick forward 
+        type: f
+
+    0x348C:
+        name: Up-B Gravity during initial UpB 
+        type: f
+
+    0x3490:
+        name: Up-B Initial vertical momentum during aerial UpB 
+        type: f
+
+    0x3494:
+        name: Down-B Affects ability to rise during grounded tornado 
+        type: f
+
+    0x3498:
+        name: Down-B Horizontal momentum on ground 
+        type: f
+
+    0x349C:
+        name: Down-B Horizontal momentum in the air 
+        type: f
+
+    0x34A0:
+        name: Down-B Unknown 
+        type: f
+
+    0x34A4:
+        name: Down-B Unknown 
+        type: f
+
+    0x34A8:
+        name: Down-B Unknown 
+        type: f
+
+    0x34AC:
+        name: Down-B Unknown 
+        type: I
+
+    0x34B0:
+        name: Down-B Affects ability to rise from tapping B 
+        type: f
+
+    0x34B4:
+        name: Down-B Maximum vertical momentum gained from tapping B 
+        type: f
+
+    0x34B8:
+        name: Down-B Non-0 values toggle freefall after usage; Landing lag? 
+        type: f
+
+    0x34BC:
+        name: Down-B Unknown 
+        type: I
+
+        
+marth:
+    0x38C8:
+        name: Neutral-B Charge animation iterations to reach full charge (animation is 30 frames, so basically half-seconds) 
+        type: I
+
+    0x38CC:
+        name: Neutral-B Base damage 
+        type: I
+
+    0x38D0:
+        name: Neutral-B Damage added per charge animation iteration (again, basically half-seconds) 
+        type: I
+
+    0x38D4:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x38D8:
+        name: Neutral-B Aerial horizontal deceleration 
+        type: f
+
+    0x38DC:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x38E0:
+        name: Side-B Unknown 
+        type: f
+
+    0x38E4:
+        name: Side-B Aerial vertical boost 
+        type: f
+
+    0x38E8:
+        name: Side-B Aerial horizontal deceleration 
+        type: f
+
+    0x38EC:
+        name: Side-B Gravity during move 
+        type: f
+
+    0x38F0:
+        name: Up-B Max horizontal air movement in freefall 
+        type: f
+
+    0x38F4:
+        name: Up-B Landing lag 
+        type: f
+
+    0x38F8:
+        name: Up-B Unknown 
+        type: f
+
+    0x38FC:
+        name: Up-B Unknown 
+        type: f
+
+    0x3900:
+        name: Up-B directionalization distance (displacement, not angle) 
+        type: f
+
+    0x3904:
+        name: Up-B directionalized pre-jump displacement (has a low max) 
+        type: f
+
+    0x3908:
+        name: Up-B aerial jump height ratio (relative to ground version) 
+        type: f
+
+    0x390C:
+        name: Up-B gravity after use 
+        type: f
+
+    0x3910:
+        name: Up-B max fall speed after use 
+        type: f
+
+    0x3914:
+        name: Up-B Unknown 
+        type: f
+
+    0x3918:
+        name: Down-B Unknown 
+        type: f
+
+    0x391C:
+        name: Down-B Counter gravity 
+        type: f
+
+    0x3920:
+        name: Down-B Counter max fall speed 
+        type: f
+
+    0x3924:
+        name: Down-B Unknown 
+        type: f
+
+    0x3928:
+        name: Down-B Hitlag/Freeze frames on activation 
+        type: f
+
+    0x392C:
+        name: Down-B Y-axis height of Counter collision box (positive int only) 
+        type: I
+
+    0x3930:
+        name: Down-B X-axis movement of collision box (floating point) 
+        type: f
+
+    0x3934:
+        name: Down-B also affects Y-axis movement of bubble, maybe this is position and 392C is bone? 
+        type: f
+
+    0x3938:
+        name: Down-B Z-axis movement of collision box (floating point) 
+        type: f
+
+    0x393C:
+        name: Down-B Counter collision box size 
+        type: f
+
+    0x3940:
+        name: Down-B Unknown 
+        type: f
+
+    0x3944:
+        name: Down-B affects length of sword trail 
+        type: f
+
+
+mewtwo:
+    0x38D4:
+        name: Neutral-B Increment frames before charging per each iteration 
+        type: f
+
+    0x38D8:
+        name: Neutral-B Ground horizontal momentum from releasing Shadow Ball 
+        type: f
+
+    0x38DC:
+        name: Neutral-B Air horizontal momentum from releasing Shadow Ball 
+        type: f
+
+    0x38E0:
+        name: Neutral-B Loop iterations to fully charge Shadow Ball 
+        type: I
+
+    0x38E4:
+        name: Neutral-B Frames before transition to Shadow Ball release animation (?) 
+        type: I
+
+    0x38E8:
+        name: Neutral-B Landing lag/SpecialFall toggle 
+        type: f
+
+    0x3DA0:
+        name: Neutral-B Projectile lifetime 
+        type: f
+
+    0x3DA4:
+        name: Neutral-B Firing angle (radians) 
+        type: f
+
+    0x3DA8:
+        name: Neutral-B Uncharged projectile speed 
+        type: f
+
+    0x3DAC:
+        name: Neutral-B Fully charged projectile speed 
+        type: f
+
+    0x3DB0:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x3DB4:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x3DB8:
+        name: Neutral-B Base Shadow Ball size 
+        type: f
+
+    0x3DBC:
+        name: Neutral-B Full Shadow Ball size 
+        type: f
+
+    0x3DC0:
+        name: Neutral-B Wiggle intensity (?) 
+        type: I
+
+    0x3DC4:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x3DC8:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x3DCC:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x38EC:
+        name: Side-B Air vertical momentum boost 
+        type: f
+
+    0x38F0:
+        name: Side-B Unknown 
+        type: I
+
+    0x38F4:
+        name: Side-B Unknown 
+        type: I
+
+    0x38F8:
+        name: Side-B Z-offset of reflection 
+        type: f
+
+    0x38FC:
+        name: Side-B Y-offset of reflection 
+        type: f
+
+    0x3900:
+        name: Side-B X-offset of reflection 
+        type: f
+
+    0x3904:
+        name: Side-B Reflection size multiplier 
+        type: f
+
+    0x3908:
+        name: Up-B Unknown 
+        type: f
+
+    0x390C:
+        name: Up-B Unknown 
+        type: f
+
+    0x3910:
+        name: Up-B Unknown 
+        type: f
+
+    0x3914:
+        name: Up-B If set to 0, moving down on Up+B crashes game 
+        type: f
+
+    0x3918:
+        name: Up-B If set to 0, crashes game on Up+B 
+        type: f
+
+    0x391C:
+        name: Up-B Unknown 
+        type: f
+
+    0x3920:
+        name: Up-B Unknown 
+        type: f
+
+    0x3924:
+        name: Up-B Travel time (frames) 
+        type: I
+
+    0x3928:
+        name: Up-B Unknown 
+        type: f
+
+    0x392C:
+        name: Up-B Affects sensitivity to direction change? 
+        type: f
+
+    0x3930:
+        name: Up-B Something with initial momentum (?) 
+        type: f
+
+    0x3934:
+        name: Up-B Something with initial momentum (stacks with previous) 
+        type: f
+
+    0x3938:
+        name: Up-B Unknown 
+        type: f
+
+    0x393C:
+        name: Up-B Unknown 
+        type: I
+
+    0x3940:
+        name: Up-B Ending momentum (?) 
+        type: f
+
+    0x3944:
+        name: Up-B Unknown 
+        type: f
+
+    0x3948:
+        name: Up-B Landing lag (divided by ~10) 
+        type: f
+
+    0x394C:
+        name: Down-B Base falling acceleration 
+        type: f
+
+    0x3950:
+        name: Down-B Falling acceleration multiplier 
+        type: f
+
+    0x3954:
+        name: Down-B X-offset of first hitbox 
+        type: f
+
+    0x3958:
+        name: Down-B Y-offset of first hitbox 
+        type: f
+
+    0x3CF8:
+        name: Down-B Number of times hitbox travels horizontally 
+        type: f
+
+    0x3CFC:
+        name: Down-B Hitbox stretch multiplier (?) 
+        type: f
+
+
+gnw:
+    0x37B0:
+        name: Neutral-B Frame repeated hit starts from 
+        type: f
+
+    0x37B4:
+        name: Neutral-B Max number of sausage per rotation 
+        type: f
+
+    0x435C:
+        name: Neutral-B Size of sausage 
+        type: f
+
+    0x439C:
+        name: Neutral-B Sausage bounce against wall 
+        type: f
+
+    0x43A0:
+        name: Neutral-B Duration of sausage (frames) 
+        type: f
+
+    0x43A4:
+        name: Neutral-B Duration of stale sausage after hitting ground (frames) 
+        type: f
+
+    0x43A8:
+        name: Neutral-B Horizontal velocity of sausage 1 
+        type: f
+
+    0x43AC:
+        name: Neutral-B Vertical velocity of sausage 1 
+        type: f
+
+    0x43B0:
+        name: Neutral-B Gravity of sausage 1 
+        type: f
+
+    0x43B4:
+        name: Neutral-B Spin of sausage 1 
+        type: f
+
+    0x43B8:
+        name: Neutral-B Also Spin of sausage 1? 
+        type: f
+
+    0x37F4:
+        name: Up B (Fire?) Maximum angle on up B? (radians) 
+        type: f
+
+    0x37F8:
+        name: Up B (Fire?) Up B landing lag (/5)? 
+        type: f
+
+    0x3818:
+        name: Down-B Bucket absorption Y axis 
+        type: I
+
+    0x381C:
+        name: Down-B Bucket absorption X axis 
+        type: f
+
+    0x3820:
+        name: Down-B Bucket absorption Z axis 
+        type: f
+
+    0x3824:
+        name: Down-B  ??? 
+        type: I
+
+    0x3828:
+        name: Down-B Bucket absorption hitbox size 
+        type: f
+
+    0x3798:
+        name: Miscellaneous Model width 
+        type: f
+
+
+ness:
+    0x3720:
+        name: F-Smash Max damage reflectable 
+        type: I
+
+    0x3724:
+        name: F-Smash Reflection bubble x-pos 
+        type: I
+
+    0x3728:
+        name: F-Smash Reflection bubble y-pos 
+        type: f
+
+    0x372C:
+        name: F-Smash Reflection bubble z-pos 
+        type: I
+
+    0x3730:
+        name: F-Smash Reflection bubble radius 
+        type: f
+
+    0x3734:
+        name: F-Smash Reflection damage multiplier 
+        type: f
+
+    0x3738:
+        name: F-Smash Reflection speed multiplier 
+        type: f
+
+    0x3664:
+        name: Neutral-B Unknown 
+        type: I
+
+    0x3668:
+        name: Neutral-B Cooldown after releasing PK Flash (frames) 
+        type: I
+
+    0x366C:
+        name: Neutral-B Unknown 
+        type: I
+
+    0x3670:
+        name: Neutral-B Unknown 
+        type: I
+
+    0x3674:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x3678:
+        name: Neutral-B Aerial vertical momentum on charge 
+        type: f
+
+    0x367C:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x3680:
+        name: Neutral-B Landing Lag 
+        type: f
+
+    0x3C98:
+        name: Neutral-B Projectile Lifetime 
+        type: f
+
+    0x3C9C:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x3CA0:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x3CA4:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x3CA8:
+        name: Neutral-B PK Flash horizontal momentum 
+        type: f
+
+    0x3CAC:
+        name: Neutral-B Max rising height 
+        type: f
+
+    0x3CB0:
+        name: Neutral-B Control sensitivity 
+        type: f
+
+    0x3CB4:
+        name: Neutral-B Gravity 
+        type: f
+
+    0x3CB8:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x3CBC:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x3CC0:
+        name: Neutral-B Detonation timer 
+        type: f
+
+    0x3CC4:
+        name: Neutral-B Base damage 
+        type: f
+
+    0x3D80:
+        name: Neutral-B Hitbox size multiplier (smaller = bigger) 
+        type: f
+
+    0x3D84:
+        name: Neutral-B Initial hitbox size multiplier 
+        type: f
+
+    0x3D88:
+        name: Neutral-B Hitbox growth multiplier 
+        type: f
+
+    0x3D8C:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x3D90:
+        name: Neutral-B Damage multiplier 
+        type: f
+
+    0x3684:
+        name: Side-B Aerial launch trajectory (radians) 
+        type: f
+
+    0x3688:
+        name: Side-B Aerial Horizontal Velocity 
+        type: f
+
+    0x368C:
+        name: Side-B Grounded launch trajectory (radians) 
+        type: f
+
+    0x3690:
+        name: Side-B Ground Horizontal Velocity? 
+        type: f
+
+    0x3694:
+        name: Side-B X-Offset 
+        type: f
+
+    0x3698:
+        name: Side-B Y-Offset 
+        type: f
+
+    0x369C:
+        name: Side-B Landing Lag 
+        type: f
+
+    0x3E68:
+        name: Side-B Spark lifetime 
+        type: f
+
+    0x3E6C:
+        name: Side-B Spark speed (?) 
+        type: f
+
+    0x3F30:
+        name: Side-B Pillar lifetime 
+        type: f
+
+    0x3F34:
+        name: Side-B Pillar vertical momentum (?) 
+        type: f
+
+    0x3F38:
+        name: Side-B Loop hitbox size multiplier (?) 
+        type: f
+
+    0x36A0:
+        name: Up-B Unknown 
+        type: f
+
+    0x36A4:
+        name: Up-B Duration of PKT animation after projectile dies? 
+        type: I
+
+    0x36A8:
+        name: Up-B Unknown 
+        type: I
+
+    0x36AC:
+        name: Up-B How long before you fall during UpB hold in air? 
+        type: I
+
+    0x36B0:
+        name: Up-B Unknown 
+        type: f
+
+    0x36B4:
+        name: Up-B UpB holding falling acceleration 
+        type: f
+
+    0x36B8:
+        name: Up-B PKT2 Momentum 
+        type: f
+
+    0x36BC:
+        name: Up-B Unknown 
+        type: f
+
+    0x36C0:
+        name: Up-B PKT2 deceleration rate? 
+        type: f
+
+    0x36C4:
+        name: Up-B Unknown 
+        type: f
+
+    0x36C8:
+        name: Up-B Unknown 
+        type: f
+
+    0x36CC:
+        name: Up-B Unknown 
+        type: f
+
+    0x36D4:
+        name: Up-B Landing Lag 
+        type: f
+
+    0x4044:
+        name: Up-B Projectile lifetime 
+        type: f
+
+    0x4048:
+        name: Up-B PKT Speed 
+        type: f
+
+    0x404C:
+        name: Up-B Spawn angle 
+        type: f
+
+    0x4050:
+        name: Up-B PKT turning control, lower number = higher amount of control 
+        type: f
+
+    0x4054:
+        name: Up-B PKT turning radius, higher number = tighter radius 
+        type: f
+
+    0x4134:
+        name: Up-B Unknown 
+        type: f
+
+    0x36D8:
+        name: Down-B Frames Down+B is held after releasing B 
+        type: f
+
+    0x36DC:
+        name: Down-B Unknown 
+        type: f
+
+    0x36E0:
+        name: Down-B Momentum Preservation? 
+        type: f
+
+    0x36E4:
+        name: Down-B Momentum Preservation? 
+        type: f
+
+    0x36E8:
+        name: Down-B Unknown 
+        type: I
+
+    0x36EC:
+        name: Down-B Unknown 
+        type: f
+
+    0x36F0:
+        name: Down-B Fall speed 
+        type: f
+
+    0x36F4:
+        name: Down-B Unknown 
+        type: f
+
+    0x36F8:
+        name: Down-B Unknown 
+        type: f
+
+    0x36FC:
+        name: Down-B Unknown 
+        type: I
+
+    0x3700:
+        name: Down-B Absorption Collision X Offset 
+        type: f
+
+    0x3704:
+        name: Down-B Absorption Collision Y Offset 
+        type: f
+
+    0x3708:
+        name: Down-B Absorption Collision Z Offset 
+        type: f
+
+    0x370C:
+        name: Down-B Absorption Collision Size (?) 
+        type: f
+
+
+peach:
+    0x3A48:
+        name: Float Float duration (frames) 
+        type: f
+
+    0x3A80:
+        name: Side-B Horizontal Travel Momentum (tilt) 
+        type: f
+
+    0x3A84:
+        name: Side-B Horizontal Travel Momentum (smash) 
+        type: f
+
+    0x3A88:
+        name: Side-B Vertical Travel Momentum 
+        type: f
+
+    0x3A8C:
+        name: Side-B Unknown 
+        type: f
+
+    0x3A90:
+        name: Side-B Unknown 
+        type: f
+
+    0x3A94:
+        name: Side-B Unknown 
+        type: f
+
+    0x3A98:
+        name: Side-B Unknown 
+        type: f
+
+    0x3A9C:
+        name: Side-B Unknown 
+        type: f
+
+    0x3AA0:
+        name: Side-B Vertical Boost During Recoil 
+        type: f
+
+    0x3AA4:
+        name: Side-B Unknown 
+        type: f
+
+    0x3AA8:
+        name: Side-B Unknown 
+        type: f
+
+    0x3AAC:
+        name: Up-B Unknown 
+        type: f
+
+    0x3AB0:
+        name: Up-B Unknown 
+        type: f
+
+    0x3AB4:
+        name: Up-B Unknown 
+        type: f
+
+    0x3AB8:
+        name: Up-B Unknown 
+        type: f
+
+    0x3ABC:
+        name: Up-B Amount to which the launch may be directed (larger = significantly more control) 
+        type: f
+
+    0x3A4C:
+        name: Down-B items Number of item data sets to load (starting @3A54)? 
+        type: I
+
+    0x3A50:
+        name: Down-B items Odds for getting an Item (1 out of this many) 
+        type: I
+
+    0x3A54:
+        name: Down-B items Item 1 odds 
+        type: I
+
+    0x3A58:
+        name: Down-B items Item 1 ID 
+        type: I
+
+    0x3A5C:
+        name: Down-B items Item 2 odds 
+        type: I
+
+    0x3A60:
+        name: Down-B items Item 2 ID 
+        type: I
+
+    0x3A64:
+        name: Down-B items Item 3 odds 
+        type: I
+
+    0x3A68:
+        name: Down-B items Item 3 ID 
+        type: I
+
+    0x410C:
+        name: Down-B Turnips Number of turnip data sets to load (starting @4110)? 
+        type: I
+
+    0x4110:
+        name: Down-B Turnips Turnip 1 odds 
+        type: I
+
+    0x4114:
+        name: Down-B Turnips Turnip 1 damage 
+        type: I
+
+    0x4118:
+        name: Down-B Turnips Turnip 2 odds 
+        type: I
+
+    0x411C:
+        name: Down-B Turnips Turnip 2 damage 
+        type: I
+
+    0x4120:
+        name: Down-B Turnips Turnip 3 odds 
+        type: I
+
+    0x4124:
+        name: Down-B Turnips Turnip 3 damage 
+        type: I
+
+    0x4128:
+        name: Down-B Turnips Turnip 4 odds 
+        type: I
+
+    0x412C:
+        name: Down-B Turnips Turnip 4 damage 
+        type: I
+
+    0x4130:
+        name: Down-B Turnips Turnip 5 odds 
+        type: I
+
+    0x4134:
+        name: Down-B Turnips Turnip 5 damage 
+        type: I
+
+    0x4138:
+        name: Down-B Turnips Turnip 6 odds 
+        type: I
+
+    0x413C:
+        name: Down-B Turnips Turnip 6 damage 
+        type: I
+
+    0x4140:
+        name: Down-B Turnips Turnip 7 odds 
+        type: I
+
+    0x4144:
+        name: Down-B Turnips Turnip 7 damage 
+        type: I
+
+    0x4148:
+        name: Down-B Turnips Turnip 8 odds 
+        type: I
+
+    0x414C:
+        name: Down-B Turnips Turnip 8 damage 
+        type: I
+
+        
+pichu:
+    0x3B54:
+        name: Neutral-B Lifetime 
+        type: f
+
+    0x3B58:
+        name: Neutral-B Aerial jolt angle (radians) 
+        type: f
+
+    0x3B5C:
+        name: Neutral-B Aerial jolt velocity 
+        type: f
+
+    0x35FC:
+        name: Side-B Charge time 
+        type: f
+
+    0x3600:
+        name: Side-B Base damage 
+        type: f
+
+    0x3604:
+        name: Side-B Damage multiplier 
+        type: f
+
+    0x3614:
+        name: Side-B Base horizontal momentum 
+        type: f
+
+    0x3618:
+        name: Side-B Horizontal momentum multiplier 
+        type: f
+
+    0x361C:
+        name: Side-B Base vertical momentum 
+        type: f
+
+    0x3620:
+        name: Side-B Vertical momentum multiplier 
+        type: f
+
+
+pikachu:
+    0x3C94:
+        name: Neutral-B Lifetime 
+        type: f
+
+    0x3C98:
+        name: Neutral-B Aerial jolt angle (radians) 
+        type: f
+
+    0x3C9C:
+        name: Neutral-B Aerial jolt velocity 
+        type: f
+
+    0x372C:
+        name: Side-B Charge time 
+        type: f
+
+    0x3730:
+        name: Side-B Base damage 
+        type: f
+
+    0x3734:
+        name: Side-B Damage multiplier 
+        type: f
+
+    0x3740:
+        name: Side-B Falling speed 
+        type: f
+
+    0x3744:
+        name: Side-B Base horizontal firing momentum 
+        type: f
+
+    0x3748:
+        name: Side-B Horizontal momentum multiplier 
+        type: f
+
+    0x374C:
+        name: Side-B Base vertical firing momentum 
+        type: f
+
+    0x3750:
+        name: Side-B Vertical momentum multiplier 
+        type: f
+
+    0x3754:
+        name: Side-B  ?? read on release 
+        type: f
+
+    0x3758:
+        name: Side-B Unknown 
+        type: f
+
+    0x375C:
+        name: Side-B Unknown 
+        type: f
+
+    0x3760:
+        name: Side-B Unknown 
+        type: f
+
+    0x35E0:
+        name: Up-B Momentum subtracted during ending frames 9-49 
+        type: f
+
+    0x35E4:
+        name: Up-B Momentum cap from subtraction during ending 
+        type: f
+
+    0x3764:
+        name: Up-B  ?? read on startup 
+        type: I
+
+    0x3768:
+        name: Up-B Travel distance 
+        type: I
+
+    0x376C:
+        name: Up-B Momentum subtracted frames 11-13 during startup 
+        type: f
+
+    0x3770:
+        name: Up-B Model rotation traveling on ground 
+        type: f
+
+    0x3774:
+        name: Up-B Model width multiplier traveling on ground 
+        type: f
+
+    0x3778:
+        name: Up-B Model height multiplier traveling on ground 
+        type: f
+
+    0x377C:
+        name: Up-B Model length multiplier traveling on ground 
+        type: f
+
+    0x3780:
+        name: Up-B Model rotation traveling in air 
+        type: f
+
+    0x3784:
+        name: Up-B Model width multiplier traveling in air 
+        type: f
+
+    0x3788:
+        name: Up-B Model height multiplier traveling in air 
+        type: f
+
+    0x378C:
+        name: Up-B Model length multiplier traveling in air 
+        type: f
+
+    0x3790:
+        name: Up-B  ?? Read when air -> ground 
+        type: f
+
+    0x3794:
+        name: Up-B Aiming sensitivity 
+        type: f
+
+    0x3798:
+        name: Up-B Starting momentum of each segment 
+        type: f
+
+    0x379C:
+        name: Up-B Momentum added to 3798 
+        type: f
+
+    0x37A0:
+        name: Up-B Second segment length multiplier 
+        type: f
+
+    0x37A4:
+        name: Up-B Horizontal momentum preservation 
+        type: f
+
+    0x37A8:
+        name: Up-B Minimum direction change (degrees) for grounded second segment 
+        type: I
+
+    0x37AC:
+        name: Up-B Horizontal momentum subtracted each frame after frame 5 of second segment 
+        type: f
+
+    0x37B0:
+        name: Up-B Minimum direction change (degrees) for aerial second segment 
+        type: I
+
+    0x37B4:
+        name: Up-B Unknown (Not read) 
+        type: f
+
+    0x37B8:
+        name: Up-B Landing lag 
+        type: f
+
+    0x37BC:
+        name: Down-B Vertical momentum on aerial thunder hit 
+        type: f
+
+    0x37C0:
+        name: Down-B Something to do with rising from an aerial thunder hit? 
+        type: f
+
+    0x37C4:
+        name: Down-B Something to do with vertical range for thunder self-hit? 
+        type: f
+
+    0x37C8:
+        name: Down-B Projectile travel speed 
+        type: f
+
+    0x37CC:
+        name: Down-B Horizontal range for thunder self-hit? 
+        type: f
+
+    0x37D0:
+        name: Down-B Vertical range for thunder self-hit? 
+        type: f
+
+    0x37D4:
+        name: Down-B Vertical displacement of cloud graphic 
+        type: f
+
+    0x37D8:
+        name: Down-B Height of thunder creation 
+        type: f
+
+    0x37DC:
+        name: Down-B Number of lightning bursts 
+        type: I
+
+    0x37E0:
+        name: Down-B Time between individual lightning bursts (frames) 
+        type: I
+
+    0x37E4:
+        name: Down-B Projectile spawn ID(Most values other than 81 or 82 freeze game) 
+        type: I
+
+        
+roy:
+    0x3A20:
+        name: Neutral-B Charge time (half-seconds) 
+        type: I
+
+    0x3A24:
+        name: Neutral-B Base damage 
+        type: I
+
+    0x3A28:
+        name: Neutral-B Damage added per second 
+        type: I
+
+    0x3A2C:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x3A30:
+        name: Neutral-B Aerial horizontal deceleration 
+        type: f
+
+    0x3A34:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x3A38:
+        name: Side-B Unknown 
+        type: f
+
+    0x3A3C:
+        name: Side-B Aerial vertical boost 
+        type: f
+
+    0x3A40:
+        name: Side-B Aerial horizontal deceleration 
+        type: f
+
+    0x3A44:
+        name: Side-B Gravity during move 
+        type: f
+
+    0x3A48:
+        name: Up-B Max horizontal air movement in freefall 
+        type: f
+
+    0x3A4C:
+        name: Up-B Landing lag 
+        type: f
+
+    0x3A50:
+        name: Up-B Unknown 
+        type: f
+
+    0x3A54:
+        name: Up-B Unknown 
+        type: f
+
+    0x3A58:
+        name: Up-B directionalization distance (displacement, not angle) 
+        type: f
+
+    0x3A5C:
+        name: Up-B directionalized pre-jump displacement (has a low max) 
+        type: f
+
+    0x3A60:
+        name: Up-B aerial jump height ratio (relative to ground version) 
+        type: f
+
+    0x3A64:
+        name: Up-B gravity after use 
+        type: f
+
+    0x3A68:
+        name: Up-B max fall speed after use 
+        type: f
+
+    0x3A6C:
+        name: Up-B Unknown 
+        type: f
+
+    0x3A70:
+        name: Down-B Unknown 
+        type: f
+
+    0x3A74:
+        name: Down-B Counter gravity 
+        type: f
+
+    0x3A78:
+        name: Down-B Counter max fall speed 
+        type: f
+
+    0x3A7C:
+        name: Down-B Damage multiplier 
+        type: f
+
+    0x3A80:
+        name: Down-B Hitlag/Freeze frames on activation 
+        type: f
+
+    0x3A84:
+        name: Down-B Y-axis height of Counter collision box (positive int only) 
+        type: I
+
+    0x3A88:
+        name: Down-B Z-axis movement of collision box (floating point) 
+        type: f
+
+    0x3A8C:
+        name: Down-B Unknown 
+        type: f
+
+    0x3A90:
+        name: Down-B X-axis movement of collision box (floating point) 
+        type: f
+
+    0x3A94:
+        name: Down-B Counter collision box size 
+        type: f
+
+    0x3A98:
+        name: Down-B Unknown 
+        type: f
+
+    0x3A9C:
+        name: Down-B Unknown 
+        type: f
+
+
+samus:
+    0x3620:
+        name: Neutral-B Charge time. Higher value = slower charge. Unsure of ratio. 
+        type: f
+
+    0x3624:
+        name: Neutral-B Recoil from charged shot (air only). Negative values send you backward, positive send you forward. 
+        type: f
+
+    0x3628:
+        name: Neutral-B Frames between change in charge level 
+        type: I
+
+    0x362C:
+        name: Neutral-B Anything other than 0 makes you go to special fall 
+        type: I
+
+    0x3EB0:
+        name: Neutral-B Charge shot duration 
+        type: f
+
+    0x3EB4:
+        name: Neutral-B Angle projectile fires at? 
+        type: I
+
+    0x3EB8:
+        name: Neutral-B Base velocity. Diminishes with more charge (Full charge still goes same speed) 
+        type: f
+
+    0x3EBC:
+        name: Neutral-B Charged shot velocity. Effect is greater with more charge (Uncharged shot goes same speed) 
+        type: f
+
+    0x3EC0:
+        name: Neutral-B  ?? (read on shooting) 
+        type: f
+
+    0x3EC4:
+        name: Neutral-B  ?? (read on shooting) 
+        type: f
+
+    0x3EC8:
+        name: Neutral-B Initial charge shot size (graphic). Scales accordingly with charge 
+        type: f
+
+    0x3ECC:
+        name: Neutral-B Final power shot size (graphic). Scales accordingly with charge. 
+        type: f
+
+    0x36A4:
+        name: Grab/Tether Something to do with standing grapple creation? 
+        type: I
+
+    0x36A8:
+        name: Grab/Tether Frame grapple object is created (Standing) 
+        type: I
+
+    0x36AC:
+        name: Grab/Tether Frame grapple begins retracting (Standing) 
+        type: I
+
+    0x36B0:
+        name: Grab/Tether Frame grapple object is removed (Standing) 
+        type: I
+
+    0x36B4:
+        name: Grab/Tether Something to do with running grapple creation? 
+        type: I
+
+    0x36B8:
+        name: Grab/Tether Frame grapple object is created (Running) 
+        type: I
+
+    0x36BC:
+        name: Grab/Tether Frame grapple begins retracting (Running) 
+        type: I
+
+    0x36C0:
+        name: Grab/Tether Frame grapple object is removed (Running) 
+        type: I
+
+    0x36C4:
+        name: Grab/Tether Something to do with air grapple creation? 
+        type: I
+
+    0x36C8:
+        name: Grab/Tether Frame grapple object is created (Tether) 
+        type: I
+
+    0x36CC:
+        name: Grab/Tether Frame grapple begins retracting (Tether) 
+        type: I
+
+    0x36D0:
+        name: Grab/Tether Frame grapple object is removed (Tether) 
+        type: I
+
+    0x36D4:
+        name: Grab/Tether Tether jump velocity multiplier 
+        type: f
+
+    0x36D8:
+        name: Grab/Tether Number of frames you can hang using tether (actual number varies a little bit?) 
+        type: I
+
+    0x3630:
+        name: Side-B Frame buffer between tilt and smash missile 
+        type: f
+
+    0x3634:
+        name: Side-B Traction 
+        type: f
+
+    0x3638:
+        name: Side-B  ?? 
+        type: f
+
+    0x363C:
+        name: Side-B X offset 
+        type: f
+
+    0x4038:
+        name: Side-B Y offset? 
+        type: f
+
+    0x403C:
+        name: Side-B Homing missile duration 
+        type: f
+
+    0x4040:
+        name: Side-B Homing missile deceleration point 
+        type: f
+
+    0x4044:
+        name: Side-B Homing missile initial velocity 
+        type: f
+
+    0x4048:
+        name: Side-B Homing missile secondary velocity, after it finishes deceleration and stops homing 
+        type: f
+
+    0x404C:
+        name: Side-B Homing missile deceleration. Lower value = missile slows faster 
+        type: f
+
+    0x4050:
+        name: Side-B Homing capability. Higher value = better homing 
+        type: f
+
+    0x4054:
+        name: Side-B Something to do with homing. Lower value = worse homing. Range perhaps? 
+        type: f
+
+    0x4058:
+        name: Side-B Something to do with homing. Higher value = no homing. 
+        type: f
+
+    0x405C:
+        name: Side-B Super missile duration 
+        type: f
+
+    0x4060:
+        name: Side-B Super missile duration point 
+        type: f
+
+    0x4064:
+        name: Side-B Super missile initial velocity 
+        type: f
+
+    0x4068:
+        name: Side-B Super missile acceleration 
+        type: f
+
+    0x406C:
+        name: Side-B Super missile final speed 
+        type: f
+
+    0x3640:
+        name: Up-B Horizontal momentum added on with no control 
+        type: f
+
+    0x3644:
+        name: Up-B Aerial control 
+        type: f
+
+    0x3648:
+        name: Up-B Air friction? 
+        type: f
+
+    0x364C:
+        name: Up-B Aerial vertical momentum 
+        type: f
+
+    0x3650:
+        name: Up-B  ?? (read on start of fall) 
+        type: f
+
+    0x3654:
+        name: Up-B Joystick sensitivity to turn around during startup 
+        type: f
+
+    0x3658:
+        name: Up-B Landing lag 
+        type: f
+
+    0x365C:
+        name: Down-B Vertical momentum grounded bomb 
+        type: f
+
+    0x3660:
+        name: Down-B Vertical momentum aerial bomb 
+        type: f
+
+    0x3664:
+        name: Down-B Grounded mobility 
+        type: f
+
+    0x3668:
+        name: Down-B Aerial mobility 
+        type: f
+
+    0x366C:
+        name: Down-B  ?? 
+        type: f
+
+    0x3670:
+        name: Down-B  ?? 
+        type: f
+
+    0x3674:
+        name: Down-B Grounded momentum preservation 
+        type: f
+
+    0x3678:
+        name: Down-B Aerial momentum preservation 
+        type: f
+
+    0x367C:
+        name: Down-B X offset 
+        type: I
+
+    0x3680:
+        name: Down-B Y offset 
+        type: f
+
+    0x3684:
+        name: Down-B  ?? 
+        type: I
+
+    0x3688:
+        name: Down-B  ?? 
+        type: f
+
+    0x368C:
+        name: Down-B  ?? 
+        type: f
+
+    0x3690:
+        name: Down-B Landing detection from bomb jump? 
+        type: f
+
+    0x3694:
+        name: Down-B Something else with landing detection? 
+        type: f
+
+    0x3698:
+        name: Down-B  ?? 
+        type: f
+
+    0x369C:
+        name: Down-B Landing detection? 
+        type: f
+
+    0x36A0:
+        name: Down-B  ?? 
+        type: f
+
+    0x4144:
+        name: Down-B Bomb duration 
+        type: f
+
+    0x4148:
+        name: Down-B  ?? 
+        type: f
+
+    0x414C:
+        name: Down-B  ?? 
+        type: f
+
+
+sheik:
+    0x39B4:
+        name: Neutral-B Needle lifetime (frames) 
+        type: f
+
+    0x39B8:
+        name: Neutral-B Idle needle duration on ground (frames) 
+        type: f
+
+    0x39BC:
+        name: Neutral-B Needle traveling speed 
+        type: f
+
+    0x35B0:
+        name: Side-B How long chain is out before reeling in (release B) 
+        type: f
+
+    0x35B4:
+        name: Side-B  ?? 
+        type: f
+
+    0x35B8:
+        name: Side-B frame chain comes out 
+        type: f
+
+    0x35BC:
+        name: Side-B frame you can move chain around 
+        type: f
+
+    0x35C0:
+        name: Side-B frame after releasing B chain reels in 
+        type: f
+
+    0x35C4:
+        name: Side-B frame chain disappears after releasing B 
+        type: f
+
+    0x35D4:
+        name: Up-B Travel frames 
+        type: I
+
+    0x35F4:
+        name: Up-B Unknown 
+        type: f
+
+    0x35F8:
+        name: Up-B Landing lag. 
+        type: f
+
+    0x35FC:
+        name: Up-B Unknown 
+        type: f
+
+    0x3600:
+        name: Up-B Unknown 
+        type: f
+
+    0x3604:
+        name: Down-B Gravity? 
+        type: f
+
+
+yoshi:
+    0x34E0:
+        name: Double Jump?? Unknown 
+        type: I
+
+    0x34E4:
+        name: Double Jump?? Unknown 
+        type: f
+
+    0x34E8:
+        name: Double Jump?? Knockback resistance? 
+        type: f
+
+    0x34EC:
+        name: Double Jump?? Unknown 
+        type: I
+
+    0x34F0:
+        name: Neutral-B Initial horizontal momentum 
+        type: f
+
+    0x34F4:
+        name: Neutral-B Initial vertical momentum 
+        type: f
+
+    0x34F8:
+        name: Neutral-B Damage multiplier when egged 
+        type: f
+
+    0x34FC:
+        name: Neutral-B I don't know but it can make it upside down? wtf 
+        type: f
+
+    0x3500:
+        name: Neutral-B Egg lay growing time 
+        type: f
+
+    0x3504:
+        name: Neutral-B Part of breakout formula (lower = harder) 
+        type: f
+
+    0x3508:
+        name: Neutral-B Something with button mashing time? 
+        type: f
+
+    0x350C:
+        name: Neutral-B Something with egg wiggling? 
+        type: f
+
+    0x3510:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x3514:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x3518:
+        name: Neutral-B Enemies invincibility upon breaking out of egg (frames). 0 = infinite 
+        type: I
+
+    0x351C:
+        name: Neutral-B horizontal velocity on breakout? 
+        type: I
+
+    0x3520:
+        name: Neutral-B vertical velocity on breakout? 
+        type: f
+
+    0x3524:
+        name: Neutral-B something to do with breakout time 
+        type: f
+
+    0x3528:
+        name: Side-B Max length (frames) 
+        type: I
+
+    0x352C:
+        name: Side-B Min length (frames) 
+        type: I
+
+    0x3530:
+        name: Side-B Unknown 
+        type: I
+
+    0x3534:
+        name: Side-B Unknown 
+        type: f
+
+    0x3538:
+        name: Side-B Initial horizontal speed 
+        type: I
+
+    0x353C:
+        name: Side-B Initial vertical speed 
+        type: f
+
+    0x3540:
+        name: Side-B Unknown 
+        type: f
+
+    0x3544:
+        name: Side-B rolling momentum when you land for the first time 
+        type: f
+
+    0x3548:
+        name: Side-B Unknown 
+        type: f
+
+    0x354C:
+        name: Side-B gravity 
+        type: f
+
+    0x3550:
+        name: Side-B ending gravity 
+        type: f
+
+    0x3554:
+        name: Side-B base rolling momentum? 
+        type: f
+
+    0x3558:
+        name: Side-B rolling momentum multiplier? 
+        type: f
+
+    0x355C:
+        name: Side-B something with rolling momentum? 
+        type: f
+
+    0x3560:
+        name: Side-B something with rolling momentum? 
+        type: f
+
+    0x3564:
+        name: Side-B Unknown 
+        type: f
+
+    0x3568:
+        name: Side-B Unknown 
+        type: f
+
+    0x356C:
+        name: Side-B Unknown 
+        type: f
+
+    0x3570:
+        name: Side-B air acceleration 
+        type: f
+
+    0x3574:
+        name: Side-B Unknown 
+        type: f
+
+    0x3578:
+        name: Side-B Unknown 
+        type: f
+
+    0x357C:
+        name: Side-B Unknown 
+        type: f
+
+    0x3580:
+        name: Side-B Unknown 
+        type: f
+
+    0x3584:
+        name: Side-B Unknown 
+        type: I
+
+    0x3588:
+        name: Side-B Unknown 
+        type: f
+
+    0x358C:
+        name: Side-B Unknown 
+        type: f
+
+    0x3590:
+        name: Side-B Unknown 
+        type: f
+
+    0x3594:
+        name: Side-B bounce velocity multiplier 
+        type: f
+
+    0x3598:
+        name: Side-B Unknown 
+        type: f
+
+    0x359C:
+        name: Side-B Unknown 
+        type: f
+
+    0x35A0:
+        name: Side-B Used in damage formula? 
+        type: f
+
+    0x35A4:
+        name: Side-B Unknown 
+        type: f
+
+    0x35A8:
+        name: Side-B Unknown 
+        type: f
+
+    0x35AC:
+        name: Side-B Unknown 
+        type: f
+
+    0x35B0:
+        name: Side-B ending air acceleration? 
+        type: f
+
+    0x35B4:
+        name: Side-B Unknown 
+        type: f
+
+    0x35B8:
+        name: Side-B Unknown 
+        type: f
+
+    0x35BC:
+        name: Side-B Unknown 
+        type: I
+
+    0x35C0:
+        name: Side-B ending horizontal speed? 
+        type: f
+
+    0x35C4:
+        name: Side-B (45 degrees) 
+        type: f
+
+    0x35C8:
+        name: Side-B something to do with freefall 
+        type: f
+
+    0x35CC:
+        name: Up-B affects angle of thrown egg backward and forward? (radians) 
+        type: f
+
+    0x35D0:
+        name: Up-B affects angle of thrown egg backward and forward? (30 degrees) 
+        type: f
+
+    0x35D4:
+        name: Up-B affects angle of thrown egg backward and forward? (4 degrees) 
+        type: f
+
+    0x35D8:
+        name: Up-B throwing angle? (73 degrees) 
+        type: f
+
+    0x35DC:
+        name: Up-B base speed 
+        type: f
+
+    0x35E0:
+        name: Up-B speed scaling based on button hold? 
+        type: f
+
+    0x35E4:
+        name: Up-B creation X pos 
+        type: f
+
+    0x35E8:
+        name: Up-B creation Y pos 
+        type: f
+
+    0x35EC:
+        name: Up-B Egg air friction? 
+        type: f
+
+    0x35F0:
+        name: Up-B base egg spin 
+        type: f
+
+    0x35F4:
+        name: Down-B Ground Pound drop speed? 
+        type: f
+
+    0x35F8:
+        name: Down-B Ground Pound stars X pos 
+        type: f
+
+    0x35FC:
+        name: Down-B Ground Pound stars Y pos 
+        type: f
+
+    0x3600:
+        name: Down-B Unknown 
+        type: f
+
+    0x3604:
+        name: Down-B Unknown 
+        type: f
+
+    0x3608:
+        name: Down-B Unknown 
+        type: f
+
+    0x3A88:
+        name: Up-B Eggs How long until it explodes (frames)? 
+        type: f
+
+    0x3A8C:
+        name: Up-B Eggs How long explosion exists in frames? 
+        type: f
+
+    0x3B6C:
+        name: Down-B Stars Horizontal movement? 
+        type: f
+
+    0x3B70:
+        name: Down-B Stars Gravity? 
+        type: f
+
+
+younglink:
+    0x3724:
+        name: Neutral-B Frames until max arrow angle? 
+        type: f
+
+    0x3728:
+        name: Neutral-B Arrow charging speed (higher = faster) 
+        type: f
+
+    0x372c:
+        name: Neutral-B Anything other than 0 goes into special free fall 
+        type: f
+
+    0x3730:
+        name: Neutral-B Behavior for projectile?(65 is Fire Arrow) 
+        type: I
+
+    0x3734:
+        name: Neutral-B Model ID for projectile?(77 is Young Link's arrow) 
+        type: I
+
+    0x4144:
+        name: Neutral-B Arrow lifetime (frames) 
+        type: f
+
+    0x4148:
+        name: Neutral-B Uncharged arrow velocity multiplier 
+        type: f
+
+    0x414C:
+        name: Neutral-B Charged arrow velocity multiplier 
+        type: f
+
+    0x4150:
+        name: Neutral-B Uncharged arrow damage 
+        type: f
+
+    0x4154:
+        name: Neutral-B Fully charged arrow damage 
+        type: f
+
+    0x4158:
+        name: Neutral-B  ??? 
+        type: f
+
+    0x415C:
+        name: Neutral-B Arrow lifetime on ground (frames) 
+        type: f
+
+    0x4160:
+        name: Neutral-B Arrow gravity 
+        type: f
+
+    0x4164:
+        name: Neutral-B Arrow weight 
+        type: f
+
+    0x3738:
+        name: Side-B Something to do with angle of boomerang, high numbers it cannot be angled 
+        type: f
+
+    0x373C:
+        name: Side-B Boomerang angle (radians) 
+        type: f
+
+    0x3740:
+        name: Side-B  ??? 
+        type: f
+
+    0x3744:
+        name: Side-B Smash Boomerang launch speed 
+        type: f
+
+    0x3748:
+        name: Side-B Regular Boomerang launch speed 
+        type: f
+
+    0x374C:
+        name: Side-B Boomerang return proximity (X offset of when catchable) 
+        type: f
+
+    0x3750:
+        name: Side-B Thrown projectile ID(61 is Young Link's boomerang) 
+        type: I
+
+    0x3754:
+        name: Side-B  ??? 
+        type: f
+
+    0x3758:
+        name: Side-B Boomerang Deceleration/Resistance? 
+        type: f
+
+    0x375C:
+        name: Side-B  ??? 
+        type: f
+
+    0x3760:
+        name: Side-B  ??? 
+        type: f
+
+    0x3764:
+        name: Side-B  ??? 
+        type: f
+
+    0x3768:
+        name: Side-B  ??? 
+        type: f
+
+    0x3754:
+        name: Up-B Up B landing lag 
+        type: f
+
+    0x3758:
+        name: Up-B Up B initial horizontal momentum 
+        type: f
+
+    0x375C:
+        name: Up-B Up B aerial mobility multiplier 
+        type: f
+
+    0x3760:
+        name: Up-B Maximum mobility 
+        type: f
+
+    0x3764:
+        name: Up-B Initial vertical momentum 
+        type: f
+
+    0x3768:
+        name: Up-B Up B gravity 
+        type: f
+
+    0x376C:
+        name: Down-B Item ID for bomb(59 is Young Link's bomb) 
+        type: I
+
+    0x3770:
+        name: Miscellaneous Down Air 'bounce' vertical momentum 
+        type: f
+
+
+zelda:
+    0x3978:
+        name: Neutral-B Unknown 
+        type: f
+
+    0x397C:
+        name: Neutral-B Unknown 
+        type: I
+
+    0x3980:
+        name: Neutral-B Horizontal momentum preservation (less = more)? 
+        type: f
+
+    0x3984:
+        name: Neutral-B Vertical momentum? 
+        type: f
+
+    0x3988:
+        name: Neutral-B Unknown 
+        type: I
+
+    0x398C:
+        name: Neutral-B Unknown 
+        type: I
+
+    0x3990:
+        name: Side-B Frame you start falling? 
+        type: I
+
+    0x3994:
+        name: Side-B Earliest frame to detonate projectile 
+        type: I
+
+    0x3998:
+        name: Side-B X offset? 
+        type: f
+
+    0x399C:
+        name: Side-B Y offset? 
+        type: f
+
+    0x39A0:
+        name: Side-B Unknown 
+        type: f
+
+    0x39A4:
+        name: Side-B Falling gravity? 
+        type: f
+
+    0x39A8:
+        name: Side-B Unknown 
+        type: f
+
+    0x39AC:
+        name: Side-B Landing lag 
+        type: f
+
+    0x3EE8:
+        name: Side-B Max travel distance in frames? 
+        type: f
+
+    0x3EEC:
+        name: Side-B Frames where damage grows with distance 
+        type: f
+
+    0x3EF0:
+        name: Side-B  ?? (read during startup) 
+        type: f
+
+    0x3EF4:
+        name: Side-B  ?? (read during startup) 
+        type: f
+
+    0x3EF8:
+        name: Side-B Firing angle (radians) 
+        type: I
+
+    0x3EFC:
+        name: Side-B Initial speed 
+        type: f
+
+    0x3F00:
+        name: Side-B Acceleration 
+        type: f
+
+    0x3F04:
+        name: Side-B  ?? (read during startup) 
+        type: f
+
+    0x3F08:
+        name: Side-B Joystick sensitivity for maneuverability 
+        type: f
+
+    0x3F0C:
+        name: Side-B Up/Down maneuverability (1.4 degrees) 
+        type: f
+
+    0x3F10:
+        name: Side-B Maximum curve projectile can angle (high numbers allow reversing direction) (80 degrees) 
+        type: f
+
+    0x3F14:
+        name: Side-B Frames before explosion after releasing B 
+        type: f
+
+    0x3FC0:
+        name: Side-B Projectile lifetime 
+        type: f
+
+    0x3FC4:
+        name: Side-B Initial Hitbox Size multiplier 
+        type: f
+
+    0x3FC8:
+        name: Side-B Hitbox Growth multiplier 
+        type: f
+
+    0x3FCC:
+        name: Side-B Initial Damage 
+        type: f
+
+    0x3FD0:
+        name: Side-B Damage Growth Rate 
+        type: f
+
+    0x39B0:
+        name: Up-B horizontal momentum preservation (smaller = higher)? 
+        type: f
+
+    0x39B4:
+        name: Up-B vertical momentum preservation (smaller = higher)? 
+        type: f
+
+    0x39B8:
+        name: Up-B Vertical momentum preservation? 
+        type: f
+
+    0x39BC:
+        name: Up-B Something with momentum preservation? 
+        type: f
+
+    0x39C0:
+        name: Up-B Travel distance (in frames)? 
+        type: I
+
+    0x39C4:
+        name: Up-B Unknown 
+        type: f
+
+    0x39C8:
+        name: Up-B Unknown 
+        type: f
+
+    0x39CC:
+        name: Up-B Unknown 
+        type: f
+
+    0x39D0:
+        name: Up-B Unknown 
+        type: f
+
+    0x39D4:
+        name: Up-B Unknown 
+        type: f
+
+    0x39D8:
+        name: Up-B Unknown 
+        type: I
+
+    0x39DC:
+        name: Up-B Unknown 
+        type: f
+
+    0x39E0:
+        name: Up-B Unknown 
+        type: f
+
+    0x39E4:
+        name: Up-B Landing lag  
+        type: f
