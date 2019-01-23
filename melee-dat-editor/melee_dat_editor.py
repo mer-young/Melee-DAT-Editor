@@ -493,13 +493,11 @@ class ScriptEditor (QWidget):
                 menu.exec_(e.globalPos())
 
         def insert_event(self, pos, event):
-            self.insertItem(
-                    pos,
-                    self.item_from_event(
-                            event,
-                            self.item(pos).data(self.offset_role)
-                            )
-                    )
+            if self.item(pos) is None:
+                offset = self.start_offset
+            else:
+                offset = self.item(pos).data(self.offset_role)
+            self.insertItem(pos, self.item_from_event(event,offset))
             self.update_offsets()
 
         def popup_event_editor(self, row):
