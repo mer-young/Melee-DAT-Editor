@@ -28,7 +28,7 @@ import script
 
 
 __version__ = '0.1.2 Alpha'
-RELEASE_DATE = '16 January 2018'
+RELEASE_DATE = '22 January 2018'
 
 ABOUT_TEXT = f"""
 Melee Dat Editor
