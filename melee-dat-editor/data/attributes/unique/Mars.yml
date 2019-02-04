@@ -1,132 +1,100 @@
 # Marth
 
-length: 0x98
-
-0x0:
-    name: "Neutral-B Charge animation iterations to reach full charge (animation is 30 frames, so basically half-seconds)"
-    type: I
-
-0x4:
-    name: "Neutral-B Base damage"
-    type: I
-
-0x8:
-    name: "Neutral-B Damage added per charge animation iteration (again, basically half-seconds)"
-    type: I
-
-0xc:
-    name: "Neutral-B Unknown"
-    type: f
-
-0x10:
-    name: "Neutral-B Aerial horizontal deceleration"
-    type: f
-
-0x14:
-    name: "Neutral-B Unknown"
-    type: f
-
-0x18:
-    name: "Side-B Unknown"
-    type: f
-
-0x1c:
-    name: "Side-B Aerial vertical boost"
-    type: f
-
-0x20:
-    name: "Side-B Aerial horizontal deceleration"
-    type: f
-
-0x24:
-    name: "Side-B Gravity during move"
-    type: f
-
-0x28:
-    name: "Up-B Max horizontal air movement in freefall"
-    type: f
-
-0x2c:
-    name: "Up-B Landing lag"
-    type: f
-
-0x30:
-    name: "Up-B Unknown"
-    type: f
-
-0x34:
-    name: "Up-B Unknown"
-    type: f
-
-0x38:
-    name: "Up-B directionalization distance (displacement, not angle)"
-    type: f
-
-0x3c:
-    name: "Up-B directionalized pre-jump displacement (has a low max)"
-    type: f
-
-0x40:
-    name: "Up-B aerial jump height ratio (relative to ground version)"
-    type: f
-
-0x44:
-    name: "Up-B gravity after use"
-    type: f
-
-0x48:
-    name: "Up-B max fall speed after use"
-    type: f
-
-0x4c:
-    name: "Up-B Unknown"
-    type: f
-
-0x50:
-    name: "Down-B Unknown"
-    type: f
-
-0x54:
-    name: "Down-B Counter gravity"
-    type: f
-
-0x58:
-    name: "Down-B Counter max fall speed"
-    type: f
-
-0x5c:
-    name: "Down-B Unknown"
-    type: f
-
-0x60:
-    name: "Down-B Hitlag/Freeze frames on activation"
-    type: f
-
-0x64:
-    name: "Down-B Y-axis height of Counter collision box (positive int only)"
-    type: I
-
-0x68:
-    name: "Down-B X-axis movement of collision box (floating point)"
-    type: f
-
-0x6c:
-    name: "Down-B also affects Y-axis movement of bubble, maybe this is position and 392C is bone?"
-    type: f
-
-0x70:
-    name: "Down-B Z-axis movement of collision box (floating point)"
-    type: f
-
-0x74:
-    name: "Down-B Counter collision box size"
-    type: f
-
-0x78:
-    name: "Down-B Unknown"
-    type: f
-
-0x7c:
-    name: "Down-B affects length of sword trail"
-    type: f
-
+unique attributes:
+    length: 0x98
+    0x0:
+        name: "Neutral-B Charge animation iterations to reach full charge (animation is 30 frames, so basically half-seconds)"
+        type: I
+    0x4:
+        name: "Neutral-B Base damage"
+        type: I
+    0x8:
+        name: "Neutral-B Damage added per charge animation iteration (again, basically half-seconds)"
+        type: I
+    0xc:
+        name: "Neutral-B Unknown"
+        type: f
+    0x10:
+        name: "Neutral-B Aerial horizontal deceleration"
+        type: f
+    0x14:
+        name: "Neutral-B Unknown"
+        type: f
+    0x18:
+        name: "Side-B Unknown"
+        type: f
+    0x1c:
+        name: "Side-B Aerial vertical boost"
+        type: f
+    0x20:
+        name: "Side-B Aerial horizontal deceleration"
+        type: f
+    0x24:
+        name: "Side-B Gravity during move"
+        type: f
+    0x28:
+        name: "Up-B Max horizontal air movement in freefall"
+        type: f
+    0x2c:
+        name: "Up-B Landing lag"
+        type: f
+    0x30:
+        name: "Up-B Unknown"
+        type: f
+    0x34:
+        name: "Up-B Unknown"
+        type: f
+    0x38:
+        name: "Up-B directionalization distance (displacement, not angle)"
+        type: f
+    0x3c:
+        name: "Up-B directionalized pre-jump displacement (has a low max)"
+        type: f
+    0x40:
+        name: "Up-B aerial jump height ratio (relative to ground version)"
+        type: f
+    0x44:
+        name: "Up-B gravity after use"
+        type: f
+    0x48:
+        name: "Up-B max fall speed after use"
+        type: f
+    0x4c:
+        name: "Up-B Unknown"
+        type: f
+    0x50:
+        name: "Down-B Unknown"
+        type: f
+    0x54:
+        name: "Down-B Counter gravity"
+        type: f
+    0x58:
+        name: "Down-B Counter max fall speed"
+        type: f
+    0x5c:
+        name: "Down-B Unknown"
+        type: f
+    0x60:
+        name: "Down-B Hitlag/Freeze frames on activation"
+        type: f
+    0x64:
+        name: "Down-B Y-axis height of Counter collision box (positive int only)"
+        type: I
+    0x68:
+        name: "Down-B X-axis movement of collision box (floating point)"
+        type: f
+    0x6c:
+        name: "Down-B also affects Y-axis movement of bubble, maybe this is position and 392C is bone?"
+        type: f
+    0x70:
+        name: "Down-B Z-axis movement of collision box (floating point)"
+        type: f
+    0x74:
+        name: "Down-B Counter collision box size"
+        type: f
+    0x78:
+        name: "Down-B Unknown"
+        type: f
+    0x7c:
+        name: "Down-B affects length of sword trail"
+        type: f

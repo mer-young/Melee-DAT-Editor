@@ -1,76 +1,58 @@
 # Donkey Kong
 
-length: 0x74
-
-0x2c:
-    name: "Neutral-B Max arm swings How many arm swings to fully charge"
-    type: I
-
-0x30:
-    name: "Neutral-B Damage per arm swing First arm swing has no effect"
-    type: I
-
-0x34:
-    name: "Neutral-B Grounded charged punch horizontal velocity"
-    type: f
-
-0x38:
-    name: "Neutral-B Landing lag"
-    type: f
-
-0x3c:
-    name: "Neutral-B Unknown"
-    type: f
-
-0x40:
-    name: "Neutral-B Unknown"
-    type: f
-
-0x44:
-    name: "Side-B Aerial gravity"
-    type: f
-
-0x48:
-    name: "Side-B Unknown"
-    type: f
-
-0x4c:
-    name: "Up-B Aerial vertical velocity"
-    type: f
-
-0x50:
-    name: "Up-B Aerial gravity"
-    type: f
-
-0x54:
-    name: "Up-B Grounded horizontal velocity"
-    type: f
-
-0x58:
-    name: "Up-B Aerial horizontal velocity"
-    type: f
-
-0x5c:
-    name: "Up-B Grounded mobility"
-    type: f
-
-0x60:
-    name: "Up-B Aerial mobility"
-    type: f
-
-0x64:
-    name: "Up-B Landing lag"
-    type: f
-
-0x68:
-    name: "Down-B X offset of hitbox 1"
-    type: f
-
-0x6c:
-    name: "Down-B X offset of hitbox 2"
-    type: f
-
-0x70:
-    name: "Down-B Unknown"
-    type: f
-
+unique attributes:
+    length: 0x74
+    0x2c:
+        name: "Neutral-B Max arm swings How many arm swings to fully charge"
+        type: I
+    0x30:
+        name: "Neutral-B Damage per arm swing First arm swing has no effect"
+        type: I
+    0x34:
+        name: "Neutral-B Grounded charged punch horizontal velocity"
+        type: f
+    0x38:
+        name: "Neutral-B Landing lag"
+        type: f
+    0x3c:
+        name: "Neutral-B Unknown"
+        type: f
+    0x40:
+        name: "Neutral-B Unknown"
+        type: f
+    0x44:
+        name: "Side-B Aerial gravity"
+        type: f
+    0x48:
+        name: "Side-B Unknown"
+        type: f
+    0x4c:
+        name: "Up-B Aerial vertical velocity"
+        type: f
+    0x50:
+        name: "Up-B Aerial gravity"
+        type: f
+    0x54:
+        name: "Up-B Grounded horizontal velocity"
+        type: f
+    0x58:
+        name: "Up-B Aerial horizontal velocity"
+        type: f
+    0x5c:
+        name: "Up-B Grounded mobility"
+        type: f
+    0x60:
+        name: "Up-B Aerial mobility"
+        type: f
+    0x64:
+        name: "Up-B Landing lag"
+        type: f
+    0x68:
+        name: "Down-B X offset of hitbox 1"
+        type: f
+    0x6c:
+        name: "Down-B X offset of hitbox 2"
+        type: f
+    0x70:
+        name: "Down-B Unknown"
+        type: f

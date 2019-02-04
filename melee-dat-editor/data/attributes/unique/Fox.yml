@@ -1,210 +1,181 @@
-length: 0xd4
+# Fox
 
-0x0:
-    name: "Unknown Unknown"
-    type: f
+unique attributes:
+    length: 0xd4
+    0x0:
+        name: "Unknown Unknown"
+        type: f
+    0x4:
+        name: "Unknown Unknown"
+        type: f
+    0x8:
+        name: "Unknown Unknown"
+        type: f
+    0xc:
+        name: "Unknown Unknown"
+        type: f
+    0x10:
+        name: "Unknown Unknown"
+        type: I
+    0x14:
+        name: "Unknown Unknown"
+        type: f
+    0x18:
+        name: "Unknown Unknown"
+        type: I
+    0x1c:
+        name: "Neutral-B projectiles? Projectile ID"
+        type: I
+    0x20:
+        name: "Neutral-B projectiles? Blaster ID"
+        type: I
+    0x24:
+        name: "Unknown Unknown"
+        type: f
+    0x28:
+        name: "Unknown Unknown"
+        type: f
+    0x2c:
+        name: "Unknown Unknown"
+        type: f
+    0x30:
+        name: "Unknown Unknown"
+        type: f
+    0x34:
+        name: "Unknown Unknown"
+        type: f
+    0x38:
+        name: "Unknown Unknown"
+        type: f
+    0x3c:
+        name: "Unknown Unknown"
+        type: f
+    0x40:
+        name: "Unknown Unknown"
+        type: f
+    0x44:
+        name: "Unknown Unknown"
+        type: f
+    0x48:
+        name: "Unknown Unknown"
+        type: f
+    0x4c:
+        name: "Unknown Unknown"
+        type: f
+    0x50:
+        name: "Unknown Unknown"
+        type: f
+    0x54:
+        name: "Unknown Unknown"
+        type: f
+    0x58:
+        name: "Up-B Unknown"
+        type: f
+    0x5c:
+        name: "Up-B Aerial momentum preservation on startup?"
+        type: f
+    0x60:
+        name: "Up-B Momentum on startup?"
+        type: f
+    0x64:
+        name: "Up-B Default angle? (radians)"
+        type: f
+    0x68:
+        name: "Up-B How many frames before you stop traveling (does not affect distance past a certain point)"
+        type: f
+    0x6c:
+        name: "Up-B Unknown"
+        type: I
+    0x70:
+        name: "Up-B Something with distance? Perhaps frames before slowing down?"
+        type: f
+    0x74:
+        name: "Up-B Speed of travel/distance traveled"
+        type: f
+    0x78:
+        name: "Up-B Max momentum to stop at"
+        type: f
+    0x7c:
+        name: "Up-B Unknown"
+        type: f
+    0x80:
+        name: "Up-B Something to do with angle when hitting ground?"
+        type: f
+    0x84:
+        name: "Up-B How far you go when hitting ground angled"
+        type: f
+    0x88:
+        name: "Up-B Unknown"
+        type: f
+    0x8c:
+        name: "Up-B Unknown"
+        type: f
+    0x90:
+        name: "Up-B Landing lag?"
+        type: f
+    0x94:
+        name: "Up-B Unknown"
+        type: f
+    0x98:
+        name: "Unknown Unknown"
+        type: f
+    0x9c:
+        name: "Unknown Unknown"
+        type: f
+    0xa0:
+        name: "Unknown Unknown"
+        type: f
+    0xa4:
+        name: "Unknown Unknown"
+        type: I
+    0xa8:
+        name: "Unknown Unknown"
+        type: f
+    0xac:
+        name: "Unknown Unknown"
+        type: f
+    0xb0:
+        name: "Unknown Unknown"
+        type: I
+    0xb4:
+        name: "Down-B? Max damage reflectable"
+        type: I
+    0xb8:
+        name: "Down-B? Reflection bubble x-pos"
+        type: I
+    0xbc:
+        name: "Down-B? Reflection bubble y-pos"
+        type: f
+    0xc0:
+        name: "Down-B? Reflection bubble z-pos"
+        type: I
+    0xc4:
+        name: "Down-B? Reflection bubble radius"
+        type: f
+    0xc8:
+        name: "Down-B? Reflection damage multiplier"
+        type: f
+    0xcc:
+        name: "Down-B? Reflection speed multiplier"
+        type: f
 
-0x4:
-    name: "Unknown Unknown"
-    type: f
+articles:
+    - name: Laser
+      attributes:
+          0x0:
+              name: Duration
+              type: f
+          0x4:
+              name: Scale?
+              type: f
+      variants:
+          - Normal
+          - Up/Back/Down Throws
 
-0x8:
-    name: "Unknown Unknown"
-    type: f
+    - name: Gun
 
-0xc:
-    name: "Unknown Unknown"
-    type: f
-
-0x10:
-    name: "Unknown Unknown"
-    type: I
-
-0x14:
-    name: "Unknown Unknown"
-    type: f
-
-0x18:
-    name: "Unknown Unknown"
-    type: I
-
-0x1c:
-    name: "Neutral-B projectiles? Projectile ID"
-    type: I
-
-0x20:
-    name: "Neutral-B projectiles? Blaster ID"
-    type: I
-
-0x24:
-    name: "Unknown Unknown"
-    type: f
-
-0x28:
-    name: "Unknown Unknown"
-    type: f
-
-0x2c:
-    name: "Unknown Unknown"
-    type: f
-
-0x30:
-    name: "Unknown Unknown"
-    type: f
-
-0x34:
-    name: "Unknown Unknown"
-    type: f
-
-0x38:
-    name: "Unknown Unknown"
-    type: f
-
-0x3c:
-    name: "Unknown Unknown"
-    type: f
-
-0x40:
-    name: "Unknown Unknown"
-    type: f
-
-0x44:
-    name: "Unknown Unknown"
-    type: f
-
-0x48:
-    name: "Unknown Unknown"
-    type: f
-
-0x4c:
-    name: "Unknown Unknown"
-    type: f
-
-0x50:
-    name: "Unknown Unknown"
-    type: f
-
-0x54:
-    name: "Unknown Unknown"
-    type: f
-
-0x58:
-    name: "Up-B Unknown"
-    type: f
-
-0x5c:
-    name: "Up-B Aerial momentum preservation on startup?"
-    type: f
-
-0x60:
-    name: "Up-B Momentum on startup?"
-    type: f
-
-0x64:
-    name: "Up-B Default angle? (radians)"
-    type: f
-
-0x68:
-    name: "Up-B How many frames before you stop traveling (does not affect distance past a certain point)"
-    type: f
-
-0x6c:
-    name: "Up-B Unknown"
-    type: I
-
-0x70:
-    name: "Up-B Something with distance? Perhaps frames before slowing down?"
-    type: f
-
-0x74:
-    name: "Up-B Speed of travel/distance traveled"
-    type: f
-
-0x78:
-    name: "Up-B Max momentum to stop at"
-    type: f
-
-0x7c:
-    name: "Up-B Unknown"
-    type: f
-
-0x80:
-    name: "Up-B Something to do with angle when hitting ground?"
-    type: f
-
-0x84:
-    name: "Up-B How far you go when hitting ground angled"
-    type: f
-
-0x88:
-    name: "Up-B Unknown"
-    type: f
-
-0x8c:
-    name: "Up-B Unknown"
-    type: f
-
-0x90:
-    name: "Up-B Landing lag?"
-    type: f
-
-0x94:
-    name: "Up-B Unknown"
-    type: f
-
-0x98:
-    name: "Unknown Unknown"
-    type: f
-
-0x9c:
-    name: "Unknown Unknown"
-    type: f
-
-0xa0:
-    name: "Unknown Unknown"
-    type: f
-
-0xa4:
-    name: "Unknown Unknown"
-    type: I
-
-0xa8:
-    name: "Unknown Unknown"
-    type: f
-
-0xac:
-    name: "Unknown Unknown"
-    type: f
-
-0xb0:
-    name: "Unknown Unknown"
-    type: I
-
-0xb4:
-    name: "Down-B? Max damage reflectable"
-    type: I
-
-0xb8:
-    name: "Down-B? Reflection bubble x-pos"
-    type: I
-
-0xbc:
-    name: "Down-B? Reflection bubble y-pos"
-    type: f
-
-0xc0:
-    name: "Down-B? Reflection bubble z-pos"
-    type: I
-
-0xc4:
-    name: "Down-B? Reflection bubble radius"
-    type: f
-
-0xc8:
-    name: "Down-B? Reflection damage multiplier"
-    type: f
-
-0xcc:
-    name: "Down-B? Reflection speed multiplier"
-    type: f
-
+    - name: Illusion
+      variants:
+          - Grounded
+          - Aerial
+          - Unknown

@@ -25,14 +25,16 @@ def common_table(dat_type):
 def unique_table(character_short_name):
     try:
         fname = os.path.join(unique_folder, character_short_name + '.yml')
-        return get_table(fname)
+        return get_table(fname, key='unique attributes')
     except FileNotFoundError:
         fname = os.path.join(unique_folder, '_default.yml')
-        return get_table(fname)
+        return get_table(fname, key='unique attributes')
 
 
-def get_table(fname):
+def get_table(fname, key=None):
     data = yaml.safe_load(open(fname, 'r'))
+    if key is not None:
+        data = data[key]
     try:
         length = data.pop('length')
     except KeyError:

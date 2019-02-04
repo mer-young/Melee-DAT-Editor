@@ -1,302 +1,235 @@
-length: 0x138
-
-0x0:
-    name: "Double Jump?? Unknown"
-    type: I
-
-0x4:
-    name: "Double Jump?? Unknown"
-    type: f
-
-0x8:
-    name: "Double Jump?? Knockback resistance?"
-    type: f
-
-0xc:
-    name: "Double Jump?? Unknown"
-    type: I
-
-0x10:
-    name: "Neutral-B Initial horizontal momentum"
-    type: f
-
-0x14:
-    name: "Neutral-B Initial vertical momentum"
-    type: f
-
-0x18:
-    name: "Neutral-B Damage multiplier when egged"
-    type: f
-
-0x1c:
-    name: "Neutral-B I don't know but it can make it upside down? wtf"
-    type: f
-
-0x20:
-    name: "Neutral-B Egg lay growing time"
-    type: f
-
-0x24:
-    name: "Neutral-B Part of breakout formula (lower = harder)"
-    type: f
-
-0x28:
-    name: "Neutral-B Something with button mashing time?"
-    type: f
-
-0x2c:
-    name: "Neutral-B Something with egg wiggling?"
-    type: f
-
-0x30:
-    name: "Neutral-B Unknown"
-    type: f
-
-0x34:
-    name: "Neutral-B Unknown"
-    type: f
-
-0x38:
-    name: "Neutral-B Enemies invincibility upon breaking out of egg (frames). 0 = infinite"
-    type: I
-
-0x3c:
-    name: "Neutral-B horizontal velocity on breakout?"
-    type: I
-
-0x40:
-    name: "Neutral-B vertical velocity on breakout?"
-    type: f
-
-0x44:
-    name: "Neutral-B something to do with breakout time"
-    type: f
-
-0x48:
-    name: "Side-B Max length (frames)"
-    type: I
-
-0x4c:
-    name: "Side-B Min length (frames)"
-    type: I
-
-0x50:
-    name: "Side-B Unknown"
-    type: I
-
-0x54:
-    name: "Side-B Unknown"
-    type: f
-
-0x58:
-    name: "Side-B Initial horizontal speed"
-    type: I
-
-0x5c:
-    name: "Side-B Initial vertical speed"
-    type: f
-
-0x60:
-    name: "Side-B Unknown"
-    type: f
-
-0x64:
-    name: "Side-B rolling momentum when you land for the first time"
-    type: f
-
-0x68:
-    name: "Side-B Unknown"
-    type: f
-
-0x6c:
-    name: "Side-B gravity"
-    type: f
-
-0x70:
-    name: "Side-B ending gravity"
-    type: f
-
-0x74:
-    name: "Side-B base rolling momentum?"
-    type: f
-
-0x78:
-    name: "Side-B rolling momentum multiplier?"
-    type: f
-
-0x7c:
-    name: "Side-B something with rolling momentum?"
-    type: f
-
-0x80:
-    name: "Side-B something with rolling momentum?"
-    type: f
-
-0x84:
-    name: "Side-B Unknown"
-    type: f
-
-0x88:
-    name: "Side-B Unknown"
-    type: f
-
-0x8c:
-    name: "Side-B Unknown"
-    type: f
-
-0x90:
-    name: "Side-B air acceleration"
-    type: f
-
-0x94:
-    name: "Side-B Unknown"
-    type: f
-
-0x98:
-    name: "Side-B Unknown"
-    type: f
-
-0x9c:
-    name: "Side-B Unknown"
-    type: f
-
-0xa0:
-    name: "Side-B Unknown"
-    type: f
-
-0xa4:
-    name: "Side-B Unknown"
-    type: I
-
-0xa8:
-    name: "Side-B Unknown"
-    type: f
-
-0xac:
-    name: "Side-B Unknown"
-    type: f
-
-0xb0:
-    name: "Side-B Unknown"
-    type: f
-
-0xb4:
-    name: "Side-B bounce velocity multiplier"
-    type: f
-
-0xb8:
-    name: "Side-B Unknown"
-    type: f
-
-0xbc:
-    name: "Side-B Unknown"
-    type: f
-
-0xc0:
-    name: "Side-B Used in damage formula?"
-    type: f
-
-0xc4:
-    name: "Side-B Unknown"
-    type: f
-
-0xc8:
-    name: "Side-B Unknown"
-    type: f
-
-0xcc:
-    name: "Side-B Unknown"
-    type: f
-
-0xd0:
-    name: "Side-B ending air acceleration?"
-    type: f
-
-0xd4:
-    name: "Side-B Unknown"
-    type: f
-
-0xd8:
-    name: "Side-B Unknown"
-    type: f
-
-0xdc:
-    name: "Side-B Unknown"
-    type: I
-
-0xe0:
-    name: "Side-B ending horizontal speed?"
-    type: f
-
-0xe4:
-    name: "Side-B (45 degrees)"
-    type: f
-
-0xe8:
-    name: "Side-B something to do with freefall"
-    type: f
-
-0xec:
-    name: "Up-B affects angle of thrown egg backward and forward? (radians)"
-    type: f
-
-0xf0:
-    name: "Up-B affects angle of thrown egg backward and forward? (30 degrees)"
-    type: f
-
-0xf4:
-    name: "Up-B affects angle of thrown egg backward and forward? (4 degrees)"
-    type: f
-
-0xf8:
-    name: "Up-B throwing angle? (73 degrees)"
-    type: f
-
-0xfc:
-    name: "Up-B base speed"
-    type: f
-
-0x100:
-    name: "Up-B speed scaling based on button hold?"
-    type: f
-
-0x104:
-    name: "Up-B creation X pos"
-    type: f
-
-0x108:
-    name: "Up-B creation Y pos"
-    type: f
-
-0x10c:
-    name: "Up-B Egg air friction?"
-    type: f
-
-0x110:
-    name: "Up-B base egg spin"
-    type: f
-
-0x114:
-    name: "Down-B Ground Pound drop speed?"
-    type: f
-
-0x118:
-    name: "Down-B Ground Pound stars X pos"
-    type: f
-
-0x11c:
-    name: "Down-B Ground Pound stars Y pos"
-    type: f
-
-0x120:
-    name: "Down-B Unknown"
-    type: f
-
-0x124:
-    name: "Down-B Unknown"
-    type: f
-
-0x128:
-    name: "Down-B Unknown"
-    type: f
-
+# Yoshi
+
+unique attributes:
+    length: 0x138
+    0x0:
+        name: "Double Jump?? Unknown"
+        type: I
+    0x4:
+        name: "Double Jump?? Unknown"
+        type: f
+    0x8:
+        name: "Double Jump?? Knockback resistance?"
+        type: f
+    0xc:
+        name: "Double Jump?? Unknown"
+        type: I
+    0x10:
+        name: "Neutral-B Initial horizontal momentum"
+        type: f
+    0x14:
+        name: "Neutral-B Initial vertical momentum"
+        type: f
+    0x18:
+        name: "Neutral-B Damage multiplier when egged"
+        type: f
+    0x1c:
+        name: "Neutral-B I don't know but it can make it upside down? wtf"
+        type: f
+    0x20:
+        name: "Neutral-B Egg lay growing time"
+        type: f
+    0x24:
+        name: "Neutral-B Part of breakout formula (lower = harder)"
+        type: f
+    0x28:
+        name: "Neutral-B Something with button mashing time?"
+        type: f
+    0x2c:
+        name: "Neutral-B Something with egg wiggling?"
+        type: f
+    0x30:
+        name: "Neutral-B Unknown"
+        type: f
+    0x34:
+        name: "Neutral-B Unknown"
+        type: f
+    0x38:
+        name: "Neutral-B Enemies invincibility upon breaking out of egg (frames). 0 = infinite"
+        type: I
+    0x3c:
+        name: "Neutral-B horizontal velocity on breakout?"
+        type: I
+    0x40:
+        name: "Neutral-B vertical velocity on breakout?"
+        type: f
+    0x44:
+        name: "Neutral-B something to do with breakout time"
+        type: f
+    0x48:
+        name: "Side-B Max length (frames)"
+        type: I
+    0x4c:
+        name: "Side-B Min length (frames)"
+        type: I
+    0x50:
+        name: "Side-B Unknown"
+        type: I
+    0x54:
+        name: "Side-B Unknown"
+        type: f
+    0x58:
+        name: "Side-B Initial horizontal speed"
+        type: I
+    0x5c:
+        name: "Side-B Initial vertical speed"
+        type: f
+    0x60:
+        name: "Side-B Unknown"
+        type: f
+    0x64:
+        name: "Side-B rolling momentum when you land for the first time"
+        type: f
+    0x68:
+        name: "Side-B Unknown"
+        type: f
+    0x6c:
+        name: "Side-B gravity"
+        type: f
+    0x70:
+        name: "Side-B ending gravity"
+        type: f
+    0x74:
+        name: "Side-B base rolling momentum?"
+        type: f
+    0x78:
+        name: "Side-B rolling momentum multiplier?"
+        type: f
+    0x7c:
+        name: "Side-B something with rolling momentum?"
+        type: f
+    0x80:
+        name: "Side-B something with rolling momentum?"
+        type: f
+    0x84:
+        name: "Side-B Unknown"
+        type: f
+    0x88:
+        name: "Side-B Unknown"
+        type: f
+    0x8c:
+        name: "Side-B Unknown"
+        type: f
+    0x90:
+        name: "Side-B air acceleration"
+        type: f
+    0x94:
+        name: "Side-B Unknown"
+        type: f
+    0x98:
+        name: "Side-B Unknown"
+        type: f
+    0x9c:
+        name: "Side-B Unknown"
+        type: f
+    0xa0:
+        name: "Side-B Unknown"
+        type: f
+    0xa4:
+        name: "Side-B Unknown"
+        type: I
+    0xa8:
+        name: "Side-B Unknown"
+        type: f
+    0xac:
+        name: "Side-B Unknown"
+        type: f
+    0xb0:
+        name: "Side-B Unknown"
+        type: f
+    0xb4:
+        name: "Side-B bounce velocity multiplier"
+        type: f
+    0xb8:
+        name: "Side-B Unknown"
+        type: f
+    0xbc:
+        name: "Side-B Unknown"
+        type: f
+    0xc0:
+        name: "Side-B Used in damage formula?"
+        type: f
+    0xc4:
+        name: "Side-B Unknown"
+        type: f
+    0xc8:
+        name: "Side-B Unknown"
+        type: f
+    0xcc:
+        name: "Side-B Unknown"
+        type: f
+    0xd0:
+        name: "Side-B ending air acceleration?"
+        type: f
+    0xd4:
+        name: "Side-B Unknown"
+        type: f
+    0xd8:
+        name: "Side-B Unknown"
+        type: f
+    0xdc:
+        name: "Side-B Unknown"
+        type: I
+    0xe0:
+        name: "Side-B ending horizontal speed?"
+        type: f
+    0xe4:
+        name: "Side-B (45 degrees)"
+        type: f
+    0xe8:
+        name: "Side-B something to do with freefall"
+        type: f
+    0xec:
+        name: "Up-B affects angle of thrown egg backward and forward? (radians)"
+        type: f
+    0xf0:
+        name: "Up-B affects angle of thrown egg backward and forward? (30 degrees)"
+        type: f
+    0xf4:
+        name: "Up-B affects angle of thrown egg backward and forward? (4 degrees)"
+        type: f
+    0xf8:
+        name: "Up-B throwing angle? (73 degrees)"
+        type: f
+    0xfc:
+        name: "Up-B base speed"
+        type: f
+    0x100:
+        name: "Up-B speed scaling based on button hold?"
+        type: f
+    0x104:
+        name: "Up-B creation X pos"
+        type: f
+    0x108:
+        name: "Up-B creation Y pos"
+        type: f
+    0x10c:
+        name: "Up-B Egg air friction?"
+        type: f
+    0x110:
+        name: "Up-B base egg spin"
+        type: f
+    0x114:
+        name: "Down-B Ground Pound drop speed?"
+        type: f
+    0x118:
+        name: "Down-B Ground Pound stars X pos"
+        type: f
+    0x11c:
+        name: "Down-B Ground Pound stars Y pos"
+        type: f
+    0x120:
+        name: "Down-B Unknown"
+        type: f
+    0x124:
+        name: "Down-B Unknown"
+        type: f
+    0x128:
+        name: "Down-B Unknown"
+        type: f
+
+articles:
+    - name: Egg (Egg Throw)
+    - name: Down-B Star
+    - Unknown
+    - Name: Egg (Egg Lay)

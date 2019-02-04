@@ -1,198 +1,169 @@
-length: 0xdc
+# Ness
 
-0x0:
-    name: "Neutral-B Unknown"
-    type: I
+unique attributes:
+    length: 0xdc
+    0x0:
+        name: "Neutral-B Unknown"
+        type: I
+    0x4:
+        name: "Neutral-B Cooldown after releasing PK Flash (frames)"
+        type: I
+    0x8:
+        name: "Neutral-B Unknown"
+        type: I
+    0xc:
+        name: "Neutral-B Unknown"
+        type: I
+    0x10:
+        name: "Neutral-B Unknown"
+        type: f
+    0x14:
+        name: "Neutral-B Aerial vertical momentum on charge"
+        type: f
+    0x18:
+        name: "Neutral-B Unknown"
+        type: f
+    0x1c:
+        name: "Neutral-B Landing Lag"
+        type: f
+    0x20:
+        name: "Side-B Aerial launch trajectory (radians)"
+        type: f
+    0x24:
+        name: "Side-B Aerial Horizontal Velocity"
+        type: f
+    0x28:
+        name: "Side-B Grounded launch trajectory (radians)"
+        type: f
+    0x2c:
+        name: "Side-B Ground Horizontal Velocity?"
+        type: f
+    0x30:
+        name: "Side-B X-Offset"
+        type: f
+    0x34:
+        name: "Side-B Y-Offset"
+        type: f
+    0x38:
+        name: "Side-B Landing Lag"
+        type: f
+    0x3c:
+        name: "Up-B Unknown"
+        type: f
+    0x40:
+        name: "Up-B Duration of PKT animation after projectile dies?"
+        type: I
+    0x44:
+        name: "Up-B Unknown"
+        type: I
+    0x48:
+        name: "Up-B How long before you fall during UpB hold in air?"
+        type: I
+    0x4c:
+        name: "Up-B Unknown"
+        type: f
+    0x50:
+        name: "Up-B UpB holding falling acceleration"
+        type: f
+    0x54:
+        name: "Up-B PKT2 Momentum"
+        type: f
+    0x58:
+        name: "Up-B Unknown"
+        type: f
+    0x5c:
+        name: "Up-B PKT2 deceleration rate?"
+        type: f
+    0x60:
+        name: "Up-B Unknown"
+        type: f
+    0x64:
+        name: "Up-B Unknown"
+        type: f
+    0x68:
+        name: "Up-B Unknown"
+        type: f
+    0x70:
+        name: "Up-B Landing Lag"
+        type: f
+    0x74:
+        name: "Down-B Frames Down+B is held after releasing B"
+        type: f
+    0x78:
+        name: "Down-B Unknown"
+        type: f
+    0x7c:
+        name: "Down-B Momentum Preservation?"
+        type: f
+    0x80:
+        name: "Down-B Momentum Preservation?"
+        type: f
+    0x84:
+        name: "Down-B Unknown"
+        type: I
+    0x88:
+        name: "Down-B Unknown"
+        type: f
+    0x8c:
+        name: "Down-B Fall speed"
+        type: f
+    0x90:
+        name: "Down-B Unknown"
+        type: f
+    0x94:
+        name: "Down-B Unknown"
+        type: f
+    0x98:
+        name: "Down-B Unknown"
+        type: I
+    0x9c:
+        name: "Down-B Absorption Collision X Offset"
+        type: f
+    0xa0:
+        name: "Down-B Absorption Collision Y Offset"
+        type: f
+    0xa4:
+        name: "Down-B Absorption Collision Z Offset"
+        type: f
+    0xa8:
+        name: "Down-B Absorption Collision Size (?)"
+        type: f
+    0xbc:
+        name: "F-Smash Max damage reflectable"
+        type: I
+    0xc0:
+        name: "F-Smash Reflection bubble x-pos"
+        type: I
+    0xc4:
+        name: "F-Smash Reflection bubble y-pos"
+        type: f
+    0xc8:
+        name: "F-Smash Reflection bubble z-pos"
+        type: I
+    0xcc:
+        name: "F-Smash Reflection bubble radius"
+        type: f
+    0xd0:
+        name: "F-Smash Reflection damage multiplier"
+        type: f
+    0xd4:
+        name: "F-Smash Reflection speed multiplier"
+        type: f
 
-0x4:
-    name: "Neutral-B Cooldown after releasing PK Flash (frames)"
-    type: I
-
-0x8:
-    name: "Neutral-B Unknown"
-    type: I
-
-0xc:
-    name: "Neutral-B Unknown"
-    type: I
-
-0x10:
-    name: "Neutral-B Unknown"
-    type: f
-
-0x14:
-    name: "Neutral-B Aerial vertical momentum on charge"
-    type: f
-
-0x18:
-    name: "Neutral-B Unknown"
-    type: f
-
-0x1c:
-    name: "Neutral-B Landing Lag"
-    type: f
-
-0x20:
-    name: "Side-B Aerial launch trajectory (radians)"
-    type: f
-
-0x24:
-    name: "Side-B Aerial Horizontal Velocity"
-    type: f
-
-0x28:
-    name: "Side-B Grounded launch trajectory (radians)"
-    type: f
-
-0x2c:
-    name: "Side-B Ground Horizontal Velocity?"
-    type: f
-
-0x30:
-    name: "Side-B X-Offset"
-    type: f
-
-0x34:
-    name: "Side-B Y-Offset"
-    type: f
-
-0x38:
-    name: "Side-B Landing Lag"
-    type: f
-
-0x3c:
-    name: "Up-B Unknown"
-    type: f
-
-0x40:
-    name: "Up-B Duration of PKT animation after projectile dies?"
-    type: I
-
-0x44:
-    name: "Up-B Unknown"
-    type: I
-
-0x48:
-    name: "Up-B How long before you fall during UpB hold in air?"
-    type: I
-
-0x4c:
-    name: "Up-B Unknown"
-    type: f
-
-0x50:
-    name: "Up-B UpB holding falling acceleration"
-    type: f
-
-0x54:
-    name: "Up-B PKT2 Momentum"
-    type: f
-
-0x58:
-    name: "Up-B Unknown"
-    type: f
-
-0x5c:
-    name: "Up-B PKT2 deceleration rate?"
-    type: f
-
-0x60:
-    name: "Up-B Unknown"
-    type: f
-
-0x64:
-    name: "Up-B Unknown"
-    type: f
-
-0x68:
-    name: "Up-B Unknown"
-    type: f
-
-0x70:
-    name: "Up-B Landing Lag"
-    type: f
-
-0x74:
-    name: "Down-B Frames Down+B is held after releasing B"
-    type: f
-
-0x78:
-    name: "Down-B Unknown"
-    type: f
-
-0x7c:
-    name: "Down-B Momentum Preservation?"
-    type: f
-
-0x80:
-    name: "Down-B Momentum Preservation?"
-    type: f
-
-0x84:
-    name: "Down-B Unknown"
-    type: I
-
-0x88:
-    name: "Down-B Unknown"
-    type: f
-
-0x8c:
-    name: "Down-B Fall speed"
-    type: f
-
-0x90:
-    name: "Down-B Unknown"
-    type: f
-
-0x94:
-    name: "Down-B Unknown"
-    type: f
-
-0x98:
-    name: "Down-B Unknown"
-    type: I
-
-0x9c:
-    name: "Down-B Absorption Collision X Offset"
-    type: f
-
-0xa0:
-    name: "Down-B Absorption Collision Y Offset"
-    type: f
-
-0xa4:
-    name: "Down-B Absorption Collision Z Offset"
-    type: f
-
-0xa8:
-    name: "Down-B Absorption Collision Size (?)"
-    type: f
-
-0xbc:
-    name: "F-Smash Max damage reflectable"
-    type: I
-
-0xc0:
-    name: "F-Smash Reflection bubble x-pos"
-    type: I
-
-0xc4:
-    name: "F-Smash Reflection bubble y-pos"
-    type: f
-
-0xc8:
-    name: "F-Smash Reflection bubble z-pos"
-    type: I
-
-0xcc:
-    name: "F-Smash Reflection bubble radius"
-    type: f
-
-0xd0:
-    name: "F-Smash Reflection damage multiplier"
-    type: f
-
-0xd4:
-    name: "F-Smash Reflection speed multiplier"
-    type: f
-
+articles:
+    - name: PK Fire Projectile
+    - name: PK Fire Pillar
+      variants:
+          - Impact?
+          - Loop?
+    - name: PK Flash
+      variants:
+          - Spawn?
+          - Explosion?
+          - Unknown
+    - name: PK Thunder Startup?
+    - name: PK Thunder Loop 1?
+    - name: PK Thunder Loop 2?
+    - name: PK Thunder Loop 3?
+    - name: PK Thunder Loop 4?
+    - name: PK Flash Explosion

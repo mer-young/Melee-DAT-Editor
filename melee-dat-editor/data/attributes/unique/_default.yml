@@ -1,3 +1,6 @@
-0x0:
-    name: (Undefined)
-    type: f
+# Used if character is unknown
+
+unique attributes:
+    0x0:
+        name: (Undefined)
+        type: f

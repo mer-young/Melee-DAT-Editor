@@ -1,102 +1,86 @@
-length: 0xc0
+# Peach
 
-0xc:
-    name: "Float Float duration (frames)"
-    type: f
+unique attributes:
+    length: 0xc0
+    0xc:
+        name: "Float Float duration (frames)"
+        type: f
+    0x10:
+        name: "Down-B items Number of item data sets to load (starting @3A54)?"
+        type: I
+    0x14:
+        name: "Down-B items Odds for getting an Item (1 out of this many)"
+        type: I
+    0x18:
+        name: "Down-B items Item 1 odds"
+        type: I
+    0x1c:
+        name: "Down-B items Item 1 ID"
+        type: I
+    0x20:
+        name: "Down-B items Item 2 odds"
+        type: I
+    0x24:
+        name: "Down-B items Item 2 ID"
+        type: I
+    0x28:
+        name: "Down-B items Item 3 odds"
+        type: I
+    0x2c:
+        name: "Down-B items Item 3 ID"
+        type: I
+    0x44:
+        name: "Side-B Horizontal Travel Momentum (tilt)"
+        type: f
+    0x48:
+        name: "Side-B Horizontal Travel Momentum (smash)"
+        type: f
+    0x4c:
+        name: "Side-B Vertical Travel Momentum"
+        type: f
+    0x50:
+        name: "Side-B Unknown"
+        type: f
+    0x54:
+        name: "Side-B Unknown"
+        type: f
+    0x58:
+        name: "Side-B Unknown"
+        type: f
+    0x5c:
+        name: "Side-B Unknown"
+        type: f
+    0x60:
+        name: "Side-B Unknown"
+        type: f
+    0x64:
+        name: "Side-B Vertical Boost During Recoil"
+        type: f
+    0x68:
+        name: "Side-B Unknown"
+        type: f
+    0x6c:
+        name: "Side-B Unknown"
+        type: f
+    0x70:
+        name: "Up-B Unknown"
+        type: f
+    0x74:
+        name: "Up-B Unknown"
+        type: f
+    0x78:
+        name: "Up-B Unknown"
+        type: f
+    0x7c:
+        name: "Up-B Unknown"
+        type: f
+    0x80:
+        name: "Up-B Amount to which the launch may be directed (larger = significantly more control)"
+        type: f
 
-0x10:
-    name: "Down-B items Number of item data sets to load (starting @3A54)?"
-    type: I
-
-0x14:
-    name: "Down-B items Odds for getting an Item (1 out of this many)"
-    type: I
-
-0x18:
-    name: "Down-B items Item 1 odds"
-    type: I
-
-0x1c:
-    name: "Down-B items Item 1 ID"
-    type: I
-
-0x20:
-    name: "Down-B items Item 2 odds"
-    type: I
-
-0x24:
-    name: "Down-B items Item 2 ID"
-    type: I
-
-0x28:
-    name: "Down-B items Item 3 odds"
-    type: I
-
-0x2c:
-    name: "Down-B items Item 3 ID"
-    type: I
-
-0x44:
-    name: "Side-B Horizontal Travel Momentum (tilt)"
-    type: f
-
-0x48:
-    name: "Side-B Horizontal Travel Momentum (smash)"
-    type: f
-
-0x4c:
-    name: "Side-B Vertical Travel Momentum"
-    type: f
-
-0x50:
-    name: "Side-B Unknown"
-    type: f
-
-0x54:
-    name: "Side-B Unknown"
-    type: f
-
-0x58:
-    name: "Side-B Unknown"
-    type: f
-
-0x5c:
-    name: "Side-B Unknown"
-    type: f
-
-0x60:
-    name: "Side-B Unknown"
-    type: f
-
-0x64:
-    name: "Side-B Vertical Boost During Recoil"
-    type: f
-
-0x68:
-    name: "Side-B Unknown"
-    type: f
-
-0x6c:
-    name: "Side-B Unknown"
-    type: f
-
-0x70:
-    name: "Up-B Unknown"
-    type: f
-
-0x74:
-    name: "Up-B Unknown"
-    type: f
-
-0x78:
-    name: "Up-B Unknown"
-    type: f
-
-0x7c:
-    name: "Up-B Unknown"
-    type: f
-
-0x80:
-    name: "Up-B Amount to which the launch may be directed (larger = significantly more control)"
-    type: f
-
+articles:
+    - name: Bomber Explosion
+    - name: Turnip
+    - name: Parasol
+    - name: Toad
+    - name: Toad Cloud

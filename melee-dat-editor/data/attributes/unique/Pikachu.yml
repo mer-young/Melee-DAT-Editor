@@ -1,182 +1,144 @@
-length: 0xf8
+# Pikachu
 
-0x24:
-    name: "Side-B Charge time"
-    type: f
+unique attributes:
+    length: 0xf8
+    0x24:
+        name: "Side-B Charge time"
+        type: f
+    0x28:
+        name: "Side-B Base damage"
+        type: f
+    0x2c:
+        name: "Side-B Damage multiplier"
+        type: f
+    0x38:
+        name: "Side-B Falling speed"
+        type: f
+    0x3c:
+        name: "Side-B Base horizontal firing momentum"
+        type: f
+    0x40:
+        name: "Side-B Horizontal momentum multiplier"
+        type: f
+    0x44:
+        name: "Side-B Base vertical firing momentum"
+        type: f
+    0x48:
+        name: "Side-B Vertical momentum multiplier"
+        type: f
+    0x4c:
+        name: "Side-B  ?? read on release"
+        type: f
+    0x50:
+        name: "Side-B Unknown"
+        type: f
+    0x54:
+        name: "Side-B Unknown"
+        type: f
+    0x58:
+        name: "Side-B Unknown"
+        type: f
+    0x5c:
+        name: "Up-B  ?? read on startup"
+        type: I
+    0x60:
+        name: "Up-B Travel distance"
+        type: I
+    0x64:
+        name: "Up-B Momentum subtracted frames 11-13 during startup"
+        type: f
+    0x68:
+        name: "Up-B Model rotation traveling on ground"
+        type: f
+    0x6c:
+        name: "Up-B Model width multiplier traveling on ground"
+        type: f
+    0x70:
+        name: "Up-B Model height multiplier traveling on ground"
+        type: f
+    0x74:
+        name: "Up-B Model length multiplier traveling on ground"
+        type: f
+    0x78:
+        name: "Up-B Model rotation traveling in air"
+        type: f
+    0x7c:
+        name: "Up-B Model width multiplier traveling in air"
+        type: f
+    0x80:
+        name: "Up-B Model height multiplier traveling in air"
+        type: f
+    0x84:
+        name: "Up-B Model length multiplier traveling in air"
+        type: f
+    0x88:
+        name: "Up-B  ?? Read when air -> ground"
+        type: f
+    0x8c:
+        name: "Up-B Aiming sensitivity"
+        type: f
+    0x90:
+        name: "Up-B Starting momentum of each segment"
+        type: f
+    0x94:
+        name: "Up-B Momentum added to 3798"
+        type: f
+    0x98:
+        name: "Up-B Second segment length multiplier"
+        type: f
+    0x9c:
+        name: "Up-B Horizontal momentum preservation"
+        type: f
+    0xa0:
+        name: "Up-B Minimum direction change (degrees) for grounded second segment"
+        type: I
+    0xa4:
+        name: "Up-B Horizontal momentum subtracted each frame after frame 5 of second segment"
+        type: f
+    0xa8:
+        name: "Up-B Minimum direction change (degrees) for aerial second segment"
+        type: I
+    0xac:
+        name: "Up-B Unknown (Not read)"
+        type: f
+    0xb0:
+        name: "Up-B Landing lag"
+        type: f
+    0xb4:
+        name: "Down-B Vertical momentum on aerial thunder hit"
+        type: f
+    0xb8:
+        name: "Down-B Something to do with rising from an aerial thunder hit?"
+        type: f
+    0xbc:
+        name: "Down-B Something to do with vertical range for thunder self-hit?"
+        type: f
+    0xc0:
+        name: "Down-B Projectile travel speed"
+        type: f
+    0xc4:
+        name: "Down-B Horizontal range for thunder self-hit?"
+        type: f
+    0xc8:
+        name: "Down-B Vertical range for thunder self-hit?"
+        type: f
+    0xcc:
+        name: "Down-B Vertical displacement of cloud graphic"
+        type: f
+    0xd0:
+        name: "Down-B Height of thunder creation"
+        type: f
+    0xd4:
+        name: "Down-B Number of lightning bursts"
+        type: I
+    0xd8:
+        name: "Down-B Time between individual lightning bursts (frames)"
+        type: I
+    0xdc:
+        name: "Down-B Projectile spawn ID(Most values other than 81 or 82 freeze game)"
+        type: I
 
-0x28:
-    name: "Side-B Base damage"
-    type: f
-
-0x2c:
-    name: "Side-B Damage multiplier"
-    type: f
-
-0x38:
-    name: "Side-B Falling speed"
-    type: f
-
-0x3c:
-    name: "Side-B Base horizontal firing momentum"
-    type: f
-
-0x40:
-    name: "Side-B Horizontal momentum multiplier"
-    type: f
-
-0x44:
-    name: "Side-B Base vertical firing momentum"
-    type: f
-
-0x48:
-    name: "Side-B Vertical momentum multiplier"
-    type: f
-
-0x4c:
-    name: "Side-B  ?? read on release"
-    type: f
-
-0x50:
-    name: "Side-B Unknown"
-    type: f
-
-0x54:
-    name: "Side-B Unknown"
-    type: f
-
-0x58:
-    name: "Side-B Unknown"
-    type: f
-
-0x5c:
-    name: "Up-B  ?? read on startup"
-    type: I
-
-0x60:
-    name: "Up-B Travel distance"
-    type: I
-
-0x64:
-    name: "Up-B Momentum subtracted frames 11-13 during startup"
-    type: f
-
-0x68:
-    name: "Up-B Model rotation traveling on ground"
-    type: f
-
-0x6c:
-    name: "Up-B Model width multiplier traveling on ground"
-    type: f
-
-0x70:
-    name: "Up-B Model height multiplier traveling on ground"
-    type: f
-
-0x74:
-    name: "Up-B Model length multiplier traveling on ground"
-    type: f
-
-0x78:
-    name: "Up-B Model rotation traveling in air"
-    type: f
-
-0x7c:
-    name: "Up-B Model width multiplier traveling in air"
-    type: f
-
-0x80:
-    name: "Up-B Model height multiplier traveling in air"
-    type: f
-
-0x84:
-    name: "Up-B Model length multiplier traveling in air"
-    type: f
-
-0x88:
-    name: "Up-B  ?? Read when air -> ground"
-    type: f
-
-0x8c:
-    name: "Up-B Aiming sensitivity"
-    type: f
-
-0x90:
-    name: "Up-B Starting momentum of each segment"
-    type: f
-
-0x94:
-    name: "Up-B Momentum added to 3798"
-    type: f
-
-0x98:
-    name: "Up-B Second segment length multiplier"
-    type: f
-
-0x9c:
-    name: "Up-B Horizontal momentum preservation"
-    type: f
-
-0xa0:
-    name: "Up-B Minimum direction change (degrees) for grounded second segment"
-    type: I
-
-0xa4:
-    name: "Up-B Horizontal momentum subtracted each frame after frame 5 of second segment"
-    type: f
-
-0xa8:
-    name: "Up-B Minimum direction change (degrees) for aerial second segment"
-    type: I
-
-0xac:
-    name: "Up-B Unknown (Not read)"
-    type: f
-
-0xb0:
-    name: "Up-B Landing lag"
-    type: f
-
-0xb4:
-    name: "Down-B Vertical momentum on aerial thunder hit"
-    type: f
-
-0xb8:
-    name: "Down-B Something to do with rising from an aerial thunder hit?"
-    type: f
-
-0xbc:
-    name: "Down-B Something to do with vertical range for thunder self-hit?"
-    type: f
-
-0xc0:
-    name: "Down-B Projectile travel speed"
-    type: f
-
-0xc4:
-    name: "Down-B Horizontal range for thunder self-hit?"
-    type: f
-
-0xc8:
-    name: "Down-B Vertical range for thunder self-hit?"
-    type: f
-
-0xcc:
-    name: "Down-B Vertical displacement of cloud graphic"
-    type: f
-
-0xd0:
-    name: "Down-B Height of thunder creation"
-    type: f
-
-0xd4:
-    name: "Down-B Number of lightning bursts"
-    type: I
-
-0xd8:
-    name: "Down-B Time between individual lightning bursts (frames)"
-    type: I
-
-0xdc:
-    name: "Down-B Projectile spawn ID(Most values other than 81 or 82 freeze game)"
-    type: I
-
+articles:
+    - name: Thunder
+    - name: Thunder Jolt Projectile
+    - name: Thunder Jolt Slinky

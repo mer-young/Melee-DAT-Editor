@@ -1,190 +1,151 @@
-length: 0xd4
+# Samus
 
-0x18:
-    name: "Neutral-B Charge time. Higher value = slower charge. Unsure of ratio."
-    type: f
+unique attributes:
+    length: 0xd4
+    0x18:
+        name: "Neutral-B Charge time. Higher value = slower charge. Unsure of ratio."
+        type: f
+    0x1c:
+        name: "Neutral-B Recoil from charged shot (air only). Negative values send you backward, positive send you forward."
+        type: f
+    0x20:
+        name: "Neutral-B Frames between change in charge level"
+        type: I
+    0x24:
+        name: "Neutral-B Anything other than 0 makes you go to special fall"
+        type: I
+    0x28:
+        name: "Side-B Frame buffer between tilt and smash missile"
+        type: f
+    0x2c:
+        name: "Side-B Traction"
+        type: f
+    0x30:
+        name: "Side-B  ??"
+        type: f
+    0x34:
+        name: "Side-B X offset"
+        type: f
+    0x38:
+        name: "Up-B Horizontal momentum added on with no control"
+        type: f
+    0x3c:
+        name: "Up-B Aerial control"
+        type: f
+    0x40:
+        name: "Up-B Air friction?"
+        type: f
+    0x44:
+        name: "Up-B Aerial vertical momentum"
+        type: f
+    0x48:
+        name: "Up-B  ?? (read on start of fall)"
+        type: f
+    0x4c:
+        name: "Up-B Joystick sensitivity to turn around during startup"
+        type: f
+    0x50:
+        name: "Up-B Landing lag"
+        type: f
+    0x54:
+        name: "Down-B Vertical momentum grounded bomb"
+        type: f
+    0x58:
+        name: "Down-B Vertical momentum aerial bomb"
+        type: f
+    0x5c:
+        name: "Down-B Grounded mobility"
+        type: f
+    0x60:
+        name: "Down-B Aerial mobility"
+        type: f
+    0x64:
+        name: "Down-B  ??"
+        type: f
+    0x68:
+        name: "Down-B  ??"
+        type: f
+    0x6c:
+        name: "Down-B Grounded momentum preservation"
+        type: f
+    0x70:
+        name: "Down-B Aerial momentum preservation"
+        type: f
+    0x74:
+        name: "Down-B X offset"
+        type: I
+    0x78:
+        name: "Down-B Y offset"
+        type: f
+    0x7c:
+        name: "Down-B  ??"
+        type: I
+    0x80:
+        name: "Down-B  ??"
+        type: f
+    0x84:
+        name: "Down-B  ??"
+        type: f
+    0x88:
+        name: "Down-B Landing detection from bomb jump?"
+        type: f
+    0x8c:
+        name: "Down-B Something else with landing detection?"
+        type: f
+    0x90:
+        name: "Down-B  ??"
+        type: f
+    0x94:
+        name: "Down-B Landing detection?"
+        type: f
+    0x98:
+        name: "Down-B  ??"
+        type: f
+    0x9c:
+        name: "Grab/Tether Something to do with standing grapple creation?"
+        type: I
+    0xa0:
+        name: "Grab/Tether Frame grapple object is created (Standing)"
+        type: I
+    0xa4:
+        name: "Grab/Tether Frame grapple begins retracting (Standing)"
+        type: I
+    0xa8:
+        name: "Grab/Tether Frame grapple object is removed (Standing)"
+        type: I
+    0xac:
+        name: "Grab/Tether Something to do with running grapple creation?"
+        type: I
+    0xb0:
+        name: "Grab/Tether Frame grapple object is created (Running)"
+        type: I
+    0xb4:
+        name: "Grab/Tether Frame grapple begins retracting (Running)"
+        type: I
+    0xb8:
+        name: "Grab/Tether Frame grapple object is removed (Running)"
+        type: I
+    0xbc:
+        name: "Grab/Tether Something to do with air grapple creation?"
+        type: I
+    0xc0:
+        name: "Grab/Tether Frame grapple object is created (Tether)"
+        type: I
+    0xc4:
+        name: "Grab/Tether Frame grapple begins retracting (Tether)"
+        type: I
+    0xc8:
+        name: "Grab/Tether Frame grapple object is removed (Tether)"
+        type: I
+    0xcc:
+        name: "Grab/Tether Tether jump velocity multiplier"
+        type: f
+    0xd0:
+        name: "Grab/Tether Number of frames you can hang using tether (actual number varies a little bit?)"
+        type: I
 
-0x1c:
-    name: "Neutral-B Recoil from charged shot (air only). Negative values send you backward, positive send you forward."
-    type: f
-
-0x20:
-    name: "Neutral-B Frames between change in charge level"
-    type: I
-
-0x24:
-    name: "Neutral-B Anything other than 0 makes you go to special fall"
-    type: I
-
-0x28:
-    name: "Side-B Frame buffer between tilt and smash missile"
-    type: f
-
-0x2c:
-    name: "Side-B Traction"
-    type: f
-
-0x30:
-    name: "Side-B  ??"
-    type: f
-
-0x34:
-    name: "Side-B X offset"
-    type: f
-
-0x38:
-    name: "Up-B Horizontal momentum added on with no control"
-    type: f
-
-0x3c:
-    name: "Up-B Aerial control"
-    type: f
-
-0x40:
-    name: "Up-B Air friction?"
-    type: f
-
-0x44:
-    name: "Up-B Aerial vertical momentum"
-    type: f
-
-0x48:
-    name: "Up-B  ?? (read on start of fall)"
-    type: f
-
-0x4c:
-    name: "Up-B Joystick sensitivity to turn around during startup"
-    type: f
-
-0x50:
-    name: "Up-B Landing lag"
-    type: f
-
-0x54:
-    name: "Down-B Vertical momentum grounded bomb"
-    type: f
-
-0x58:
-    name: "Down-B Vertical momentum aerial bomb"
-    type: f
-
-0x5c:
-    name: "Down-B Grounded mobility"
-    type: f
-
-0x60:
-    name: "Down-B Aerial mobility"
-    type: f
-
-0x64:
-    name: "Down-B  ??"
-    type: f
-
-0x68:
-    name: "Down-B  ??"
-    type: f
-
-0x6c:
-    name: "Down-B Grounded momentum preservation"
-    type: f
-
-0x70:
-    name: "Down-B Aerial momentum preservation"
-    type: f
-
-0x74:
-    name: "Down-B X offset"
-    type: I
-
-0x78:
-    name: "Down-B Y offset"
-    type: f
-
-0x7c:
-    name: "Down-B  ??"
-    type: I
-
-0x80:
-    name: "Down-B  ??"
-    type: f
-
-0x84:
-    name: "Down-B  ??"
-    type: f
-
-0x88:
-    name: "Down-B Landing detection from bomb jump?"
-    type: f
-
-0x8c:
-    name: "Down-B Something else with landing detection?"
-    type: f
-
-0x90:
-    name: "Down-B  ??"
-    type: f
-
-0x94:
-    name: "Down-B Landing detection?"
-    type: f
-
-0x98:
-    name: "Down-B  ??"
-    type: f
-
-0x9c:
-    name: "Grab/Tether Something to do with standing grapple creation?"
-    type: I
-
-0xa0:
-    name: "Grab/Tether Frame grapple object is created (Standing)"
-    type: I
-
-0xa4:
-    name: "Grab/Tether Frame grapple begins retracting (Standing)"
-    type: I
-
-0xa8:
-    name: "Grab/Tether Frame grapple object is removed (Standing)"
-    type: I
-
-0xac:
-    name: "Grab/Tether Something to do with running grapple creation?"
-    type: I
-
-0xb0:
-    name: "Grab/Tether Frame grapple object is created (Running)"
-    type: I
-
-0xb4:
-    name: "Grab/Tether Frame grapple begins retracting (Running)"
-    type: I
-
-0xb8:
-    name: "Grab/Tether Frame grapple object is removed (Running)"
-    type: I
-
-0xbc:
-    name: "Grab/Tether Something to do with air grapple creation?"
-    type: I
-
-0xc0:
-    name: "Grab/Tether Frame grapple object is created (Tether)"
-    type: I
-
-0xc4:
-    name: "Grab/Tether Frame grapple begins retracting (Tether)"
-    type: I
-
-0xc8:
-    name: "Grab/Tether Frame grapple object is removed (Tether)"
-    type: I
-
-0xcc:
-    name: "Grab/Tether Tether jump velocity multiplier"
-    type: f
-
-0xd0:
-    name: "Grab/Tether Number of frames you can hang using tether (actual number varies a little bit?)"
-    type: I
-
+articles:
+    - name: Bomb
+    - name: Charge Shot
+    - name: Missile
+    - name: Grapple Beam

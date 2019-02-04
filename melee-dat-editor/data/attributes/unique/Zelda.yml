@@ -1,114 +1,92 @@
-length: 0xa8
+# Zelda
 
-0x0:
-    name: "Neutral-B Unknown"
-    type: f
+unique attributes:
+    length: 0xa8
+    0x0:
+        name: "Neutral-B Unknown"
+        type: f
+    0x4:
+        name: "Neutral-B Unknown"
+        type: I
+    0x8:
+        name: "Neutral-B Horizontal momentum preservation (less = more)?"
+        type: f
+    0xc:
+        name: "Neutral-B Vertical momentum?"
+        type: f
+    0x10:
+        name: "Neutral-B Unknown"
+        type: I
+    0x14:
+        name: "Neutral-B Unknown"
+        type: I
+    0x18:
+        name: "Side-B Frame you start falling?"
+        type: I
+    0x1c:
+        name: "Side-B Earliest frame to detonate projectile"
+        type: I
+    0x20:
+        name: "Side-B X offset?"
+        type: f
+    0x24:
+        name: "Side-B Y offset?"
+        type: f
+    0x28:
+        name: "Side-B Unknown"
+        type: f
+    0x2c:
+        name: "Side-B Falling gravity?"
+        type: f
+    0x30:
+        name: "Side-B Unknown"
+        type: f
+    0x34:
+        name: "Side-B Landing lag"
+        type: f
+    0x38:
+        name: "Up-B horizontal momentum preservation (smaller = higher)?"
+        type: f
+    0x3c:
+        name: "Up-B vertical momentum preservation (smaller = higher)?"
+        type: f
+    0x40:
+        name: "Up-B Vertical momentum preservation?"
+        type: f
+    0x44:
+        name: "Up-B Something with momentum preservation?"
+        type: f
+    0x48:
+        name: "Up-B Travel distance (in frames)?"
+        type: I
+    0x4c:
+        name: "Up-B Unknown"
+        type: f
+    0x50:
+        name: "Up-B Unknown"
+        type: f
+    0x54:
+        name: "Up-B Unknown"
+        type: f
+    0x58:
+        name: "Up-B Unknown"
+        type: f
+    0x5c:
+        name: "Up-B Unknown"
+        type: f
+    0x60:
+        name: "Up-B Unknown"
+        type: I
+    0x64:
+        name: "Up-B Unknown"
+        type: f
+    0x68:
+        name: "Up-B Unknown"
+        type: f
+    0x6c:
+        name: "Up-B Landing lag"
+        type: f
 
-0x4:
-    name: "Neutral-B Unknown"
-    type: I
-
-0x8:
-    name: "Neutral-B Horizontal momentum preservation (less = more)?"
-    type: f
-
-0xc:
-    name: "Neutral-B Vertical momentum?"
-    type: f
-
-0x10:
-    name: "Neutral-B Unknown"
-    type: I
-
-0x14:
-    name: "Neutral-B Unknown"
-    type: I
-
-0x18:
-    name: "Side-B Frame you start falling?"
-    type: I
-
-0x1c:
-    name: "Side-B Earliest frame to detonate projectile"
-    type: I
-
-0x20:
-    name: "Side-B X offset?"
-    type: f
-
-0x24:
-    name: "Side-B Y offset?"
-    type: f
-
-0x28:
-    name: "Side-B Unknown"
-    type: f
-
-0x2c:
-    name: "Side-B Falling gravity?"
-    type: f
-
-0x30:
-    name: "Side-B Unknown"
-    type: f
-
-0x34:
-    name: "Side-B Landing lag"
-    type: f
-
-0x38:
-    name: "Up-B horizontal momentum preservation (smaller = higher)?"
-    type: f
-
-0x3c:
-    name: "Up-B vertical momentum preservation (smaller = higher)?"
-    type: f
-
-0x40:
-    name: "Up-B Vertical momentum preservation?"
-    type: f
-
-0x44:
-    name: "Up-B Something with momentum preservation?"
-    type: f
-
-0x48:
-    name: "Up-B Travel distance (in frames)?"
-    type: I
-
-0x4c:
-    name: "Up-B Unknown"
-    type: f
-
-0x50:
-    name: "Up-B Unknown"
-    type: f
-
-0x54:
-    name: "Up-B Unknown"
-    type: f
-
-0x58:
-    name: "Up-B Unknown"
-    type: f
-
-0x5c:
-    name: "Up-B Unknown"
-    type: f
-
-0x60:
-    name: "Up-B Unknown"
-    type: I
-
-0x64:
-    name: "Up-B Unknown"
-    type: f
-
-0x68:
-    name: "Up-B Unknown"
-    type: f
-
-0x6c:
-    name: "Up-B Landing lag"
-    type: f
-
+articles:
+    - name: Din's Fire
+    - name: Din's Fire Explosion

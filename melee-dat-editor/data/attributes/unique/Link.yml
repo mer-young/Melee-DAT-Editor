@@ -1,90 +1,85 @@
-length: 0xdc
+# Link
+unique attributes:
+    length: 0xdc
+    0x0:
+        name: "Neutral-B Frames until max arrow angle?"
+        type: f
+    0x4:
+        name: "Neutral-B Arrow charging speed (higher = faster)"
+        type: f
+    0x8:
+        name: "Neutral-B Anything other than 0 goes into special free fall"
+        type: f
+    0xc:
+        name: "Neutral-B Item Loader ID? (0 = Capsule + game freeze)"
+        type: I
+    0x10:
+        name: "Neutral-B Item Loader ID? (0 = Capsule + normal arrow shooting)"
+        type: I
+    0x14:
+        name: "Side-B Something to do with angle of boomerang, high numbers it cannot be angled"
+        type: f
+    0x18:
+        name: "Side-B Boomerang angle (radians)"
+        type: f
+    0x1c:
+        name: "Side-B  ???"
+        type: f
+    0x20:
+        name: "Side-B Smash Boomerang launch speed"
+        type: f
+    0x24:
+        name: "Side-B Regular Boomerang launch speed"
+        type: f
+    0x30:
+        name: "Up-B Up B landing lag"
+        type: f
+    0x34:
+        name: "Up-B Up B initial horizontal momentum"
+        type: f
+    0x38:
+        name: "Up-B Up B aerial mobility"
+        type: f
+    0x3c:
+        name: "Up-B Up B momentum preservation?"
+        type: f
+    0x40:
+        name: "Up-B Initial vertical momentum"
+        type: f
+    0x48:
+        name: "Down-B ID for bomb(58 is Link's bomb)"
+        type: I
+    0x4c:
+        name: "Miscellaneous Down Air 'bounce' vertical momentum"
+        type: f
+    0x50:
+        name: "Miscellaneous Frames before hitbox reappears after hitting with Down Air"
+        type: f
+    0xc8:
+        name: "Miscellaneous Shield block collision X offset"
+        type: I
+    0xcc:
+        name: "Miscellaneous Shield block collision Y offset (positive is down, negative is up)"
+        type: I
+    0xd0:
+        name: "Miscellaneous Shield block collision Z offset"
+        type: I
+    0xd4:
+        name: "Miscellaneous Shield block hitbox size modifier"
+        type: f
 
-0x0:
-    name: "Neutral-B Frames until max arrow angle?"
-    type: f
-
-0x4:
-    name: "Neutral-B Arrow charging speed (higher = faster)"
-    type: f
-
-0x8:
-    name: "Neutral-B Anything other than 0 goes into special free fall"
-    type: f
-
-0xc:
-    name: "Neutral-B Item Loader ID? (0 = Capsule + game freeze)"
-    type: I
-
-0x10:
-    name: "Neutral-B Item Loader ID? (0 = Capsule + normal arrow shooting)"
-    type: I
-
-0x14:
-    name: "Side-B Something to do with angle of boomerang, high numbers it cannot be angled"
-    type: f
-
-0x18:
-    name: "Side-B Boomerang angle (radians)"
-    type: f
-
-0x1c:
-    name: "Side-B  ???"
-    type: f
-
-0x20:
-    name: "Side-B Smash Boomerang launch speed"
-    type: f
-
-0x24:
-    name: "Side-B Regular Boomerang launch speed"
-    type: f
-
-0x30:
-    name: "Up-B Up B landing lag"
-    type: f
-
-0x34:
-    name: "Up-B Up B initial horizontal momentum"
-    type: f
-
-0x38:
-    name: "Up-B Up B aerial mobility"
-    type: f
-
-0x3c:
-    name: "Up-B Up B momentum preservation?"
-    type: f
-
-0x40:
-    name: "Up-B Initial vertical momentum"
-    type: f
-
-0x48:
-    name: "Down-B ID for bomb(58 is Link's bomb)"
-    type: I
-
-0x4c:
-    name: "Miscellaneous Down Air 'bounce' vertical momentum"
-    type: f
-
-0x50:
-    name: "Miscellaneous Frames before hitbox reappears after hitting with Down Air"
-    type: f
-
-0xc8:
-    name: "Miscellaneous Shield block collision X offset"
-    type: I
-
-0xcc:
-    name: "Miscellaneous Shield block collision Y offset (positive is down, negative is up)"
-    type: I
-
-0xd0:
-    name: "Miscellaneous Shield block collision Z offset"
-    type: I
-
-0xd4:
-    name: "Miscellaneous Shield block hitbox size modifier"
-    type: f
-
+articles:
+    - name: Bomb
+      variants:
+          - Unknown
+          - Impact?
+          - Explosion?
+    - name: Boomerang
+      variants:
+          - Unknown
+          - Unknown
+          - Return
+    - name: Hookshot
+    - name: Arrow
+    - name: Bow
+    - name: (empty)
