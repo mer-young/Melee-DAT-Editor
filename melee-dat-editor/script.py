@@ -16,9 +16,15 @@ import yaml
 event_types_fname = os.path.join('data', 'event-types.yml')
 custom_fname = os.path.join('data', 'custom-event-types.yml')
 event_types = yaml.safe_load(open(event_types_fname, 'r'))
-custom_event_types = yaml.safe_load(open(custom_fname, 'r'))
-event_types.update(custom_event_types)
 
+custom_event_types = yaml.safe_load(open(custom_fname, 'r'))
+
+for key, value in event_types.items():
+    if key == 'default':
+        continue
+    event_types[key] = {key: value}
+    if key in custom_event_types.keys():
+        event_types[key].update(custom_event_types[key])
 
 keys = list(event_types.keys())
 keys.remove('default')
@@ -140,8 +146,10 @@ class Event:
 
     def __init__(self, bytestr):
         self._data = self._data = int.from_bytes(bytestr, byteorder='big')
-        self._code = self.find_code(bytestr)
-        self._evtype = event_types.get(self._code, event_types['default'])
+        code, custom_code = self.find_code(bytestr)
+        self._code = [code, custom_code]
+        self._evtype = self.get_evtype(code, custom_code)
+
         if len(bytestr) != self.length:
             raise ValueError("Invalid input length for event '{}' (expected {}"
                              " bytes, received {})".format(self.name,
@@ -159,16 +167,34 @@ class Event:
 
     @staticmethod
     def find_code(bytestr):
+        # returns code, custom_code
+        # where custom_code is the same as base_code if the event is not custom
         data = int.from_bytes(bytestr, byteorder='big')
-        for i in range(data.bit_length() - 6):
-            try_code = (data >> i)
-            if try_code in custom_event_types.keys():
-                return try_code
-        return bytestr[0] & 0xFC
+
+        base_code = bytestr[0] & 0xFC
+        if base_code in custom_event_types.keys():
+            for i in range(len(bytestr)*8 - 6):
+                try_code = (data >> i)
+                if try_code in custom_event_types[base_code].keys():
+                    return [base_code, try_code]
+        return [base_code, base_code]
+
+    @staticmethod
+    def get_evtype(code, custom_code=None):
+        if custom_code is None:
+            custom_code = code
+        try:
+            print(code)
+            print(code in event_types.keys())
+            base = event_types[code]
+        except KeyError:  # manually rather than get() because default has no subkeys
+            print('default')
+            return event_types['default']
+        return base[custom_code]
 
     # alternate constructors
     @classmethod
-    def blank(cls, code):
+    def blank(cls, code, custom_code=None):
         """
         Create an Event of the specified type with all fields initialized to
         zeros.
@@ -179,8 +205,10 @@ class Event:
             Event code, ranging from 0 to 0xFC
 
         """
-        length = event_types[code]['length']
-        bytestr = code.to_bytes(ceil(code.bit_length()/8), 'big')
+        if custom_code is None:
+            custom_code = code
+        length = event_types[code][custom_code]['length']
+        bytestr = custom_code.to_bytes(ceil(custom_code.bit_length()/8), 'big')
         bytestr += b'\x00' * (length - len(bytestr))
         return cls(bytestr)
 
@@ -198,16 +226,16 @@ class Event:
         if not lookahead:
             return None
 
-        length = event_types.get(cls.find_code(lookahead),
-                                 event_types['default']
-                                 )['length']
+        length = cls.get_evtype(*cls.find_code(lookahead))['length']
+        print(length)
         file.seek(pos)
         bytestr = file.read(length)
-        try:
-            return cls(bytestr)
-        except ValueError:
-            raise EOFError("End of file reached at {} after "
-                           " reading '{}'".format(file.tell(), bytestr))
+        return cls(bytestr)
+#        try:
+#            return cls(bytestr)
+#        except ValueError:
+#            raise EOFError("End of file reached at {} after "
+#                           " reading '{}'".format(file.tell(), bytestr))
 
     @classmethod
     def from_hex(cls, hexstr):

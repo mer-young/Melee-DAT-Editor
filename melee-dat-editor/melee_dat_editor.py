@@ -586,16 +586,22 @@ class EventEditor (QDialog):
         self.vbox = QVBoxLayout(self)
 #        vbox.addWidget(QLabel(event.name))
         event_type_dropdown = QComboBox(self)
-        for code, evtype in script.event_types.items():
+        custom_event_entries = []
+        for code, evtype_base in script.event_types.items():
             if code in ['length', 'default']:
                 continue
-            event_type_dropdown.addItem(
-                    f'{evtype["name"]} ({hex(code)})',
-                    code
-                    )
+            for custom_code, evtype in evtype_base.items():
+                text = f'{evtype["name"]} ({hex(custom_code)})'
+                data = [code, custom_code]
+                if custom_code == code:
+                    custom_event_entries.append((text, data))
+                else:
+                    event_type_dropdown.addItem(text, data)
+        for text, data in custom_event_entries:
+            event_type_dropdown.addItem(text, data)
         event_type_dropdown.setCurrentIndex(event_type_dropdown.findData(event.code))
         event_type_dropdown.currentIndexChanged.connect(
-                lambda: self.change_type(event_type_dropdown.currentData())
+                lambda: self.change_type(*event_type_dropdown.currentData())
                 )
         self.vbox.addWidget(event_type_dropdown)
 
@@ -635,8 +641,8 @@ class EventEditor (QDialog):
         self.raw_edit.editingFinished.connect(self.raw_changed)
         self.form.addRow('Raw', self.raw_edit)
 
-    def change_type(self, code):
-        self.event = script.Event.blank(code)
+    def change_type(self, code, custom_code):
+        self.event = script.Event.blank(code, custom_code)
         while self.form.count():
             self.form.removeRow(0)
         app.processEvents(QEventLoop.ExcludeUserInputEvents)

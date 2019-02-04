@@ -1,0 +1,90 @@
+# ID lists
+
+Character Internal:
+    0x00: Mario
+    0x01: Fox
+    0x02: Captain Falcon
+    0x03: Donkey Kong
+    0x04: Kirby
+    0x05: Bowser
+    0x06: Link
+    0x07: Sheik
+    0x08: Ness
+    0x09: Peach
+    0x0A: Popo
+    0x0B: Nana
+    0x0C: Pikachu
+    0x0D: Samus
+    0x0E: Yoshi
+    0x0F: Jigglypuff
+    0x10: Mewtwo
+    0x11: Luigi
+    0x12: Marth
+    0x13: Zelda
+    0x14: Young Link
+    0x15: Dr. Mario
+    0x16: Falco
+    0x17: Pichu
+    0x18: Mr. Game & Watch
+    0x19: Ganondorf
+    0x1A: Roy
+    0x1B: Master Hand
+    0x1C: Crazy Hand
+    0x1D: Male Wireframe
+    0x1E: Female Wireframe
+    0x1F: Giga Bowser
+    0x20: Sandbag
+
+Character External:
+    0x00: Captain Falcon
+    0x01: Donkey Kongcd
+    0x02: Fox
+    0x03: Mr. Game & Watch
+    0x04: Kirby
+    0x05: Bowser
+    0x06: Link
+    0x07: Luigi
+    0x08: Mario
+    0x09: Marth
+    0x0A: Mewtwo
+    0x0B: Ness
+    0x0C: Peach
+    0x0D: Pikachu
+    0x0E: Ice Climbers
+    0x0F: Jigglypuff
+    0x10: Samus
+    0x11: Yoshi
+    0x12: Zelda
+    0x13: Sheik
+    0x14: Falco
+    0x15: Young Link
+    0x16: Dr. Mario
+    0x17: Roy
+    0x18: Pichu
+    0x19: Ganondorf
+    0x1A: Master Hand
+    0x1B: Male Wireframe
+    0x1C: Female Wireframe
+    0x1D: Giga Bower
+    0x1E: Crazy Hand
+    0x1F: Sandbag
+    0x20: Popo
+    0x21: User Select(Event) / None
+
+Hitbox Element:
+    0x00: Normal
+    0x01: Fire
+    0x02: Electric
+    0x03: Slash
+    0x04: Coin
+    0x05: Ice
+    0x06: Sleep (103 frames)
+    0x07: Sleep (412 frames)
+    0x08: Grounded
+    0x09: Grounded
+    0x0A: Cape
+    0x0B: Empty
+    0x0C: Disable
+    0x0D: Darkness
+    0x0E: Screw Attack
+    0x0F: Lip's Stick
