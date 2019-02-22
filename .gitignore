@@ -2,3 +2,5 @@
 *.dol
 *.iso
 __pycache__/
+
+!/melee-dat-editor/data/fsm-templates/*.dat

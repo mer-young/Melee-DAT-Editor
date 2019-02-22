@@ -27,8 +27,8 @@ from datfiles import moveset_datfile
 import script
 
 
-__version__ = '0.1.2 Alpha'
-RELEASE_DATE = '22 January 2018'
+__version__ = '0.1.3 Alpha'
+RELEASE_DATE = '22 February 2018'
 
 ABOUT_TEXT = f"""
 Melee Dat Editor
@@ -178,7 +178,6 @@ class MainWindow (QMainWindow):
         if event.mimeData().hasUrls():
             event.accept()
         else:
-            print('ignore')
             event.ignore()
 
     def dropEvent(self, event):
@@ -348,6 +347,7 @@ class ScriptEditor (QWidget):
         self.dropdown.clear()
         for i, sa in self.f.iter_subactions():
             name = hex(i) + ': ' + self.f.subaction_short_name(i)
+#            print(name)
             self.dropdown.addItem(name,
                                   self.f.pointer(sa.script_pointer)
                                   )
@@ -382,7 +382,7 @@ class ScriptEditor (QWidget):
         follow_clicked = pyqtSignal(int)
         event_role = Qt.UserRole
         offset_role = Qt.UserRole + 1
-        NOP = script.Event.from_hex('0xCC000000')
+        NOP = script.FighterEvent.from_hex('0xCC000000')
 
         def __init__(self, parent=None):
             super().__init__(parent)
@@ -512,6 +512,7 @@ class ScriptEditor (QWidget):
             self.insertItem(row + 1, self.item_from_event(event, offset))
             old = self.takeItem(row)
             del old
+            self.update_offsets()
 
         def follow(self, row):
             target = self.item(row).data(self.event_role)['target']
@@ -587,13 +588,13 @@ class EventEditor (QDialog):
 #        vbox.addWidget(QLabel(event.name))
         event_type_dropdown = QComboBox(self)
         custom_event_entries = []
-        for code, evtype_base in script.event_types.items():
+        for code, evtype_base in script.fighter_event_types.items():
             if code in ['length', 'default']:
                 continue
             for custom_code, evtype in evtype_base.items():
                 text = f'{evtype["name"]} ({hex(custom_code)})'
                 data = [code, custom_code]
-                if custom_code == code:
+                if custom_code != code:
                     custom_event_entries.append((text, data))
                 else:
                     event_type_dropdown.addItem(text, data)
@@ -627,7 +628,6 @@ class EventEditor (QDialog):
     def populate_form(self):
         self.field_entry = []
         for i, fd in enumerate(self.event.fields):
-            print(fd['name'], fd['bits'], fd['type'])
             entry = self.field_editor(fd['bits'], fd['type'])
             entry.set_value(self.event[i])
             entry.editingFinished.connect(
@@ -642,7 +642,7 @@ class EventEditor (QDialog):
         self.form.addRow('Raw', self.raw_edit)
 
     def change_type(self, code, custom_code):
-        self.event = script.Event.blank(code, custom_code)
+        self.event = script.FighterEvent.blank(code, custom_code)
         while self.form.count():
             self.form.removeRow(0)
         app.processEvents(QEventLoop.ExcludeUserInputEvents)
@@ -677,7 +677,6 @@ class EventEditor (QDialog):
         elif type_str == 'h':
             byte_length = (bit_range[1] - bit_range[0] + 1)/8
             if not byte_length.is_integer():
-                print(bit_range[1], bit_range[0])
                 raise ValueError('Hex field length is not a multiple of 8 bits')
             return self.HexFieldEntry(byte_length, self)
         elif type_str == 'f':
@@ -731,7 +730,6 @@ class EventEditor (QDialog):
             return int(super().text().replace(' ', ''), base=16)
 
         def set_value(self, int_value):
-            print(hex(int_value))
             self.setText(format(int_value, '0' + str(2*self.length) + 'x'))
 
     class IntFieldEntry (QSpinBox):
@@ -752,7 +750,6 @@ class EventEditor (QDialog):
         # Always 32 bits
         Float = struct.Struct('>f')
         Int = struct.Struct('>I')
-        raw_changed = pyqtSignal(int)
 
         def __init__(self, upper_only=False, parent=None):
             super().__init__(parent)
@@ -766,9 +763,6 @@ class EventEditor (QDialog):
                 self.shift = 0
                 self.setMaximum(self.from_raw(0x7F7FFFFF))
                 self.setMinimum(self.from_raw(0xFF7FFFFF))
-            self.valueChanged.connect(
-                    lambda: self.raw_changed.emit(self.value())
-                    )
 
         def to_raw(self, float_val):
             return self.Int.unpack(self.Float.pack(float_val))[0] >> self.shift
@@ -776,13 +770,8 @@ class EventEditor (QDialog):
         def from_raw(self, raw_val):
             return self.Float.unpack(self.Int.pack(raw_val << self.shift))[0]
 
-        def value(self):
-            # operates on raw value
-            return self.to_raw(super().value())
-
         def set_value(self, val):
-            # operates on raw value, not the decimal number it represents
-            super().setValue(self.from_raw(val))
+            super().setValue(val)
 
 
 class AttributeEditor (QWidget):

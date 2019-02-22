@@ -1,0 +1,173 @@
+# Article Events, 0x28-0x60
+
+0x28:
+    name: Unknown (Graphic Effect?)
+    length: 0x14
+    fields: []
+
+0x2C:
+    name: Create Hitbox
+    length: 0x18
+    fields:
+        - name: ID
+          bits: [6, 8]
+          type: u
+
+        - name: Unknown 1
+          bits: [9, 13]
+          type: u
+
+        - name: Bone
+          bits: [14, 20]
+          type: u
+
+        - name: Unknown 2
+          bits: [21, 22]
+          type: u
+
+        - name: Damage
+          bits: [23, 31]
+          type: u
+
+        - name: Size
+          bits: [32, 47]
+          type: u
+
+        - name: Z-Offset
+          bits: [48, 63]
+          type: s
+
+        - name: Y-Offset
+          bits: [64, 79]
+          type: s
+
+        - name: X-Offset
+          bits: [80, 95]
+          type: s
+
+        - name: Angle
+          bits: [96, 104]
+          type: u
+
+        - name: Knockback Growth
+          bits: [105, 113]
+          type: u
+
+        - name: Weight-Dependent Set Knockback
+          bits: [114, 122]
+          type: u
+
+        - name: Unknown 3
+          bits: [123, 125]
+          type: u
+
+        - name: Hitbox Interaction
+          bits: [126, 127]
+          type: u
+
+        - name: Base Knockback
+          bits: [128, 136]
+          type: u
+
+        - name: Element
+          bits: [137, 141]
+          type: u
+
+        - name: Unknown 4
+          bits: [142, 142]
+          type: u
+
+        - name: Shield Damage
+          bits: [143, 149]
+          type: u
+
+        - name: Hit Sound Effect
+          bits: [150, 157]
+          type: u
+
+        - name: Hurtbox Interaction
+          bits: [158, 159]
+          type: u
+        
+        - name: Unknown data
+          bits: [160, 191]
+          type: h
+
+0x30:
+    name: Adjust Hitbox Damage
+    length: 0x4
+    fields:
+        - name: Hitbox ID
+          bits: [6, 8]
+          type: u
+
+        - name: Damage
+          bits: [9, 31]
+          type: u
+
+0x34:
+    name: Unknown (Adjust Hitbox Size?)
+    length: 0x4
+    fields:
+        - name: Hitbox ID
+          bits: [6, 8]
+          type: u
+
+        - name: Size
+          bits: [9, 31]
+          type: u
+
+0x38:
+    name: Unknown (Hitbox Set Unknown Flags?)
+    length: 0x4
+    fields: []
+    
+0x3C:
+    name: Unknown (Terminate Collisions?)
+    length: 0x4
+    fields: []
+
+0x40:
+    name: Unknown (Sound Effect?)
+    length: 0xC
+    fields: []
+
+0x44:
+    name: Unknown
+    length: 0xC
+    fields: []
+
+0x48:
+    name: Unknown
+    length: 0x4
+    fields: []
+
+0x4C:
+    name: Unknown
+    length: 0x4
+    fields: []
+
+0x50:
+    name: Unknown
+    length: 0x4
+    fields: []
+
+0x54:
+    name: Unknown
+    length: 0x4
+    fields: []
+
+0x58:
+    name: Unknown
+    length: 0x4
+    fields: []
+
+0x5C:
+    name: Unknown
+    length: 0x4
+    fields: []
+
+0x60:
+    name: Unknown
+    length: 0x4
+    fields: []

@@ -3,9 +3,9 @@
         name: Frame Speed Modifier [mer]
         length: 0x4
         fields:
-            - name: Speed Multiplier
+            - name: Speed Multiplier x100
               bits: [16, 31]
-              type: f-upper
+              type: u
 
 0x5C:
     0x5C000001:

@@ -1,0 +1,417 @@
+# Player Events, 0x28-end
+
+0x28:
+    name: Graphic Effect
+    length: 0x14
+    fields: []
+
+0x2C:
+    name: Create Hitbox
+    length: 0x14
+    fields:
+        - name: ID
+          bits: [6, 8]
+          type: u
+
+        - name: Unknown 1
+          bits: [9, 13]
+          type: u
+
+        - name: Bone
+          bits: [14, 20]
+          type: u
+
+        - name: Unknown 2
+          bits: [21, 22]
+          type: u
+
+        - name: Damage
+          bits: [23, 31]
+          type: u
+
+        - name: Size
+          bits: [32, 47]
+          type: u
+
+        - name: Z-Offset
+          bits: [48, 63]
+          type: s
+
+        - name: Y-Offset
+          bits: [64, 79]
+          type: s
+
+        - name: X-Offset
+          bits: [80, 95]
+          type: s
+
+        - name: Angle
+          bits: [96, 104]
+          type: u
+
+        - name: Knockback Growth
+          bits: [105, 113]
+          type: u
+
+        - name: Weight-Dependent Set Knockback
+          bits: [114, 122]
+          type: u
+
+        - name: Unknown 3
+          bits: [123, 125]
+          type: u
+
+        - name: Hitbox Interaction
+          bits: [126, 127]
+          type: u
+
+        - name: Base Knockback
+          bits: [128, 136]
+          type: u
+
+        - name: Element
+          bits: [137, 141]
+          type: u
+
+        - name: Unknown 4
+          bits: [142, 142]
+          type: u
+
+        - name: Shield Damage
+          bits: [143, 149]
+          type: u
+
+        - name: Hit Sound Effect
+          bits: [150, 157]
+          type: u
+
+        - name: Hurtbox Interaction
+          bits: [158, 159]
+          type: u
+
+0x30:
+    name: Adjust Hitbox Damage
+    length: 0x4
+    fields:
+        - name: Hitbox ID
+          bits: [6, 8]
+          type: u
+
+        - name: Damage
+          bits: [9, 31]
+          type: u
+
+0x34:
+    name: Adjust Hitbox Size
+    length: 0x4
+    fields:
+        - name: Hitbox ID
+          bits: [6, 8]
+          type: u
+
+        - name: Size
+          bits: [9, 31]
+          type: u
+
+0x38:
+    name: Hitbox Set Unknown Flags
+    length: 0x4
+    fields:
+        - name: Hitbox ID
+          bits: [6, 29]
+          type: u
+
+        - name: Flags Setting
+          bits: [30, 31]
+          type: u
+
+0x3C:
+    name: Terminate Specific Collision
+    length: 0x4
+    fields:
+    - name: Hitbox ID
+      bits: [6, 31]
+      type: u
+
+0x40:
+    name: Terminate Collisions
+    length: 0x4
+    fields: []
+
+0x44:
+    name: Sound Effect
+    length: 0xC
+    fields: []
+
+0x48:
+    name: Random Smash SFX
+    length: 0x4
+    fields: []
+
+0x4C:
+    name: Autocancel?
+    length: 0x4
+    fields: []
+
+0x50:
+    # also used in throws?
+    name: Reverse Direction
+    length: 0x4
+    fields: []
+
+0x54:
+    name: "Set flag 0x2210: 10"
+    length: 0x4
+    fields: []
+
+0x58:
+    name: "Set flag 0x2210: 20"
+    length: 0x4
+    fields: []
+
+0x5C:
+    name: Allow Interrupt
+    length: 0x4
+    fields: []
+
+0x60:
+    name: Projectile Flag
+    length: 0x4
+    fields: []
+
+0x64:
+    name: Related to Ground/Air State?
+    length: 0x4
+    fields: []
+
+0x68:
+    name: Set Body Collision State + Overlay
+    length: 0x4
+    fields:
+        - name: Body State
+          bits: [30, 31]
+          type: u
+
+0x6C:
+    name: Body Collision Status
+    length: 0x4
+    fields: []
+
+0x70:
+    # Punkline: "Hurtbox_Status"
+    name: Set Bone Collision State
+    length: 0x4
+    fields:
+        - name: Bone ID
+          bits: [6, 13]
+          type: u
+
+        - name: Collision State
+          bits: [14, 31]
+          type: u
+
+0x74:
+    name: Enable Jab Followup
+    length: 0x4
+    fields: []
+
+0x78:
+    name: Toggle Jab Followup
+    length: 0x4
+    fields: []
+
+0x7C:
+    name: Change Model State
+    length: 0x4
+    fields:
+        - name: Struct ID
+          bits: [6, 11]
+          type: u
+
+        - name: Temp. Object ID
+          bits: [24, 31]
+          type: u
+
+0x80:
+    name: Revert Models
+    length: 0x4
+    fields: []
+
+0x84:
+    name: Remove Models
+    length: 0x4
+    fields: []
+
+0x88:
+    name: Throw
+    length: 0xC
+    fields: []
+
+0x8C:
+    name: Held Item Invisibility
+    length: 0x4
+    fields:
+        - name: Flag
+          bits: [31, 31]
+          type: u
+
+0x90:
+    name: Body Article Invisibility
+    length: 0x4
+    fields:
+        - name: Flag
+          bits: [31, 31]
+          type: u
+
+0x94:
+    name: Character Invisibility
+    length: 0x4
+    fields:
+        - name: Flag
+          bits: [31, 31]
+          type: u
+
+0x98:
+    name: Pseudo-Random Sound Effect
+    length: 0x1C
+    fields: []
+
+0x9C:
+    name: Unknown
+    length: 0x10
+    fields: []
+
+0xA0:
+    name: Animate Texture
+    length: 0x4
+    fields: []
+
+0xA4:
+    name: Animate Model
+    length: 0x4
+    fields: []
+
+0xA8:
+    name: Related to Parasol Item?
+    length: 0x4
+    fields: []
+
+0xAC:
+    name: Rumble
+    length: 0x4
+    fields: []
+
+0xB0:
+    name: "Set flag 0x221E: 20"
+    length: 0x4
+    fields:
+        - name: Flag Setting
+          bits: [31, 31]
+          type: u
+
+0xB4:
+    name: Unknown
+    length: 0x4
+    fields: []
+
+0xB8:
+    name: Body Aura
+    length: 0x4
+    fields:
+        - name: Aura ID
+          bits: [6, 13]
+          type: u
+
+        - name: Duration
+          bits: [14, 31]
+          type: u
+
+0xBC:
+    name: Remove Color Overlay
+    length: 0x4
+    fields: []
+
+0xC0:
+    name: Unknown
+    length: 0x4
+    fields: []
+
+0xC4:
+    name: Sword Trail
+    length: 0x4
+    fields:
+        - name: Use Beam Sword Trail?
+          bits: [6, 6]
+          type: u
+
+        - name: Render Status
+          bits: [24, 31]
+          type: s
+
+0xC8:
+    name: Enable Ragdoll Physics?
+    length: 0x4
+    fields:
+        - name: Bone ID
+          bits: [6, 31]
+          type: u
+
+0xCC:
+    name: Self-Damage
+    length: 0x4
+    fields:
+        - name: Damage
+          bits: [16, 31]
+          type: u  # not sure about bits
+
+0xD0:
+    name: Continuation Control
+    length: 0x4
+    fields: []
+
+0xD4:
+    name: "Set flag 0x2225: 10"
+    length: 0x4
+    fields: []
+
+0xD8:
+    name: Footstep Sound + Graphic Effect
+    length: 0xC
+    fields: []
+
+0xDC:
+    name: Landing Sound + Graphic Effect
+    length: 0xC
+    fields: []
+
+0xE0:
+    name: Start Smash Charge
+    length: 0x8
+    fields:
+        - name: Charge Frames
+          bits: [8, 15]
+          type: u
+
+        - name: Charge Rate
+          bits: [16, 31]
+          type: u
+
+        - name: Visual Effect
+          bits: [32, 39]
+          type: u
+
+0xE4:
+    name: Unknown
+    length: 0x4
+    fields: []
+
+
+0xE8:
+    name: Aesthetic Wind Effect
+    length: 0x10
+    fields: []
+
+default:
+    name: UNKNOWN
+    length: 0x4
+    fields: []

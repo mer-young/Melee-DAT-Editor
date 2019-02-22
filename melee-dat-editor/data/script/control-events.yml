@@ -1,0 +1,69 @@
+# Control Events, 0x0-0x24
+# Used by all the event parsers
+
+0x00:
+    name: End of Script
+    length: 0x4
+    fields: []
+
+0x04:
+    name: Synchronous Timer
+    length: 0x4
+    fields:
+        - name: Frames
+          bits: [8, 31]
+          type: u  # not sure about bits
+
+0x08:
+    name: Asynchronous Timer
+    length: 0x4
+    fields:
+        - name: Frames
+          bits: [8, 31]
+          type: u  # not sure about bits
+
+0x0C:
+    name: Set Loop
+    length: 0x4
+    fields:
+        - name: Loop Count
+          bits: [8, 31]
+          type: u  # not sure about bits
+
+0x10:
+    name: Execute Loop
+    length: 0x4
+    fields: []
+
+0x14:
+    name: Subroutine
+    length: 0x8
+    fields:
+        - name: Target
+          bits: [32, 63]
+          type: h
+    pointer: 0x4
+
+0x18:
+    name: Return
+    length: 0x4
+    fields: []
+
+0x1C:
+    name: Go To
+    length: 0x8
+    fields:
+        - name: Target
+          bits: [32, 63]
+          type: h
+    pointer: 0x4
+
+0x20:
+    name: Set Timer - Looping Animation?
+    length: 0x4
+    fields: []
+
+0x24:
+    name: Unknown
+    length: 0x4  # not sure about this
+    fields: []

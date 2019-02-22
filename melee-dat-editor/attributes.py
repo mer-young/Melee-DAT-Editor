@@ -13,6 +13,16 @@ common_folder = os.path.join('data', 'attributes', 'common')
 unique_folder = os.path.join('data', 'attributes', 'unique')
 
 
+def article_info(character_short_name):
+    try:
+        fname = os.path.join(unique_folder, character_short_name + '.yml')
+        return yaml.safe_load(open(fname, 'r'))['articles']
+    except OSError:
+        raise
+    except IndexError:
+        return None
+
+
 def common_table(dat_type):
     try:
         fname = os.path.join(common_folder, dat_type + '.yml')
@@ -40,11 +50,14 @@ def get_table(fname, key=None):
     except KeyError:
         # no length specified, assume the table ends with the last listed
         length = max(data.keys()) + 4
+    return table_names_and_fmt(data, length)
 
+
+def table_names_and_fmt(info, length):
     names = []
     fmt = '>'
     for offset in range(0, length, 4):
-        entry = data.get(offset, _default_attribute)
+        entry = info.get(offset, _default_attribute)
         names.append(entry['name'])
         fmt += entry['type']
     return names, fmt

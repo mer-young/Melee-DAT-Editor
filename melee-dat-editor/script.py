@@ -6,33 +6,54 @@ Created on Thu Dec 13 23:18:39 2018
 """
 
 import binascii
+from enum import Enum
 from io import BytesIO
 from math import ceil
 import os
+import struct
 
 import yaml
 
+Float = struct.Struct('>f')
+Int = struct.Struct('>I')
 
-event_types_fname = os.path.join('data', 'event-types.yml')
-custom_fname = os.path.join('data', 'custom-event-types.yml')
-event_types = yaml.safe_load(open(event_types_fname, 'r'))
+FIGHTER, ARTICLE = Enum('script_type', 'FIGHTER ARTICLE')
+
+folder = os.path.join('data', 'script')
+
+control_event_types_fname = os.path.join(folder, 'control-events.yml')
+fighter_event_types_fname = os.path.join(folder, 'fighter-events.yml')
+article_event_types_fname = os.path.join(folder, 'article-events.yml')
+custom_fname = os.path.join(folder, 'fighter-events-custom.yml')
+
+fighter_event_types = yaml.safe_load(open(fighter_event_types_fname, 'r'))
+article_event_types = yaml.safe_load(open(article_event_types_fname, 'r'))
+control_event_types = yaml.safe_load(open(control_event_types_fname, 'r'))
 
 custom_event_types = yaml.safe_load(open(custom_fname, 'r'))
 
-for key, value in event_types.items():
+fighter_event_types.update(control_event_types)
+for key, value in fighter_event_types.items():
     if key == 'default':
         continue
-    event_types[key] = {key: value}
+    fighter_event_types[key] = {key: value}
     if key in custom_event_types.keys():
-        event_types[key].update(custom_event_types[key])
+        fighter_event_types[key].update(custom_event_types[key])
+for key, value in custom_event_types.items():
+    if key not in fighter_event_types.keys():
+        fighter_event_types[key] = value
 
-keys = list(event_types.keys())
+article_event_types.update(control_event_types)
+for key, value in article_event_types.items():
+    article_event_types[key] = {key: value}
+
+keys = list(fighter_event_types.keys())
 keys.remove('default')
 lookahead_amount = max(v.bit_length() for v in keys)
 del keys
 
 
-def read_script(file, include_terminator=False):
+def read_script(file, include_terminator=False, script_type=FIGHTER):
     """
     Read from a file until reaching the 0x00000000 terminator event. Return a
     list of Event objects for each event read.
@@ -47,14 +68,14 @@ def read_script(file, include_terminator=False):
     """
     script = []
     while True:
-        ev = Event.from_stream(file)
+        ev = event(script_type).from_stream(file)
         if ev is None:
             return script
 #        print(ev)
         script.append(ev)
         if not ev:
             return script if include_terminator else script[:-1]
-        if ev.code in [0x18, 0x1C]:  # 0x18 = return, 0x1C = goto
+        if ev.code[1] in [0x18, 0x1C]:  # 0x18 = return, 0x1C = goto
             return script
 
 
@@ -82,16 +103,26 @@ def print_script(list_of_events):
     [print(ev) for ev in list_of_events]
 
 
-def script_from_bytes(bytes_like, include_terminator=False):
+def script_from_bytes(bytes_like, include_terminator=False, script_type=FIGHTER):
     io = BytesIO(bytes_like)
-    return read_script(io, include_terminator)
+    return read_script(io, include_terminator, script_type)
 
 
-def script_from_hex_str(hexstr, include_terminator=False):
-    return script_from_bytes(binascii.unhexlify(hexstr), include_terminator)
+def script_from_hex_str(hexstr, include_terminator=False, script_type=FIGHTER):
+    return script_from_bytes(binascii.unhexlify(hexstr), include_terminator, script_type)
 
 
-class Event:
+def event(script_type):
+    """Returns the appropriate Event subclass"""
+    if script_type is FIGHTER:
+        return FighterEvent
+    if script_type is ARTICLE:
+        return ArticleEvent
+    else:
+        raise ValueError('Unknown script type "{script_type}"')
+
+
+class BaseEvent:
     """
     An event, which makes up part of a subaction script.
 
@@ -138,10 +169,10 @@ class Event:
         strs = []
         types = [fd['type'] for fd in self.fields]
         for val, tp in zip(self, types):
-                if tp == 'h':
-                    strs.append(hex(val))
-                else:
-                    strs.append(val)
+            if tp == 'h':
+                strs.append(hex(val))
+            else:
+                strs.append(val)
         return strs
 
     def __init__(self, bytestr):
@@ -149,6 +180,7 @@ class Event:
         code, custom_code = self.find_code(bytestr)
         self._code = [code, custom_code]
         self._evtype = self.get_evtype(code, custom_code)
+#        print(self._evtype)
 
         if len(bytestr) != self.length:
             raise ValueError("Invalid input length for event '{}' (expected {}"
@@ -165,31 +197,47 @@ class Event:
             except TypeError:
                 self.pointers.append(p)
 
-    @staticmethod
-    def find_code(bytestr):
+#    @staticmethod
+#    def find_code(bytestr):
+#        # returns code, custom_code
+#        # where custom_code is the same as base_code if the event is not custom
+#        data = int.from_bytes(bytestr, byteorder='big')
+#
+#        base_code = bytestr[0] & 0xFC
+#        if base_code in custom_event_types.keys():
+#            for i in range(len(bytestr)*8 - 6):
+#                try_code = (data >> i)
+#                if try_code in custom_event_types[base_code].keys():
+#                    return [base_code, try_code]
+#        return [base_code, base_code]
+    @classmethod
+    def find_code(cls, bytestr):
         # returns code, custom_code
         # where custom_code is the same as base_code if the event is not custom
         data = int.from_bytes(bytestr, byteorder='big')
 
         base_code = bytestr[0] & 0xFC
-        if base_code in custom_event_types.keys():
+        if base_code in cls.event_types.keys():
             for i in range(len(bytestr)*8 - 6):
                 try_code = (data >> i)
-                if try_code in custom_event_types[base_code].keys():
+                if try_code in cls.event_types[base_code].keys():
                     return [base_code, try_code]
+        else:  # allow for 0xFF customs
+            base_code2 = bytestr[0]
+            for i in range(len(bytestr)*8 - 6):
+                try_code = (data >> i)
+                if try_code in cls.event_types[base_code2].keys():
+                    return [base_code2, try_code]
         return [base_code, base_code]
 
-    @staticmethod
-    def get_evtype(code, custom_code=None):
+    @classmethod
+    def get_evtype(cls, code, custom_code=None):
         if custom_code is None:
             custom_code = code
-        try:
-            print(code)
-            print(code in event_types.keys())
-            base = event_types[code]
-        except KeyError:  # manually rather than get() because default has no subkeys
-            print('default')
-            return event_types['default']
+#        try:
+        base = cls.event_types[code]
+#        except KeyError:  # manually rather than get() because default has no subkeys
+#            return cls.event_types['default']
         return base[custom_code]
 
     # alternate constructors
@@ -207,9 +255,11 @@ class Event:
         """
         if custom_code is None:
             custom_code = code
-        length = event_types[code][custom_code]['length']
+        length = cls.event_types[code][custom_code]['length']
+#        print(length)
         bytestr = custom_code.to_bytes(ceil(custom_code.bit_length()/8), 'big')
         bytestr += b'\x00' * (length - len(bytestr))
+#        print(bytestr)
         return cls(bytestr)
 
     @classmethod
@@ -227,7 +277,6 @@ class Event:
             return None
 
         length = cls.get_evtype(*cls.find_code(lookahead))['length']
-        print(length)
         file.seek(pos)
         bytestr = file.read(length)
         return cls(bytestr)
@@ -293,6 +342,12 @@ class Event:
             return
         # list-like and dict-like indexing
         key = self._try_fieldname_to_index(key)
+        value_type = self.fields[key]['type']
+        if value_type == 'f':
+            val = Int.unpack(Float.pack(val))[0]
+        elif value_type == 'f-upper':
+            val = Int.unpack(Float.pack(val))[0] >> 16
+
 
         low, high = self.fields[key]['bits']
         mask = 2**(1+high-low) - 1
@@ -305,8 +360,19 @@ class Event:
             return [self[k] for k in range(*key.indices(len(self)))]
         key = self._try_fieldname_to_index(key)
         low, high = self.fields[key]['bits']
-        mask = 2**(1+high-low) - 1
-        return (self._data >> (self._nbits - 1 - high)) & mask
+        bit_length = high-low + 1
+        mask = 2**(bit_length) - 1
+        value = (self._data >> (self._nbits - 1 - high)) & mask
+        value_type = self.fields[key]['type']
+        if value_type == 's':
+            # signed
+            if (value & (1 << (bit_length - 1))):
+                value -= 1 << bit_length
+        elif value_type == 'f':
+            return Float.unpack(Int.pack(value))[0]
+        elif value_type == 'f-upper':
+            return Float.unpack(Int.pack(value << 16))[0]
+        return value
 
     def __len__(self):
         return len(self.fields)
@@ -349,3 +415,11 @@ class Event:
 
     def __repr__(self):
         return f'{self.__class__.__qualname__}({bytes(self)})'
+
+
+class FighterEvent(BaseEvent):
+    event_types = fighter_event_types
+
+
+class ArticleEvent(BaseEvent):
+    event_types = article_event_types
