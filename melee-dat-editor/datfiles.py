@@ -475,9 +475,10 @@ class MovesetDatFile (BaseDatFile):
                         )
 
             self.f.seek(self.f.pointer(self.data.jobj_pointer_pointer))
-            root_jobj_offset = self.f.pointer(self.f.read_int())
-            print('root jobj at', hex(root_jobj_offset))
-            self.image_offsets = self.f.jobjdesc_set_textures_aligned(root_jobj_offset)
+            root_jobj_pointer = self.f.read_int()
+            if root_jobj_pointer:
+                print('root jobj at', hex(root_jobj_pointer))
+                self.image_offsets = self.f.jobjdesc_set_textures_aligned(self.f.pointer(root_jobj_pointer))
 
         def script(self, variant_number):
             script_offset_raw = self.variants[variant_number].script_pointer
