@@ -231,5 +231,6 @@ unique attributes:
 articles:
     - name: Egg (Egg Throw)
     - name: Down-B Star
-    - Unknown
-    - Name: Egg (Egg Lay)
+    - name: Unknown
+    - name: Egg (Egg Lay)
+      kind: data

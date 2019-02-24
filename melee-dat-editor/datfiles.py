@@ -358,7 +358,7 @@ class MovesetDatFile (BaseDatFile):
 
         self.seek(0)
 
-    def jobjdesc_set_textures_aligned(self, jobjdesc_offset):
+    def jobjdesc_set_textures_aligned(self, jobjdesc_offset, debug_print=False):
         """
         Walk JObj to find tetures and set them as 32-byte aligned.
         Not saving hierarchy info about any of these, need to write
@@ -377,46 +377,53 @@ class MovesetDatFile (BaseDatFile):
                 offset = self.pointer(jobj.next_sibling_pointer)
                 if not any(j.start_offset == offset for j in jobj_list): # don't add a duplicate
                     jobj_list.append(self.inplace_struct(offset, JObjDesc))
-#                    print('jobj at', hex(offset))
+                    if debug_print:
+                        if debug_print: print('jobj at', hex(offset))
             if jobj.child_pointer:
                 offset = self.pointer(jobj.child_pointer)
                 if not any(j.start_offset == offset for j in jobj_list):
                     jobj_list.append(self.inplace_struct(offset, JObjDesc))
-#                    print('jobj at', hex(offset))
+                    if debug_print:
+                        if debug_print: print('jobj at', hex(offset))
             if jobj.dobj_pointer:
                 offset = self.pointer(jobj.dobj_pointer)
                 if not any(d.start_offset == offset for d in dobj_list):
                     dobj_list.append(self.inplace_struct(offset, DObjDesc))
-#                    print('dobj at', hex(offset))
+                    if debug_print: print('dobj at', hex(offset))
         for dobj in dobj_list:
             if dobj.next_sibling_pointer:
                 offset = self.pointer(dobj.next_sibling_pointer)
                 if not any(d.start_offset == offset for d in dobj_list):
                     dobj_list.append(self.inplace_struct(offset, DObjDesc))
-#                    print('dobj at', hex(offset))
+                    if debug_print: print('dobj at', hex(offset))
             if dobj.mobj_pointer:
                 offset = self.pointer(dobj.mobj_pointer)
                 if not any(m.start_offset == offset for m in mobj_list):
                     mobj_list.append(self.inplace_struct(offset, MObjDesc))
-#                    print('mobj at', hex(offset))
+                    if debug_print: print('mobj at', hex(offset))
         for mobj in mobj_list:
             if mobj.tobj_pointer:
                 offset = self.pointer(mobj.tobj_pointer)
                 if not any(t.start_offset == offset for t in tobj_list):
                     tobj_list.append(self.inplace_struct(offset, TObjDesc))
-#                    print('tobj at', hex(offset))
+                    if debug_print: print('tobj at', hex(offset))
         for tobj in tobj_list:
+            if tobj.next_sibling_pointer:
+                offset = self.pointer(tobj.next_sibling_pointer)
+                if not any(t.start_offset == offset for t in tobj_list):
+                    tobj_list.append(self.inplace_struct(offset, TObjDesc))
+                    if debug_print: print('tobj at', hex(offset))
             if tobj.image_header_pointer:
                 offset = self.pointer(tobj.image_header_pointer)
                 if not any(h.start_offset == offset for h in imageheader_list):
                     imageheader_list.append(self.inplace_struct(offset, ImageHeader))
-#                    print('image header at', hex(offset))
+                    if debug_print: print('image header at', hex(offset))
         for ih in imageheader_list:
             if ih.image_data_pointer:
                 offset = self.pointer(ih.image_data_pointer)
                 if offset not in image_offsets:
                     image_offsets.append(offset)
-                    print(image_offsets)
+                    if debug_print: print('image data at', hex(offset))
                     self.set_offset_aligned(offset, 32)
         # cleanup
         for item in jobj_list+dobj_list+mobj_list+tobj_list+imageheader_list:
@@ -427,7 +434,7 @@ class MovesetDatFile (BaseDatFile):
         ArticleData = NamedStruct('>IIIIII', 'ArticleData', [
                                   'header_pointer',
                                   'attributes_pointer',
-                                  'unk0x8',
+                                  'hurtbox_header_pointer',
                                   'variants_pointer',
                                   'jobj_pointer_pointer',
                                   'unk0x14'
@@ -476,6 +483,7 @@ class MovesetDatFile (BaseDatFile):
 
             self.f.seek(self.f.pointer(self.data.jobj_pointer_pointer))
             root_jobj_pointer = self.f.read_int()
+            self.image_offsets = []
             if root_jobj_pointer:
                 print('root jobj at', hex(root_jobj_pointer))
                 self.image_offsets = self.f.jobjdesc_set_textures_aligned(self.f.pointer(root_jobj_pointer))
@@ -683,18 +691,21 @@ TObjDesc = NamedStruct('>' + 'IIIIfffffffffIIBBHIfIIIII',
                        )
 
 
-ImageHeader = NamedStruct('>III',
+ImageHeader = NamedStruct('>IHHI',
                           'ImageHeader',
                           ['image_data_pointer',
-                           'unk0x4',
-                           'unk0x8'
+                           'width',
+                           'height',
+                           'image_format'
                            ]
                           )
 
 if __name__ == '__main__':
-    x = moveset_datfile(r'D:\SSB\melee mods\dat files\1.02\1 - Moveset\Kirby\PlKb.dat')
-    image_offsets = []
-    for a in x.articles:
-        image_offsets.extend(a.image_offsets)
-    for offset in image_offsets:
+    x = moveset_datfile(r'D:\SSB\melee mods\dat files\1.02\1 - Moveset\Sheik\PlSk.dat')
+#    image_offsets = []
+#    for a in x.articles:
+#        image_offsets.extend(a.image_offsets)
+#    for offset in image_offsets:
+#        print(hex(offset))
+    for offset, align in x.aligned_offsets:
         print(hex(offset))
