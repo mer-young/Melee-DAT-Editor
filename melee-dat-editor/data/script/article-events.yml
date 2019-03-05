@@ -106,7 +106,7 @@
           type: u
 
 0x34:
-    name: Unknown (Adjust Hitbox Size?)
+    name: Adjust Hitbox Size
     length: 0x4
     fields:
         - name: Hitbox ID

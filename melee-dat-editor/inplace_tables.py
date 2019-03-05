@@ -217,6 +217,13 @@ class _InPlaceTable:
         print(hex(Int.unpack(self.f.read(4))[0]))
         self.f.seek(pos)
 
+    def __str__(self):
+        return '[' + ', '.join(str(val) for val in self) + ']'
+
+    def __repr__(self):
+        return (self.__class__.__name__ + ' at ' + hex(self.start_offset) +
+                ' of ' + str(self.f) + ':\n' + str(self))
+
     def __len__(self):
         return self.length
 
@@ -267,6 +274,12 @@ class _InPlaceStruct:
 
     def get_offset(self, index):
         return self.start_offset + self.get_relative_offset(index)
+
+    def __del__(self):
+        try:
+            self.f.remove_inplace_table(self)
+        except ValueError:
+            pass
 
     @preserve_pos
     def raw(self, index):

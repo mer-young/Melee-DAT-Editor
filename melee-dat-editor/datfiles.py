@@ -344,11 +344,9 @@ class MovesetDatFile (BaseDatFile):
         if article_list_start:
             article_info_list = attributes.article_info(self.char_short_name())
             for i, article_info in enumerate(article_info_list):
-                try:
-                    name = article_info['name']
-                except IndexError:
-                    name = 'UNKNOWN'
-                if name.lower != '(empty)':
+                name = article_info.get('name', 'UNKNOWN')
+                kind = article_info.get('kind', 'article')
+                if name.lower() != '(empty)' and kind.lower() != 'values':
                     self.seek(self.pointer(article_list_start))
                     self.seek(4*i, SEEK_CUR)
                     article_offset = self.pointer(self.read_int())
@@ -445,6 +443,16 @@ class MovesetDatFile (BaseDatFile):
                               'un0x8',
                               'script_pointer'
                               ])
+        ArticleHurtbox = NamedStruct('>Ifffffff', 'ArticleHurtbox', [
+                            'bone',  # I think. Haven't checked to be sure
+                            'x1',    # which 2 entries are missing compared
+                            'y1',    # to character hurtboxes
+                            'z1',
+                            'x2',
+                            'y2',
+                            'z2',
+                            'scale'
+                            ])
         Header = struct.Struct('>' + 'f'*0x21)  # probably not all floats, haven't looked closely
         def __init__(self, parent, offset, info, name=None):
             print('creating article from offset', hex(offset))
@@ -481,12 +489,33 @@ class MovesetDatFile (BaseDatFile):
                         self.f.inplace_struct(offset, self.Variant)
                         )
 
+            print(hex(self.data.jobj_pointer_pointer))
             self.f.seek(self.f.pointer(self.data.jobj_pointer_pointer))
             root_jobj_pointer = self.f.read_int()
             self.image_offsets = []
             if root_jobj_pointer:
                 print('root jobj at', hex(root_jobj_pointer))
                 self.image_offsets = self.f.jobjdesc_set_textures_aligned(self.f.pointer(root_jobj_pointer))
+
+            if self.data.hurtbox_header_pointer:
+                self.hurtbox_header = self.f.inplace_struct(
+                        self.f.pointer(self.data.hurtbox_header_pointer),
+                        NamedStruct('>II', 'HurtboxHeader',
+                                    ['n_hurtboxes', 'hurtbox_table_pointer']
+                                    )
+                        )
+                if self.hurtbox_header.n_hurtboxes > 0:
+                    self.hurtbox_table = self.f.inplace_table(
+                            self.f.pointer(self.hurtbox_header.hurtbox_table_pointer),
+                            self.hurtbox_header.n_hurtboxes,
+                            self.ArticleHurtbox
+                            )
+                else:
+                    self.hurtbox_table = None
+            else:
+                self.hurtbox_header = None
+                self.hurtbox_table = None
+
 
         def script(self, variant_number):
             script_offset_raw = self.variants[variant_number].script_pointer
@@ -701,7 +730,7 @@ ImageHeader = NamedStruct('>IHHI',
                           )
 
 if __name__ == '__main__':
-    x = moveset_datfile(r'D:\SSB\melee mods\dat files\1.02\1 - Moveset\Sheik\PlSk.dat')
+    x = moveset_datfile(r'D:\SSB\melee mods\dat files\1.02\1 - Moveset\Link\PlLk.dat')
 #    image_offsets = []
 #    for a in x.articles:
 #        image_offsets.extend(a.image_offsets)
