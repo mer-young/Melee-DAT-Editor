@@ -11,10 +11,10 @@ unique attributes:
         name: "Neutral-B Anything other than 0 goes into special free fall"
         type: f
     0xc:
-        name: "Neutral-B Item Loader ID? (0 = Capsule + game freeze)"
+        name: "Neutral-B Arrow Item ID"
         type: I
     0x10:
-        name: "Neutral-B Item Loader ID? (0 = Capsule + normal arrow shooting)"
+        name: "Neutral-B Bow Item ID"
         type: I
     0x14:
         name: "Side-B Something to do with angle of boomerang, high numbers it cannot be angled"
@@ -23,13 +23,19 @@ unique attributes:
         name: "Side-B Boomerang angle (radians)"
         type: f
     0x1c:
-        name: "Side-B  ???"
+        name: "Side-B  Boomerang angle multiplier"
         type: f
     0x20:
         name: "Side-B Smash Boomerang launch speed"
         type: f
     0x24:
         name: "Side-B Regular Boomerang launch speed"
+        type: f
+    0x28:
+        name: "Side-B Boomerang "Y distance from Link" addend"
+        type: f
+    0x2C:
+        name: "Side-B Boomerang Item ID"
         type: f
     0x30:
         name: "Up-B Up B landing lag"
@@ -46,26 +52,116 @@ unique attributes:
     0x40:
         name: "Up-B Initial vertical momentum"
         type: f
+    0x44:
+        name: "Up-B Per-frame vertical velocity subtrahend multiplier"
+        type: f
     0x48:
-        name: "Down-B ID for bomb(58 is Link's bomb)"
+        name: "Down-B Bomb Item ID"
         type: I
     0x4c:
-        name: "Miscellaneous Down Air 'bounce' vertical momentum"
+        name: "Down Air 'bounce' vertical momentum"
         type: f
     0x50:
-        name: "Miscellaneous Frames before hitbox reappears after hitting with Down Air"
+        name: "Down Air Frames before hitbox reappears after hitting with Down Air"
         type: f
+    0x54:
+        name: "Down Air Frame of Down Air to stop refreshing hitbox on hit"
+        type: f
+    0x58:
+        name: "Down Air hitbox ID 0 damage after hitting opponent"
+        type: I
+    0x5C:
+        name: "Down Air hitbox ID 1 damage after hitting opponent"
+        type: I
+    0x60:
+        name: "Down Air hitbox ID 2 damage after hitting opponent"
+        type: I
+    0x64:
+        name: "Sword Trail Unk Bound"
+        type: F
+    0x68:
+        name: "Sword Trail Unk Bound"
+        type: F
+    0x6C:
+        name: "Sword Trail Unk"
+        type: I
+    0x6D:
+        name: "Sword Trail Unk"
+        type: I
+    0x6E:
+        name: "Sword Trail Unk"
+        type: I
+    0x6F:
+        name: "Sword Trail Unk"
+        type: I
+    0x70:
+        name: "Sword Trail Unk"
+        type: I
+    0x71:
+        name: "Sword Trail Unk"
+        type: I
+    0x72:
+        name: "Sword Trail Unk"
+        type: I
+    0x73:
+        name: "Sword Trail Unk"
+        type: I
+    0x74:
+        name: "Sword Trail Unk"
+        type: I
+    0x75:
+        name: "Null"
+        type: I
+    0x76:
+        name: "Null"
+        type: I
+    0x77:
+        name: "Null"
+        type: I
+    0x78:
+        name: "Sword Trail Bone ID"
+        type: I
+    0x7C:
+        name: "Sword Trail start distance from bone"
+        type: f
+    0x80:
+        name: "Sword Trail end distance from bone"
+        type: f
+    0xA4:
+        name: "Hookshot frame to spawn hookshot"
+        type: I
+    0xA8:
+        name: "Hookshot frame to spawn chain"
+        type: I
+    0xAC:
+        name: "Hookshot frame to retract chain"
+        type: I
+    0xB0:
+        name: "Hookshot frame to stop checking stuff?"
+        type: I
+    0xB4:
+        name: "Hookshot CliffJump vertical velocity multiplier"
+        type: f
+    0xB8:
+        name: "Hookshot frames before falling from AirCatchHit"
+        type: I
+    0xBC:
+        name: "Hookshot Item ID"
+        type: I
+    0xC4:
+        name: "Idle Shield bubble bone ID to attach to"
+        type: I
     0xc8:
-        name: "Miscellaneous Shield block collision X offset"
+        name: "Idle Shield bubble X offset"
         type: I
     0xcc:
-        name: "Miscellaneous Shield block collision Y offset (positive is down, negative is up)"
+        name: "Idle Shield bubble Y offset (positive is down, negative is up)"
         type: I
     0xd0:
-        name: "Miscellaneous Shield block collision Z offset"
+        name: "Idle Shield bubble Z offset"
         type: I
     0xd4:
-        name: "Miscellaneous Shield block hitbox size modifier"
+        name: "Idle Shield bubble size modifier"
         type: f
 
 articles:
