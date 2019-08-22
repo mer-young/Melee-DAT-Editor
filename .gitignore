@@ -1,6 +1,8 @@
 *.dat
 *.dol
 *.iso
+.spyproject
+.directory
 __pycache__/
 
 !/melee-dat-editor/data/fsm-templates/*.dat
