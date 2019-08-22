@@ -233,4 +233,4 @@ articles:
     - name: Down-B Star
     - name: Unknown
     - name: Egg (Egg Lay)
-      kind: data
+      kind: skip

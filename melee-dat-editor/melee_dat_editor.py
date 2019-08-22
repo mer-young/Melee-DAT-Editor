@@ -68,7 +68,7 @@ class MainWindow (QMainWindow):
 
         self.setWindowTitle('Melee Dat Editor')
         self.setWindowIcon(QIcon('resources/icon-256.ico'))
-#        self.statusBar().showMessage('')  # enable status bar
+        self.statusBar().showMessage('')  # enable status bar
         self.setup_menus()
 
         self.setAcceptDrops(True)
@@ -297,6 +297,11 @@ class MovesetDatEditor (QWidget):
             self.editors_list.currentRowChanged.connect(
                     self.frame.setCurrentIndex
                     )
+        self.frame.sizeHint = lambda: QSize(
+                max(self.frame.widget(i).sizeHint().width() for i in range(self.frame.count())),
+                max(self.frame.widget(i).sizeHint().height() for i in range(self.frame.count()))
+                )
+        self.frame.resize(self.frame.sizeHint())
         self.editors_list.setCurrentRow(0)
 
 
@@ -414,7 +419,7 @@ class ScriptEditor (QWidget):
             paste.triggered.connect(self.paste)
             self.addAction(paste)
 
-            self.delete = QAction(style.standardIcon(QStyle.SP_TrashIcon), 'Delete', self)
+            self.delete = QAction(style.standardIcon(QStyle.SP_DialogDiscardButton), 'Delete', self)
             self.delete.setShortcut(QKeySequence.Delete)
             self.delete.triggered.connect(self.delete_selected)
             self.addAction(self.delete)

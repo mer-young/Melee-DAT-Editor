@@ -83,4 +83,5 @@ articles:
     - name: Arrow
     - name: Bow
     - name: (empty)
-    - kind: values
+    - name: unknown
+      kind: skip

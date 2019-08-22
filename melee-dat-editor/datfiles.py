@@ -100,6 +100,9 @@ class BaseDatFile (HasInPlaceTables):
         self.pointer_table.insert_sorted(pointer_value)
         self.n_pointers += 1
 
+    def is_valid_pointer(self, pointer_val):
+        return pointer_val - self.header_size in self.pointer_table
+
     @preserve_pos
     def adjust_pointers(self, location, amount):
         for i, p in enumerate(self.pointer_table):
@@ -346,7 +349,7 @@ class MovesetDatFile (BaseDatFile):
             for i, article_info in enumerate(article_info_list):
                 name = article_info.get('name', 'UNKNOWN')
                 kind = article_info.get('kind', 'article')
-                if name.lower() != '(empty)' and kind.lower() != 'values':
+                if name.lower() != '(empty)' and kind.lower() != 'skip':
                     self.seek(self.pointer(article_list_start))
                     self.seek(4*i, SEEK_CUR)
                     article_offset = self.pointer(self.read_int())
@@ -493,9 +496,11 @@ class MovesetDatFile (BaseDatFile):
             self.f.seek(self.f.pointer(self.data.jobj_pointer_pointer))
             root_jobj_pointer = self.f.read_int()
             self.image_offsets = []
-            if root_jobj_pointer:
+            if self.f.is_valid_pointer(root_jobj_pointer):
                 print('root jobj at', hex(root_jobj_pointer))
                 self.image_offsets = self.f.jobjdesc_set_textures_aligned(self.f.pointer(root_jobj_pointer))
+            else:
+                print('no root jobj, value was {:x}'.format(root_jobj_pointer))
 
             if self.data.hurtbox_header_pointer:
                 self.hurtbox_header = self.f.inplace_struct(
@@ -730,7 +735,9 @@ ImageHeader = NamedStruct('>IHHI',
                           )
 
 if __name__ == '__main__':
-    x = moveset_datfile(r'D:\SSB\melee mods\dat files\1.02\1 - Moveset\Link\PlLk.dat')
+    # x = moveset_datfile(r'D:\SSB\melee mods\dat files\1.02\1 - Moveset\Link\PlLk.dat')
+    x = moveset_datfile(r'/home/rmn/SSB/melee-hacks/dat-files/1.02/1 - Moveset/Fox/PlFx.dat')
+
 #    image_offsets = []
 #    for a in x.articles:
 #        image_offsets.extend(a.image_offsets)

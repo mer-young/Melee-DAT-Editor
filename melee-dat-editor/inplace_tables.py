@@ -267,7 +267,11 @@ class _InPlaceStruct:
             self[key] = value
 
     def get_relative_offset(self, index):
-        fmt = self.struct.format.decode('ascii')
+        try:
+            fmt = self.struct.format.decode('ascii')
+        # Some Python versions return str rather than bytes
+        except AttributeError:
+            fmt = self.struct.format
         for c in '@-<>!':
             fmt = fmt.replace(c, '')
         return struct.calcsize(fmt[:index])
@@ -283,7 +287,11 @@ class _InPlaceStruct:
 
     @preserve_pos
     def raw(self, index):
-        fmt = self.struct.format.decode('ascii')
+        try:
+            fmt = self.struct.format.decode('ascii')
+        # Some Python versions return str rather than bytes
+        except AttributeError:
+            fmt = self.struct.format
         for c in '@-<>!':
             fmt = fmt.replace(c, '')
         self.f.seek(self.get_offset(index))
