@@ -75,7 +75,7 @@ unique attributes:
         name: "Down-B Unknown"
         type: f
     0x60:
-        name: "Down-B Hitlag/Freeze frames on activation"
+        name: "Down-B Minimum Hitlag/Freeze frames on activation"
         type: f
     0x64:
         name: "Down-B Y-axis height of Counter collision box (positive int only)"
