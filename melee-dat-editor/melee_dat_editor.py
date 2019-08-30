@@ -883,7 +883,7 @@ class HurtboxEditor (QWidget):
         self.make_table()
 
     def make_table(self):
-        headers = ['Bone', '?', '?', 'x1', 'y1', 'z1', 'x2', 'y2',
+        headers = ['Bone', '?', 'Grabbable', 'x1', 'y1', 'z1', 'x2', 'y2',
                    'z2', 'scale', '']
         self.table.setColumnCount(len(headers))
         for i, h in enumerate(headers):
