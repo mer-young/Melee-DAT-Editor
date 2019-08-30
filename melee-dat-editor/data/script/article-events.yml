@@ -88,7 +88,7 @@
         - name: Hurtbox Interaction
           bits: [158, 159]
           type: u
-        
+
         - name: Unknown data
           bits: [160, 191]
           type: h
@@ -121,7 +121,7 @@
     name: Unknown (Hitbox Set Unknown Flags?)
     length: 0x4
     fields: []
-    
+
 0x3C:
     name: Unknown (Terminate Collisions?)
     length: 0x4
