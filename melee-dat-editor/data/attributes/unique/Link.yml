@@ -1,4 +1,5 @@
 # Link
+
 unique attributes:
     length: 0xdc
     0x0:
@@ -32,7 +33,7 @@ unique attributes:
         name: "Side-B Regular Boomerang launch speed"
         type: f
     0x28:
-        name: "Side-B Boomerang "Y distance from Link" addend"
+        name: 'Side-B Boomerang "Y distance from Link" addend'
         type: f
     0x2C:
         name: "Side-B Boomerang Item ID"
@@ -78,10 +79,10 @@ unique attributes:
         type: I
     0x64:
         name: "Sword Trail Unk Bound"
-        type: F
+        type: f
     0x68:
         name: "Sword Trail Unk Bound"
-        type: F
+        type: f
     0x6C:
         name: "Sword Trail Unk"
         type: I
