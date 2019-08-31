@@ -858,22 +858,6 @@ class AttributeEditor (QWidget):
         if isinstance(value, float):
             return f'{value:.5f}'
 
-    # def sizeHint(self):
-    #     max_rows = 20
-    #     w = (sum(self.table.columnWidth(i)
-    #              for i in range(self.table.columnCount())
-    #              )
-    #          + self.table.verticalScrollBar().sizeHint().width()
-    #          + self.table.verticalHeader().sizeHint().width()
-    #          )
-    #     h = (sum(self.table.rowHeight(i)
-    #              for i in range(min(self.table.rowCount(), max_rows))
-    #              )
-    #          + self.table.horizontalScrollBar().sizeHint().height()
-    #          + self.table.horizontalHeader().sizeHint().height()
-    #          )
-    #     return QSize(w, h)
-
     @pyqtSlot(int, int)
     def update_value(self, i, j):
         value_entry = self.table.cellWidget(i, j)
