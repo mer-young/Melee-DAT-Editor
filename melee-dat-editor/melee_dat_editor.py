@@ -50,9 +50,6 @@ def hex_display(string, show_0x=True):
     return '0x'*bool(show_0x) + case_fun(string.replace('0x', ''))
 
 
-# TODO: get rid of unnecessary assignment of widgets to instance attributes
-# if that widget is never referenced outside of _init__
-
 class MainWindow (QMainWindow):
     """Main Window for the application"""
     def __init__(self):
@@ -73,7 +70,7 @@ class MainWindow (QMainWindow):
 
         self.setAcceptDrops(True)
 
-        self.setFixedSize(825, 700)
+        self.resize(QSize(640, 480))
         self.show()
 
     def setup_menus(self):
@@ -139,6 +136,7 @@ class MainWindow (QMainWindow):
             e = MovesetDatEditor(fname, self.last_save_directory, self)
         except Exception:
             import traceback
+            print(traceback.format_exc())
             mbox = QMessageBox(self)
             mbox.setWindowTitle(self.windowTitle())
             mbox.setText(f"Error opening {fname}.\n\n"
@@ -149,6 +147,9 @@ class MainWindow (QMainWindow):
         self.last_open_directory = os.path.dirname(fname)
         self.tabs.addTab(e, os.path.basename(fname))
         self.tabs.setCurrentWidget(e)
+        self.updateGeometry()
+        self.resize(self.sizeHint())
+        QApplication.instance().processEvents()
 
     def save(self):
         if self.current_editor():
@@ -207,6 +208,10 @@ class MovesetDatEditor (QWidget):
         self.editors_list.setFixedWidth(150)
         self.frame = QStackedWidget(self)
         self.frame.setFrameStyle(QFrame.Panel | QFrame.Raised)
+        self.frame.sizeHint = lambda: QSize(
+                max(self.frame.widget(i).sizeHint().width() for i in range(self.frame.count())),
+                max(self.frame.widget(i).sizeHint().height() for i in range(self.frame.count()))
+                )
         self.initialize()
 
         self.grid.addWidget(QLabel(self.f.title(), self), 0, 0)
@@ -786,6 +791,25 @@ class AttributeEditor (QWidget):
         self.data = attributes_table
         self.grid = QGridLayout(self)
         self.table = self.AttributeTable(self)
+
+        # set up table sizing
+        max_rows = 20
+        max_width = 1024
+        w = lambda: (sum(self.table.columnWidth(i)
+                     for i in range(self.table.columnCount())
+                     )
+                + self.table.verticalScrollBar().sizeHint().width()
+                + self.table.verticalHeader().sizeHint().width()
+                + 5  # trial and error; not sure where it comes from
+                )
+        h = lambda: (sum(self.table.rowHeight(i)
+                     for i in range(min(self.table.rowCount(), max_rows))
+                     )
+                + self.table.horizontalScrollBar().sizeHint().height()
+                + self.table.horizontalHeader().sizeHint().height()
+                )
+        self.table.sizeHint = lambda: QSize(min(w(), max_width), h())
+
         self.grid.addWidget(self.table, 0, 0)
 
         headings = ['Name', 'Value', 'Raw', 'Table Offset', 'File Offset',
@@ -833,6 +857,22 @@ class AttributeEditor (QWidget):
             return f'{value:d}'
         if isinstance(value, float):
             return f'{value:.5f}'
+
+    # def sizeHint(self):
+    #     max_rows = 20
+    #     w = (sum(self.table.columnWidth(i)
+    #              for i in range(self.table.columnCount())
+    #              )
+    #          + self.table.verticalScrollBar().sizeHint().width()
+    #          + self.table.verticalHeader().sizeHint().width()
+    #          )
+    #     h = (sum(self.table.rowHeight(i)
+    #              for i in range(min(self.table.rowCount(), max_rows))
+    #              )
+    #          + self.table.horizontalScrollBar().sizeHint().height()
+    #          + self.table.horizontalHeader().sizeHint().height()
+    #          )
+    #     return QSize(w, h)
 
     @pyqtSlot(int, int)
     def update_value(self, i, j):
